@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MS Natyalaya</title>
+<link href="styles/basic.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+var parser = new DOMParser;
+var MSN = MSN || new Object;
+MSN.sPagesFetched = MSN.sPagesFetched || new Object;
+MSN.iPagesFetched = 0;
+MSN.sPagesToFetch = ["index", "gallery", "contact", "about"];
+window.onload = function() {
+	var ajxPageFetcher = new XMLHttpRequest();
+	for(MSN.iPagesFetched = 0; MSN.iPagesFetched < MSN.sPagesToFetch.length; MSN.iPagesFetched++)
+	{
+		ajxPageFetcher.open("GET", MSN.sPagesToFetch[MSN.iPagesFetched] + ".html", false);
+		ajxPageFetcher.send();
+		MSN.sPagesFetched[MSN.sPagesToFetch[MSN.iPagesFetched]] = parser.parseFromString(ajxPageFetcher.responseText, "text/html");
+	}
+};
+function HandlePageNav(evt, sPageName) {
+	//  Prevent default behavior only if tried to be opened in same tab (i.e., handle only the left-click and not middle / right clicks.
+	if(evt.button == 0)
+	{
+		//alert(sPageName);
+		document.getElementById("PageContent").innerHTML = MSN.sPagesFetched[sPageName].getElementById("PageContent").innerHTML;
+		evt.preventDefault();
+		return false;
+	}
+	return true;
+};
+</script>
+</head>
+
+<body>
+<div id="Wrapper">
+<header>
+    <img src="images/Logo_Size_Reduced_To_Fit.png" alt="MS Natyala - Logo" id="Logo" title="MS Natyalaya" />
+    <section id="Brand">
+        <div id="Name">M.S. Natyalaya</div>
+        <div id="Motto">A school for Classical Dance.</div>
+    </section>
+    <nav id="NavBar">
+        <ul>
+            <a href="index.html" tooltip="website's home page" onClick="HandlePageNav(event, 'index');"><li>Home</li></a>
+            <a href="gallery.html" tooltip="media gallery" onClick="HandlePageNav(event, 'gallery');"><li>Gallery</li></a>
+            <a href="contact.html" tooltip="contact page" onClick="HandlePageNav(event, 'contact');"><li>Contact</li></a>
+            <a href="about.html" tooltip="about page" onClick="HandlePageNav(event, 'about');"><li>About Us</li></a>
+        </ul>
+    </nav>
+</header>
+<article id="ScrollableContent">
+    <section id="PageContent">
+    This is index.1234
+    <br />
+    <p>This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    <p>This is index.</p>
+    </section>
+</article>
+<footer>
+All your base belong to us - MSN.  Don't you dare.
+</footer>
+</div>
+</body>
+</html>

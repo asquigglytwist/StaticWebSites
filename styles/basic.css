@@ -1,0 +1,225 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Segoe UI", Verdana, sans-serif;
+	font-size: 14px;
+	color: rgba(0,0,0,1.00);
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: rgba(0,0,0,1.00);
+}
+html, body {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% auto;
+	/* [disabled]background-image: url(../images/ShivaParvathi.jpg); */
+	/* [disabled]min-height: 100vh; */
+	/* [disabled]height: 100%; */
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+#Wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+header {
+	height: 85px;
+	text-align: center;
+	background-color: rgba(255,249,103,1.00);
+	width: 100%;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 8px 6px -6px black;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 1000;
+	/* [disabled]border-color: blue; */
+	/* [disabled]border-width: 1px; */
+	/* [disabled]border-style: solid; */
+}
+#Logo {
+	display: inline-block;
+	z-index: 9001;
+	float: left;
+	margin-top: 12px;
+	margin-right: 12px;
+	margin-bottom: 5px;
+	margin-left: 12px;
+	top: 0px;
+	left: 0px;
+	-webkit-perspective: 300px;  /* Chrome 12+, Safari 4+ */
+	-ms-perspective: 300px;  /* IE 10 */
+	perspective: 300px;
+	-ms-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	box-shadow: 1px 1px 2px 2px rgba(74,74,74,1.00);
+	background-color: rgba(255,249,103,1.00);
+}
+#Logo:focus, #Logo:hover {
+	border-radius: 67px;
+	-webkit-box-shadow: 1px 1px 2px 2px rgba(74,74,74,1.00);
+	box-shadow: 1px 1px 2px 2px rgba(74,74,74,1.00);
+}
+#Brand {
+	margin: 0 auto;
+	display: inline-block;
+	padding-right: 15px;
+	padding-left: 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	left: -30px;
+	/* [disabled]border-style: solid; */
+	/* [disabled]border-width: 1px; */
+	/* [disabled]border-color: black; */
+}
+#Name {
+	font-family: 'Mr Bedfort', cursive;
+	font-size: 36px;
+	color: rgba(255,79,0,1.00);
+	font-weight: bold;
+	-ms-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#Name:focus, #Name:hover {
+	-ms-transform: rotate(-3deg); /* IE 9 */
+	-webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+	-moz-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+#Motto {
+	color: rgba(200,131,0,1.00);
+}
+#NavBar {
+	display: inline-block;
+	text-align: center;
+	float: left;
+	position: fixed;
+	top: 50px;
+	min-width: 300px;
+	background-color: rgba(0,0,0,1.00);
+	color: rgba(255,255,255,1.00);
+	right: 0px;
+	margin-right: 5px;
+	margin-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	max-width: 400px;
+	width: 400px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/* [disabled]border-width: 1px; */
+	/* [disabled]border-style: solid; */
+	/* [disabled]border-color: orange; */
+}
+#NavBar ul {
+	list-style-type: none;
+	text-align: center;
+	/* [disabled]border-color: white; */
+	/* [disabled]border-width: 1px; */
+	/* [disabled]border-style: solid; */
+}
+#NavBar ul li {
+	/*border: 1px solid blanchedalmond;*/
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	font-variant: normal;
+	color: rgba(255,255,255,1.00);
+	padding-right: 3px;
+	padding-left: 3px;
+}
+#NavBar ul li:hover, #NavBar ul li:focus {
+	color: rgba(0,45,221,1.00);
+	font-weight: bolder;
+	font-variant: small-caps;
+}
+#ScrollableContent {
+	background-image: url(../images/BackGround.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: auto auto;
+	background: url(../images/BackGround.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	min-height: 80vh;
+	height: 80%;
+	height: (100% - 55px);
+}
+#PageContent {
+	width: 90%;
+	min-width: 85%;
+	background-color: rgba(255,255,255,0.65);
+	margin: 0 auto;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	-webkit-box-shadow: 0 9px 0px 0px transparent,0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 9px 0px 0px transparent,0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
+	-ms-box-shadow: 0 9px 0px 0px transparent,0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 9px 0px 0px transparent,0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
+	/* [disabled]border-color: black; */
+	/* [disabled]border-width: 1px; */
+	/* [disabled]border-style: solid; */
+}
+footer {
+	position: relative;
+	width: 100%;
+	height: 55px;
+	text-align: center;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	-moz-box-shadow: 0 8px 6px -6px black;
+	box-shadow: 0 8px 6px -6px black;
+	box-sizing: border-box;
+	z-index: 9000;
+	bottom: 0px;
+	background-color: rgba(255,255,255,1.00);
+	right: 0px;
+	left: 0px;
+	/* [disabled]margin-top: 5px; */
+	/* [disabled]margin-right: 5px; */
+	/* [disabled]margin-bottom: 5px; */
+	/* [disabled]margin-left: 5px; */
+	/* [disabled]background-image: -webkit-linear-gradient(315deg,rgba(255,63,0,1.00) 0%,rgba(255,237,83,1.00) 7.26%,rgba(255,249,202,1.00) 49.74%,rgba(255,237,83,1.00) 83.94%,rgba(255,165,35,1.00) 100%); */
+	/* [disabled]background-image: linear-gradient(135deg,rgba(255,63,0,1.00) 0%,rgba(255,237,83,1.00) 7.26%,rgba(255,249,202,1.00) 49.74%,rgba(255,237,83,1.00) 83.94%,rgba(255,165,35,1.00) 100%); */
+	/* [disabled]border-color: blue; */
+	/* [disabled]border-width: 1px; */
+	/* [disabled]border-style: solid; */
+}
+#PageContent *:first-letter {
+	text-transform: uppercase;
+	margin-left: 30px;
+	font-weight: 600;
+	font-size: 110%;
+}
