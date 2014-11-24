@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	font-family: Arial !important;
+}
+font {
+	font-family: 'Times New Roman', Arial;
+	font-weight: bold;
+	font-size: 36px !important;
+}
+font p {
+	font-family: 'Times New Roman', Arial;
+	font-weight: bold;
+	font-size: 36px !important;
+}
+html {
+	background: none !important;
+}
+body {
+	background: none !important;
+}
+#Logo {
+	position: static !important;
+}
