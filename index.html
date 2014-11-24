@@ -4,71 +4,73 @@
 <meta charset="utf-8">
 <title>MS Natyalaya</title>
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
-var parser = new DOMParser;
-var MSN = MSN || new Object;
-MSN.sPagesFetched = MSN.sPagesFetched || new Object;
-MSN.iPagesFetched = 0;
-MSN.sPagesToFetch = ["index", "gallery", "contact", "about"];
-window.onload = function() {
-	var ajxPageFetcher = new XMLHttpRequest();
-	for(MSN.iPagesFetched = 0; MSN.iPagesFetched < MSN.sPagesToFetch.length; MSN.iPagesFetched++)
-	{
-		ajxPageFetcher.open("GET", MSN.sPagesToFetch[MSN.iPagesFetched] + ".html", false);
-		ajxPageFetcher.send();
-		MSN.sPagesFetched[MSN.sPagesToFetch[MSN.iPagesFetched]] = parser.parseFromString(ajxPageFetcher.responseText, "text/html");
-	}
-};
-function HandlePageNav(evt, sPageName) {
-	//  Prevent default behavior only if tried to be opened in same tab (i.e., handle only the left-click and not middle / right clicks.
-	if(evt.button == 0)
-	{
-		//alert(sPageName);
-		document.getElementById("PageContent").innerHTML = MSN.sPagesFetched[sPageName].getElementById("PageContent").innerHTML;
-		evt.preventDefault();
-		return false;
-	}
-	return true;
-};
-</script>
+<link href="styles/carousel.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<div id="Wrapper">
 <header>
-    <img src="images/Logo_Size_Reduced_To_Fit.png" alt="MS Natyala - Logo" id="Logo" title="MS Natyalaya" />
-    <section id="Brand">
-        <div id="Name">M.S. Natyalaya</div>
+	<img src="images/Logo_Size_Reduced_To_Fit.png" alt="MS Natyala - Logo" id="Logo" title="MS Natyalaya" />
+    <div id="Brand">
+    	<div id="Name">M.S. Natyalaya</div>
         <div id="Motto">A school for Classical Dance.</div>
-    </section>
+    </div>
     <nav id="NavBar">
         <ul>
-            <a href="index.html" tooltip="website's home page" onClick="HandlePageNav(event, 'index');"><li>Home</li></a>
-            <a href="gallery.html" tooltip="media gallery" onClick="HandlePageNav(event, 'gallery');"><li>Gallery</li></a>
-            <a href="contact.html" tooltip="contact page" onClick="HandlePageNav(event, 'contact');"><li>Contact</li></a>
-            <a href="about.html" tooltip="about page" onClick="HandlePageNav(event, 'about');"><li>About Us</li></a>
+            <a href="index.html"><li data-href="You're Home. + a very long extra buffer to test the page and blah blah blah blah blah blah blah blah blah blah blah blah blah...">Home</li></a>
+            <a href="gallery.html"><li data-href="Gallery">Gallery</li></a>
+            <a href="contact.html"><li data-href="Contact">Contact</li></a>
+            <a href="about.html"><li data-href="About page + a very long extra buffer to test the page and blah blah blah blah blah blah blah blah blah blah blah blah blah...">About Us</li></a>
         </ul>
     </nav>
 </header>
 <article id="ScrollableContent">
     <section id="PageContent">
     <div>
-    M.S. Natyalaya is a Bangalore based institute for Bharathanatyam. Our vision is to preserve the traditional art form by offering an in-depth training in both theory and practical.
+    M S Natyalaya is a Bangalore based institute training students in classical dance.  If you're interested, goto about page.
+    </div>
+    <div id="Carousel">
+    	<div class="strip">
+            <div class="thumbnail transition">
+            	<div class="albumname transition">
+                	Navarasams
+                    <div class="albumdesc transition">
+                    All the 9 rasams.
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail transition">
+            	<div class="albumname transition">
+                	Annual Day
+                    <div class="albumdesc transition">
+                    Every year we celebrate our Annual Day during the second week of January i.e., around the week of 10th January every year.
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail transition">
+            	<div class="albumname transition">
+                	Navarasams
+                    <div class="albumdesc transition">
+                    All the 9 rasams.
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail transition">
+            	<div class="albumname transition">
+                	Navarasams
+                    <div class="albumdesc transition">
+                    All the 9 rasams.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div>
-    Bharatanatyam, is a classical dance form that originated in the Indian temples. <a href="http://en.wikipedia.org/wiki/Bharata_Natyam">Bharatanatyam</a> is known for its grace, purity, tenderness, and sculpturesque poses. Lord Shiva is considered the God of this dance form. A possible origin of the name is from Bharata Muni, who wrote the Natya Shastra. The meaning of the word Bharatnatyam is "Bhavam" means expression, "ragam" meaning music, "thalam" meaning rhythm and natyam meaning dance. Bharata Natyam is considered to be a fire-dance — the mystic manifestation of the metaphysical element of fire in the human body. The movements of an authentic Bharata Natyam dancer resemble the movements of a dancing flame.
+    	Just another div.
     </div>
-    <div>
-    In Hindu mythology the whole universe is the dance of the Supreme Dancer, Nataraja, a name for Lord Shiva, the Hindu ascetic yogi and divine purveyor of destruction of evil. The symbolism of the dance of Shiva (in the form of Nataraja) is represented by the attitude called "Ananda Tandavam". Also known as the cosmic dancer, he is here the embodiment and manifestation of the eternal energy in five activities (panca-kriya): creation, pouring forth, unfolding; maintenance or duration (sthiti); destruction or taking back (smhara); concealing, veiling, hiding the transcendental essence behind the garb of apparitions (tirobhava); and favoring, bestowing grace through a manifestation that accepts the devotee (anugraha).
-    </div>
-    <div>
-    Founded in 2012 as a &lt;TODO:&nbsp;&nbsp;Insert some great sounding word here&gt;, we currently train more than 90 (Ninety) students and the numbers are still growing. M.S.Natyalaya also has tie up with Annamalai university, Chidambaram one of the renowned university for fine arts through which M.S.Natyalaya offers various grade exams & certificate programs for the students to get certified in specific skillset at various levels.
-    <div>
     </section>
 </article>
 <footer>
 All your base belong to us - MSN.  Don't you dare.
 </footer>
-</div>
 </body>
 </html>

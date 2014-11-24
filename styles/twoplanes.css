@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+#TwoPlanes {
+	position: fixed;
+	top: 86px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	z-index: 0;
+	background-image: url(../images/BackGround.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#TwoPlanes .half {
+	border: 1px solid black;
+	height: 100%;
+	/* [disabled]display: inline-block; */
+	position: absolute;
+	top: 0px;
+}
+#Left {
+	min-width: 200px;
+	width: 210px;
+	left: 0px;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+}
+#Right {
+	/* [disabled]background-color: rgba(66, 96, 116, 0.97); */
+	min-width: 500px;
+	width: 50%;
+	width: calc(100% - 214px);
+	color: rgba(255,255,255,1.00);
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	left: 212px;
+}
