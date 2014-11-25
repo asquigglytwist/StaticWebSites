@@ -73,7 +73,7 @@ header {
 }
 #Name {
 	font-family: 'Mr Bedfort', cursive;
-	font-size: 40px;
+	font-size: 50px;
 	color: rgba(255,79,0,1.00);
 	font-weight: bold;
 	padding-left: 10px;
@@ -106,7 +106,7 @@ header {
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
-	box-shadow: 1px 1px 2px 2px rgba(74,74,74,1.00);
+	/*box-shadow: 1px 1px 2px 2px rgba(74,74,74,1.00);*/
 	float: left;
 	/* [disabled]background-color: rgba(255,249,103,1.00); */
 	position: absolute;
@@ -206,7 +206,7 @@ header {
 	margin-top: 45px;
 	margin-bottom: 150px;
 	margin-right: 33vw;
-	background-color: rgba(255,255,255,0.65);
+	/*background-color: rgba(255,255,255,0.65);*/
 	text-align: center;
 }
 .contenttitle h1 {
