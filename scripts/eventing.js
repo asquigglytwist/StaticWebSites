@@ -23,7 +23,7 @@ MSN.createTicker = function()
 		if (xhr.readyState == 4)// && xhr.status == 200)
 		{
 			MSN.ndTicker = document.getElementById("Ticker");
-			MSN.ndTicker.innerHTML ="";
+			//MSN.ndTicker.innerHTML ="";
 			var allUpcomingEvents = xhr.responseXML.getElementsByTagName(MSN.sTagEvent);
 			for(var i = 0; i < allUpcomingEvents.length; i++)
 			{
@@ -32,8 +32,8 @@ MSN.createTicker = function()
 				var ndEvtDesc = document.createElement("h3");
 				ndEvtDesc.innerHTML = allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0].innerHTML;
 				var ndEvtWhenWhere = document.createElement("h3");
-				ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;&nbsp;&nbsp;" + allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0].innerHTML +
-									  "&nbsp;&nbsp;&nbsp;&nbsp;at&nbsp;&nbsp;&nbsp;&nbsp;" + allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0].innerHTML);
+				ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;" + allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0].innerHTML +
+									  "&nbsp;&nbsp;at&nbsp;&nbsp;" + allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0].innerHTML);
 				ndEvtWhenWhere.setAttribute("class", "onat");
 				var ndTemp = document.createElement(MSN.sTagToUse);
 				ndTemp.appendChild(ndEvtTitle);
@@ -41,6 +41,7 @@ MSN.createTicker = function()
 				ndTemp.appendChild(ndEvtDesc);
 				MSN.hideNode(ndTemp);
 				MSN.ndEventDivs.push(ndTemp);
+				MSN.ndTicker.firstElementChild.innerHTML += ".";
 				MSN.ndTicker.appendChild(ndTemp);
 			}
 			//MSN.ndTicker.innerHTML = sEvtTxt;
@@ -56,12 +57,13 @@ MSN.createTicker = function()
 	xhr.send();
 }
 MSN.updateTicker = function() {
-	var ndToHide;
 	MSN.hideNode(MSN.ndTicker);
+	if(MSN.oneTime)
+		MSN.oneTime();
+	if(MSN.ndTicker.style.backgroundImage.length > 0)
+		MSN.ndTicker.style.backgroundImage = "none";
 	if(MSN.ndTicker.childNodes.length > 0)
 	{
-		//MSN.ndTicker.removeChild(MSN.ndEventDivs[MSN.iDivIxToShow]);
-		//ndToHide = MSN.ndEventDivs[MSN.iDivIxToShow];
 		MSN.hideNode(MSN.ndEventDivs[MSN.iDivIxToShow]);;
 	}
 	MSN.iDivIxToShow++;
@@ -69,23 +71,25 @@ MSN.updateTicker = function() {
 	{
 		MSN.iDivIxToShow = 0;
 	}
-	//MSN.ndTicker.appendChild(MSN.ndEventDivs[MSN.iDivIxToShow]);
-	//setTimeout(function(){}, 3500);
 	MSN.showNode(MSN.ndEventDivs[MSN.iDivIxToShow]);
 	MSN.showNode(MSN.ndTicker);
-//	if(ndToHide)
-//		MSN.hideNode(ndToHide);
 };
 MSN.hideNode = function (ndNode) {
 	ndNode.style.opacity = 0;
-	//ndNode.style.display = "none";
 	ndNode.style.height = "0";
 };
 MSN.showNode = function (ndNode) {
 	ndNode.style.opacity = 1;
-	//ndNode.style.display = "block";
 	ndNode.style.height = "auto";
 };
+MSN.oneTime = function() {
+	MSN.ndTicker.setAttribute("class", "");
+	MSN.ndTicker.firstElementChild.style.display = "none";
+	MSN.oneTime = undefined;
+	/*var style = MSN.ndTicker.currentStyle || window.getComputedStyle(MSN.ndTicker, false);
+	style.backgroundImage = "none";*/
+};
 window.onload = function() {
-	setTimeout(MSN.createTicker(), (MSN.iDelay / 2));
+	MSN.createTicker();
+	//setTimeout(MSN.createTicker(), (MSN.iDelay / 4));
 };
