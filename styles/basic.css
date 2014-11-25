@@ -25,23 +25,29 @@
 }
 
 * {
+	zoom: 1;
 	padding: 0;
 	margin: 0;
 	font-family: "PT Sans", "Segoe UI", Verdana, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	color: rgba(0,0,0,1.00);
 	box-sizing: border-box;
 	vertical-align: middle;
-	
 	-webkit-transition: all 1s ease;
-	-moz-transition:    all 1s ease;
-	-ms-transition:     all 1s ease;
-	-o-transition:      all 1s ease;
-	transition:      	all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
 }
 a {
 	text-decoration: none;
 	color: rgba(0,124,176,1.00);
+}
+a:visited:before {
+	content:  "\2713 ";
+}
+img {
+	border: 0;
 }
 html, body {
 	background-image: url(../images/MSN_BG.png);
@@ -160,7 +166,7 @@ header {
 	padding-left: 3px;
 	padding-right: 3px;
 }
-a li:hover:after, a li:focus:after {
+.tooltip:hover:after,.tooltip:focus:after {
 	background: #111;
 	background-color: rgba(0,0,0,0.70);
 	color: #FFF;
@@ -169,7 +175,7 @@ a li:hover:after, a li:focus:after {
 	position: absolute;
 	text-shadow: 0 1px 0 #000000;
 	white-space: nowrap;
-	z-index: 98;
+	z-index: 505;
 	content: attr(data-href);
 	clear: both;
 	padding-left: 5px;
@@ -214,12 +220,11 @@ a li:hover:after, a li:focus:after {
 	font-size: 20px;
 }
 footer {
-	height: 55px;
+	/* [disabled]height: 55px; */
 	text-align: center;
 	-webkit-box-shadow: 0 -8px 6px -6px black;
 	-moz-box-shadow: 0 8px 6px -6px black;
 	box-shadow: 0 -8px 6px -6px black;
-	box-sizing: border-box;
 	/* [disabled]z-index: 9000; */
 	background-color: rgba(255,255,255,1.00);
 	margin-top: 10px;
