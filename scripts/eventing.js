@@ -13,11 +13,21 @@ MSN.ndEventDivs = [];
 MSN.iDivIxToShow = 1;
 MSN.ndTicker = undefined;
 MSN.tmrTicker = undefined;
+MSN.getNodeValue = undefined;
 
+MSN.isIE = function () {
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+};
 MSN.createTicker = function()
 {
 	var xhr = new XMLHttpRequest();
 	var sEvtTxt = "";
+	/*if(MSN.isIE())
+		MSN.getNodeValue = function(ndNode) { return ndNode.text; };
+	else
+		MSN.getNodeValue = function(ndNode) { return ndNode.innerHTML; };*/
+	MSN.getNodeValue = function(ndNode) { return ndNode.firstChild.nodeValue; };
 	xhr.onreadystatechange=function()
 	{
 		if (xhr.readyState == 4)// && xhr.status == 200)
@@ -28,12 +38,12 @@ MSN.createTicker = function()
 			for(var i = 0; i < allUpcomingEvents.length; i++)
 			{
 				var ndEvtTitle = document.createElement("h2");
-				ndEvtTitle.innerHTML = allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0].innerHTML;
+				ndEvtTitle.innerHTML = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]);//.innerHTML;
 				var ndEvtDesc = document.createElement("h3");
-				ndEvtDesc.innerHTML = allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0].innerHTML;
+				ndEvtDesc.innerHTML = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]);//.innerHTML;
 				var ndEvtWhenWhere = document.createElement("h3");
-				ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;" + allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0].innerHTML +
-									  "&nbsp;&nbsp;at&nbsp;&nbsp;" + allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0].innerHTML);
+				ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;" + MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0])/*.innerHTML*/ +
+									  "&nbsp;&nbsp;at&nbsp;&nbsp;" + MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0])/*.innerHTML*/);
 				ndEvtWhenWhere.setAttribute("class", "onat");
 				var ndTemp = document.createElement(MSN.sTagToUse);
 				ndTemp.appendChild(ndEvtTitle);
