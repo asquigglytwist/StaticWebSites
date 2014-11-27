@@ -33,22 +33,6 @@
 .thumb:hover, .thumb:focus {
 	border-color: rgba(143,89,11,1.0);
 }
-.nail {
-	width: 200px;
-	height: 200px;
-	overflow: hidden;
-	background-image: url(../images/thumbs/Karuna.jpg);
-	background-repeat: no-repeat;
-	background-size: 110% 110%;
-}
-.nail:focus, .nail:hover{
-	padding: 10px;
-	background-color: white;
-	background-size: 100% 100%;
-	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
 .albumname {
 	font-size: 22px;
 	border-top: 3px solid rgba(255,79,0,1.00);
@@ -63,14 +47,34 @@
 .albumname:focus, .albumname:hover{
 	background-color: rgba(238,246,9,0.7);
 }
+.nail {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	background-image: url(../images/thumbs/Karuna.jpg);
+	background-repeat: no-repeat;
+	background-size: 110% 110%;
+	vertical-align: middle;
+	display: table;
+	text-align: center;
+}
+.nail:focus, .nail:hover{
+	background-color: white;
+	background-size: 100% 100%;
+}
 .albumdesc {
 	color: rgba(253,252,0,1.00);
 	font-weight: normal;
-	font-size: 14px;
-	display: inline-block;
+	font-size: 18px;
+	display: table-cell;
 	opacity: 0;
+	width: 100%;
+	vertical-align: middle;
+	height: 100%;
 }
 .nail:hover .albumdesc, .nail:focus .albumdesc {
-	display: inline-block;
+	/* [disabled]display: table-cell; */
 	opacity: 1;
+	background-color: rgba(255,255,255,0.85);
+	color: rgba(0,0,0,1.00);
 }
