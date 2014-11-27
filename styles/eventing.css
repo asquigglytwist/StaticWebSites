@@ -20,6 +20,36 @@
 	-o-transition: all 3s ease;
 	transition: all 3s ease;
 }
+#TickerControls {
+	float: right;
+}
+#PauseTicker + label {
+	padding: 5px;
+	margin: 5px;
+	/* [disabled]border-radius: 50% 50%; */
+	border: 1px solid black;
+	background-image: url(../images/pause_play_outline.png);
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	/* [disabled]background-size: contain; */
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	-webkit-transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	-ms-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	transition-duration: .5s;
+	-webkit-transition-timing-function: linear;
+	-moz-transition-timing-function: linear;
+	-ms-transition-timing-function: linear;
+	-o-transition-timing-function: linear;
+	transition-timing-function: linear;
+}
+#PauseTicker:checked + label {
+	/* [disabled]color: rgba(255,255,255,1.00); */
+	background-position: -41px 0;
+}
 #UpComingEvents h1 {
 	font-family: 'Roboto Slab', Arial, sans-serif;
 	font-size: 22px;
