@@ -52,7 +52,7 @@ alert("It appears this is an older version of Internet Explorer, which does not 
     </div>
     <div id="BillBoard">
     <div id="UpComingEvents">
-    	<div id="TickerControls"><input type="checkbox" id="PauseTicker" /><label for="PauseTicker"></label></div>
+    	<div id="TickerControls"><input type="checkbox" id="PauseTicker" onchange="MSN.onTickerToggled();" disabled /><label for="PauseTicker" onmouseover="MSN.playpauseTooltip();"></label></div>
     	<h1>Upcoming Event(s)</h1>
         <div id="Ticker" class="loadinganim">
             <p>Looking up information on upcoming events, please wait</p>
@@ -116,7 +116,19 @@ alert("It appears this is an older version of Internet Explorer, which does not 
     </section>
 </article>
 <footer>
-	All your base belong to us - MSN.  Don't you dare.
+<div style="/* [disabled]border: 1px solid black; */ -webkit-box-shadow: 0px 0px 25px 10px rgba(103,64,7,0.80); box-shadow: 0px 0px 25px 10px rgba(103,64,7,0.80); height: 1px; opacity: 0.8;"></div>
+<nav id="AllLinks">
+  <ul>
+    <li>Home</li>
+    <li>Courses</li>
+    <li>Gallery</li>
+    <li>Contact</li>
+    <li>About</li>
+    <li>Privacy</li>
+    <li>Terms</li>
+    <li>SiteMap</li>
+  </ul>
+</nav>
 </footer>
 </body>
 </html>

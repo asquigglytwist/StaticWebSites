@@ -13,6 +13,7 @@ MSN.ndEventDivs = [];
 MSN.iDivIxToShow = 1;
 MSN.ndTicker = undefined;
 MSN.tmrTicker = undefined;
+MSN.chkTicker = undefined;
 MSN.getNodeValue = undefined;
 
 MSN.isIE = function () {
@@ -55,12 +56,18 @@ MSN.createTicker = function()
 				MSN.ndTicker.appendChild(ndTemp);
 			}
 			//MSN.ndTicker.innerHTML = sEvtTxt;
+			MSN.chkTicker = document.getElementById("PauseTicker");
 			MSN.ndTicker.style.display = "block";
 			MSN.ndTicker.style.opacity = 1;
 			if(MSN.ndEventDivs.length > 0)
+			{
 				MSN.tmrTicker = setInterval(function() { MSN.updateTicker() }, MSN.iDelay);
+			}
 			else
+			{
+				MSN.chkTicker.disabled = true;
 				MSN.ndTicker.innerHTML = "No upcoming events.";
+			}
 		}
 	}
 	xhr.open("GET", MSN.sUpComingXML, MSN.bAsyncRequest);
@@ -95,9 +102,23 @@ MSN.showNode = function (ndNode) {
 MSN.oneTime = function() {
 	MSN.ndTicker.setAttribute("class", "");
 	MSN.ndTicker.firstElementChild.style.display = "none";
+	if(MSN.ndEventDivs.length > 0)
+		MSN.chkTicker.disabled = false;
 	MSN.oneTime = undefined;
 	/*var style = MSN.ndTicker.currentStyle || window.getComputedStyle(MSN.ndTicker, false);
 	style.backgroundImage = "none";*/
+};
+MSN.onTickerToggled = function () {
+	if(MSN.chkTicker.checked)
+	{
+		clearInterval(MSN.tmrTicker);
+	}
+	else
+	{
+		MSN.tmrTicker = setInterval(function() { MSN.updateTicker() }, MSN.iDelay);
+	}
+};
+MSN.playpauseTooltip = function () {
 };
 window.onload = function() {
 	MSN.createTicker();
