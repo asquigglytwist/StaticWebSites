@@ -181,10 +181,9 @@ header {
 	padding-right: 5px;
 	top: 55px;
 	font-size: 14px;
-	overflow-style: marquee-line;
-	overflow-y: auto;
 	right: 0px;
 	font-weight: normal;
+	text-align: center;
 }
 #ScrollableContent {
 	padding-left: 75px;
@@ -228,5 +227,5 @@ footer {
 	padding-top: 5px;
 	border-top: 1px solid black;
 	-webkit-box-shadow: 0px 0px 1px 1px;
-	box-shadow: 0px 0px 1px 1px
+	box-shadow: 0px 0px 1px 1px;
 }
