@@ -11,7 +11,8 @@
 	margin-bottom: 7px;
 	margin-left: 5px;
 	display: inline-block;
-	min-height: 220px;
+	min-height: 260px;
+	border-radius: 10px;
 }
 #UpComingEvents * {
 	-webkit-transition: all 3s ease;
@@ -23,18 +24,18 @@
 #TickerControls {
 	float: right;
 }
+#TickerControls *::-moz-selection, #TickerControls *::selection {
+	background-color: rgba(255,255,255,0.00);
+}
+#PauseTicker {
+	opacity: 0;
+}
 #PauseTicker + label {
 	padding: 5px;
 	margin: 5px;
-	/* [disabled]border-radius: 50% 50%; */
-	border: 1px solid black;
-	background-image: url(../images/pause_play_outline.png);
 	width: 32px;
 	height: 32px;
 	display: inline-block;
-	/* [disabled]background-size: contain; */
-	background-repeat: no-repeat;
-	background-position: 0 0;
 	-webkit-transition-duration: .5s;
 	-moz-transition-duration: .5s;
 	-ms-transition-duration: .5s;
@@ -45,10 +46,24 @@
 	-ms-transition-timing-function: linear;
 	-o-transition-timing-function: linear;
 	transition-timing-function: linear;
+	color: rgba(0,0,0,1.00);
+	font-family: "Courier New", Courier, mono;
+	font-weight: bold;
+	font-size: 1em;
+	border-radius: 5px;
+	border: 1px solid black;
 }
-#PauseTicker:checked + label {
-	/* [disabled]color: rgba(255,255,255,1.00); */
-	background-position: -41px 0;
+#PauseTicker + label:after:hover:before {
+	content: 'Hi';
+}
+#PauseTicker + label:after {
+	content: '||';
+}
+#PauseTicker:checked + label:after {
+	content: '\25BA';
+	text-align: center;
+	margin-left: 5px;
+	margin-top: 1px;
 }
 #UpComingEvents h1 {
 	font-family: 'Roboto Slab', Arial, sans-serif;
