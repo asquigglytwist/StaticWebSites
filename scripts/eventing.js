@@ -61,6 +61,9 @@ MSN.createTicker = function()
 			MSN.ndTicker.style.opacity = 1;
 			if(MSN.ndEventDivs.length > 0)
 			{
+				MSN.updateTicker();
+				if(MSN.oneTime)
+					MSN.oneTime();
 				MSN.tmrTicker = setInterval(function() { MSN.updateTicker() }, MSN.iDelay);
 			}
 			else
@@ -75,8 +78,6 @@ MSN.createTicker = function()
 }
 MSN.updateTicker = function() {
 	MSN.hideNode(MSN.ndTicker);
-	if(MSN.oneTime)
-		MSN.oneTime();
 	if(MSN.ndTicker.style.backgroundImage.length > 0)
 		MSN.ndTicker.style.backgroundImage = "none";
 	if(MSN.ndTicker.childNodes.length > 0)
