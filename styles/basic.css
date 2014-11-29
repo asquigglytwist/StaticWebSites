@@ -4,18 +4,17 @@
 .wf-loading * {
     opacity: 0;
 }
-
 .wf-loading {
 	background: url('https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/369_font_loader/ajax-loader.gif') no-repeat center center;
     height: 100%;
     overflow: hidden;        
 }
-
 .wf-active *, .wf-inactive * {
-    -webkit-transition: opacity 1s ease-out; 
+    -webkit-transition: opacity 1s ease-out;
     -moz-transition: opacity 1s ease-out;
-    -o-transition: opacity 1s ease-out; 
-    transition: opacity 1s ease-out; 
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+	opacity: 1;
 }
 
 @media print {
@@ -29,7 +28,7 @@
 	padding: 0;
 	margin: 0;
 	font-family: "PT Sans", "Segoe UI", Verdana, sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	color: rgba(0,0,0,1.00);
 	box-sizing: border-box;
 	vertical-align: middle;
@@ -211,25 +210,89 @@ header {
 	font-size: 20px;
 }
 footer {
+	margin: 2px;
 	margin-top: 150px;
-	padding: 25px;
+	color: rgba(0,0,0,1.00);
+	padding: 30px;
 	padding-top: 2px;
-	color: rgba(0,0,0,1.00);
-	background-color: rgba(143,89,11,1.00);
+	border-top: 1px solid rgba(143,89,11,.25);
 }
-#AllLinks {
-	border: 1px solid black;
+footer section {
+	border-top: 1px solid rgba(255,79,0,0.5);
+	min-height: 150px;
+}
+.actionableitems {
+	text-align: center;
+	margin-bottom: 25px;
+}
+.actionableitems p {
+	padding: 25px;
+}
+.actionableitems a {
 	display: inline-block;
-	padding: 10px;
-	margin: 10px;
-	width: 120px;
+	border: 1px solid rgba(143,89,11,1.00);
+	border-radius: 6px 6px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	margin-bottom: 5px;
+	font-family: 'Roboto Slab', Arial, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: rgba(143,89,11,1.00);
+	min-width: 170px;
+	width: 30%;
 }
-#AllLinks ul {
-	list-style-type: none;
-}
-#AllLinks ul li {
-	color: rgba(0,0,0,1.00);
-}
-#AllLinks ul li:focus, #AllLinks ul li:hover {
+.actionableitems a:hover, .actionableitems a:focus {
+	background-color: rgba(143,89,11,1.00);
 	color: rgba(255,255,255,1.00);
+}
+#LinkForms {
+}
+#LinkForms nav {
+	display: inline-block;
+}
+#LinkForms ul {
+	display: inline-block;
+	min-width: 80px;
+	list-style-type: none;
+	vertical-align: top;
+	margin-left: 35px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#LinkForms nav ul h2 {
+	text-transform: uppercase;
+}
+#LinkForms ul li {
+	color: rgba(143,89,11,1.00);
+	margin-left: 10px;
+}
+#LinkForms ul li:focus, #LinkForms ul li:hover {
+	color: rgba(0,0,0,1.00);
+	background-color: rgba(238,246,9,0.7);
+}
+#Subscribe {
+	display: inline-block;
+}
+#Disclaimer {
+	min-height: 55px;
+	height: 60px;
+	max-height: 65px;
+	padding-left: 45px;
+}
+#Disclaimer div {
+	display: inline-block;
+	width: 48%;
+	margin: 5px;
+	margin-top: 15px;
+	/* [disabled]border: 1px solid black; */
+}
+#CopyRights {
+	padding-left: 15px;
+}
+#DesignedBy {
+	text-align: right;
+	padding-right: 15px;
 }

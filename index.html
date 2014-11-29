@@ -51,17 +51,17 @@ alert("It appears this is an older version of Internet Explorer, which does not 
             <h2>A Bangalore based Bharathanatyam school at Chinnappanahalli, Marathahalli.</h2>
         </div>
         <div id="BillBoard">
-        <div id="UpComingEvents">
-            <div id="TickerControls"><input type="checkbox" id="PauseTicker" onchange="MSN.onTickerToggled();" disabled /><label for="PauseTicker"></label></div>
-            <h1>Upcoming Event(s)</h1>
-            <div id="Ticker" class="loadinganim">
-                <p>Looking up information on upcoming events, please wait</p>
+            <div id="UpComingEvents">
+                <div id="TickerControls"><input type="checkbox" id="PauseTicker" onchange="MSN.onTickerToggled();" disabled /><label for="PauseTicker"></label></div>
+                <h1>Upcoming Event(s)</h1>
+                <div id="Ticker" class="loadinganim">
+                    <p>Looking up information on upcoming events, please wait</p>
+                </div>
             </div>
-        </div>
-        <div id="ActionableItems">
-            <a href="contact.html">I'm Interested</a>
-            <a href="feedback.html">Feedback</a>
-        </div>
+            <section class="actionableitems" style="width: 20%; display: inline-block; background-color: transparent;">
+                <a href="contact.html" style="display: block; width: auto;">I'm Interested</a>
+                <a href="feedback.html" style="display: block; width: auto;">Feedback</a>
+            </section>
         </div>
         <div>
             [PH]:  Testing line above Carousel.
@@ -116,19 +116,49 @@ alert("It appears this is an older version of Internet Explorer, which does not 
     </section>
 </article>
 <footer>
-<div style="/* [disabled]border: 1px solid black; */ -webkit-box-shadow: 0px 0px 25px 10px rgba(103,64,7,0.80); box-shadow: 0px 0px 25px 10px rgba(103,64,7,0.80); height: 1px; opacity: 0.8;"></div>
-<nav id="AllLinks">
-  <ul>
-    <li>Home</li>
-    <li>Courses</li>
-    <li>Gallery</li>
-    <li>Contact</li>
-    <li>About</li>
-    <li>Privacy</li>
-    <li>Terms</li>
-    <li>SiteMap</li>
-  </ul>
-</nav>
+    <section class="actionableitems">
+    	<p>Join the community</p>
+        <a href="contact.html">I'm Interested</a>
+        <a href="feedback.html">Feedback</a>
+    </section>
+    <section id="LinkForms">
+      <nav>
+          <ul>
+          	<h2>School</h2>
+            <li>Home</li>
+            <li>About</li>
+            <li>SiteMap</li>
+          </ul>
+          <ul>
+          	<h2>Get Started</h2>
+            <li>Courses</li>
+            <li>Gallery</li>
+            <li>Contact</li>
+          </ul>
+        <ul>
+          	<h2>Legal</h2>
+            <li>Copyright</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+          </ul>
+      </nav>
+      <div id="Subscribe">
+      	<p>
+        	If you're interested / curious, subscribe to our newsletter.
+        </p>
+        <p>
+        	<input type="email" required />&nbsp;<a href="#">Subscribe</a>
+        </p>
+      </div>
+    </section>
+    <section id="Disclaimer">
+    	<div id="CopyRights">
+        	All copyrights reserved.
+        </div>
+        <div id="DesignedBy">
+        	Designed by <a href="http://lavnok.com">Lavnok</a>.
+        </div>
+    </section>
 </footer>
 </body>
 </html>
