@@ -38,6 +38,10 @@
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
+*:focus
+{
+    outline: none;
+}
 a {
 	text-decoration: none;
 	color: rgba(0,124,176,1.00);

@@ -1,4 +1,5 @@
 // JavaScript Document
+
 var MSN = MSN || {};
 MSN.iDelay = 7000;
 MSN.bAsyncRequest = true;
