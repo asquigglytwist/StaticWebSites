@@ -3,8 +3,8 @@
 #Carousel {
 	text-align: center;
 	vertical-align: middle;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .transition {
     -webkit-transition: all .2s ease-in-out;

@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+#BillBoard {
+	margin-bottom: 20px;
+	margin-top: 40px;
+}
 #UpComingEvents {
 	min-width: 440px;
 	width: 65%;
