@@ -1,0 +1,103 @@
+@charset "utf-8";
+#Gallery {
+	border: 1px solid black;
+	width: 50%;
+	display: inline-block;
+	min-width: 600px;
+}
+#Gallery * {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+#Gallery .event {
+	margin-left: 10px;
+	/* [disabled]height: 110px; */
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+#Gallery .event .thumb {
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+}
+#Gallery .event .thumb:focus, #Gallery .event .thumb:hover {
+	-webkit-box-shadow: 0px 0px 1px 1px;
+	box-shadow: 0px 0px 1px 1px;
+	border: 1px solid rgba(255,79,0,1.00);
+	margin-left: 3px;
+	margin-right: 3px;
+	zoom: 102%;
+}
+#FullScreen {
+	background-color: rgba(0,0,0,0.75);
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	z-index: 505;
+	display: none;
+}
+#FullScreen .singlerow {
+	display: inline-block;
+}
+#FullScreen * {
+	color: rgba(255,255,255,1.00);
+	text-align: center;
+}
+#FullScreen input[type="button"] {
+	background-color: whitesmoke;
+	border-radius: 15px;
+	border: 1px solid orange;
+	padding: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: black;
+}
+#FSTitle {
+	display: inline-block;
+	margin: 10px;
+	text-decoration: underline;
+	text-align: center;
+	width: 90%;
+	font-size: 48px;
+}
+#FSCloseBtn {
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	float: right;
+	border: 1px solid black;
+	/* [disabled]width: 50px; */
+	/* [disabled]height: 50px; */
+	text-align: center;
+	vertical-align: middle;
+	font-size: 40px;
+	color: rgba(255,79,0,1.00);
+}
+#FSCloseBtn:focus, #FSCloseBtn:hover {
+	color: rgba(255,255,255,1.00);
+}
+#FSImageControls {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#FSImage {
+	border: 3px solid whitesmoke;
+	max-width: 100%;
+	max-height: 800px;
+	max-height: calc(100vh - 120px);
+	/* [disabled]display: block; */
+	text-align: center;
+	margin: 0 auto;
+}
+#Prev {
+	/* [disabled]float: left; */
+}
+#Next {
+	/* [disabled]float: right; */
+}

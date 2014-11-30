@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>M.S. Natyalaya</title>
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
+<link href="styles/gallery.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/gallery_static.js" defer></script>
 </head>
 
 <body>
@@ -30,8 +32,34 @@
         <h1>[PH]:  Line 1 for testing...Gallery</h1>
         <h2>[PH]:  Line 2 for testing as well...</h2>
     </div>
-    <div>
+    <!--<div>
     	Just another div.
+    </div>-->
+    <div id="Gallery">
+    	<div class="event" data-title="Nava Rasams" data-on="22-Sep-2-14" data-at="Galleria Emporium">
+        	<img class ="thumb" src="images/gallery/thumbs/NavaRasams/Adhbuta.jpg" alt="Adhbuta" title="Adbhuta" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Bhayanaka.jpg" alt="Bhayanaka" title="Bhayanaka" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Bhibatsya.jpg" alt="Bhibatsya" title="Bhibatsya" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Haasya.jpg" alt="Haasya" title="Haasya" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Karuna.jpg" alt="Karuna" title="Karuna" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Rowdra.jpg" alt="Rowdra" title="Rowdra" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shantha.jpg" alt="Shantha" title="Shantha" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shringara.jpg" alt="Shringara" title="Shringara" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Veera.jpg" alt="veera" title="veera" />
+        </div>
+    </div>
+    <!--<div>
+    	Just another div.
+    </div>-->
+    <div id="FullScreen" tabindex="-1">
+    	<h2 id="FSTitle">Blah Blah</h2>
+        <div id="FSCloseBtn" onClick="MSN.fnHideFS();">X</div>
+        <div id="FSImageControls">
+        	<input type="button" class="singlerow" id="Prev" value="Prev" onClick="MSN.fnPrevImage();" />
+        	<img id="FSImage" />
+            <input type="button" class="singlerow" id="Next" value="Next" onClick="MSN.fnNextImage();" />
+        </div>
+        <h3 id="FSCaption"></h3>
     </div>
     </section>
 </article>
@@ -78,12 +106,26 @@
         	Copyright &copy;<div id="CopyRightYear">2013</div>M.S. Natyalaya.
         </div>
         <div id="DesignedBy">
-        	<div>Designed by <a href="http://lavnok.com"><h1>Lavnok</h1></div><div><img src="images/LavnokLogo.png" alt="Lavnok Logo" title="Lavnok" /></div></a>
+        	<div>
+            Designed by
+            <a href="http://lavnok.com">
+            	<h1>Lavnok</h1>
+            </a>
+            </div>
+            <div>
+            	<a href="http://lavnok.com"><img src="images/LavnokLogo.png" alt="Lavnok Logo" title="Lavnok" /></a>
+            </div>
         </div>
     </section>
 </footer>
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
+	window.onload = function() {
+		MSN.fnStaticGallery();
+	};
+	document.body.onkeyup = function(evt) {
+		MSN.fnFSKeyUp(evt);
+	};
 </script>
 </body>
 </html>
