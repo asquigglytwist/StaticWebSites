@@ -249,18 +249,24 @@ footer section {
 	color: rgba(255,255,255,1.00);
 }
 #LinkForms {
+	text-align: center;
 }
 #LinkForms nav {
 	display: inline-block;
+	padding: 0;
+	margin: 0;
+	margin-right: 20px;
 }
 #LinkForms ul {
 	display: inline-block;
 	min-width: 80px;
 	list-style-type: none;
 	vertical-align: top;
-	margin-left: 35px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	text-align: left;
+	margin-left: 25px;
+	margin-right: 25px;
 }
 #LinkForms nav ul h2 {
 	text-transform: uppercase;
@@ -273,26 +279,54 @@ footer section {
 	color: rgba(0,0,0,1.00);
 	background-color: rgba(238,246,9,0.7);
 }
-#Subscribe {
+#FrmSubscribe {
 	display: inline-block;
+}
+#Social {
+	display: inline-block;
+	vertical-align: top;
+	border-left: 1px solid rgba(255,79,0,0.5);
+}
+#Social ul {
+	margin-left: 50px;
+}
+#Social h2 {
+	margin-bottom: 20px;
+}
+#Social ul li {
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 5px;
 }
 #Disclaimer {
 	min-height: 55px;
 	height: 60px;
 	max-height: 65px;
 	padding-left: 45px;
+	margin-top: 15px;
+	padding-top: 10px;
 }
 #Disclaimer div {
 	display: inline-block;
-	width: 48%;
+	/* [disabled]width: 48%; */
 	margin: 5px;
-	margin-top: 15px;
+	margin-top: 0px;
 	/* [disabled]border: 1px solid black; */
 }
 #CopyRights {
 	padding-left: 15px;
+	width: 48%;
+}
+#CopyRightYear {
+	width: auto;
 }
 #DesignedBy {
 	text-align: right;
 	padding-right: 15px;
+	width: 48%;
 }
