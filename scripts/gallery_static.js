@@ -8,6 +8,7 @@ MSN.ndAllEvents = [];
 MSN.sEventTitleAttrib = "data-title";
 MSN.sEventTimeAttrib = "data-on";
 MSN.sEventLocationAttrib = "data-at";
+MSN.sEventDescAttrib = "data-desc";
 MSN.sAllEventTitles = [];
 MSN.sAllEventTimes = [];
 MSN.sAllEventLocations = [];
@@ -103,7 +104,8 @@ MSN.fnStaticGallery = function () {
 	{
 		var sTitle = MSN.ndAllEvents[i].getAttribute(MSN.sEventTitleAttrib),
 			sTime = MSN.ndAllEvents[i].getAttribute(MSN.sEventTimeAttrib),
-			sLocation = MSN.ndAllEvents[i].getAttribute(MSN.sEventLocationAttrib);
+			sLocation = MSN.ndAllEvents[i].getAttribute(MSN.sEventLocationAttrib),
+			sDesc = MSN.ndAllEvents[i].getAttribute(MSN.sEventDescAttrib);
 		
 		MSN.sAllEventTitles.push(sTitle);
 		MSN.sAllEventTimes.push(sTime);
@@ -121,7 +123,13 @@ MSN.fnStaticGallery = function () {
 		ndWhenWhere.appendChild(ndTime);
 		ndWhenWhere.innerHTML += " at ";
 		ndWhenWhere.appendChild(ndLoc);
-		MSN.ndAllEvents[i].appendChild(ndWhenWhere);
+		//MSN.ndAllEvents[i].appendChild(ndWhenWhere);
+		MSN.ndAllEvents[i].insertBefore(ndWhenWhere, MSN.ndAllEvents[i].firstChild);
+		MSN.ndAllEvents[i].insertBefore(ndTitle, MSN.ndAllEvents[i].firstChild);
+		
+		var ndDesc = document.createElement("h4");
+		ndDesc.innerHTML = sDesc;
+		MSN.ndAllEvents[i].appendChild(ndDesc);
 		
 		var tmpAllImgs = MSN.ndAllEvents[i].getElementsByTagName("img");
 		for(var j = 0; j < tmpAllImgs.length; j++)
