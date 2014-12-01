@@ -1,15 +1,28 @@
 @charset "utf-8";
 
 .half {
-	box-sizing: border-box;
-	width: 47%;
-	display: inline-block;
+	/* [disabled]box-sizing: border-box; */
+	/* [disabled]width: 47%; */
+	/* [disabled]display: inline-block; */
+	/* [disabled]border: 1px solid black; */
 }
 #TrainingLevels {
-	counter-reset: my-awesome-counter;
-	/* [disabled]width: 49%; */
-	/* [disabled]display: inline-block; */
+	counter-reset: section;
 	margin-left: 5px;
+	border-collapse: separate;
+	border-spacing: 5px;
+}
+.levelbox {
+	width: 25%;
+	margin: 15px;
+	padding: 15px;
+	display: table-cell;
+	border: 1px solid rgba(143,89,11,.25);
+	border-radius: 7px;
+	vertical-align: top;
+}
+.levelbox:focus, .levelbox:hover {
+	border-color: rgba(143,89,11,1.0);
 }
 #TrainingLevels h1 {
 	text-align: center;
@@ -22,14 +35,23 @@
 	margin-left: 20px;
 	margin-top: 5px;
 	margin-bottom: 5px;
-	counter-increment: my-awesome-counter;
+	counter-increment: section;
+	counter-reset: subsection;
 }
 #TrainingLevels h2:before {
-	content: counter(my-awesome-counter, upper-roman) ' - ';
+	content: counter(section, upper-roman) ' - ';
+}
+#TrainingLevels p {
+	margin: 10px;
+}
+#TrainingLevels p:before {
+	counter-increment: subsection;
+	/* [disabled]content: counter(section) "." counter(subsection) " - "; */
+	content: "\00A0\00A0" counter(subsection) ".\00A0"; 
+}
+#TrainingLevels p:focus, #TrainingLevels p:hover {
+	background-color: rgba(238,246,9,0.5);
 }
 #ClassAndBatch {
-	border: 1px solid black;
-	/* [disabled]display: inline-block; */
-	/* [disabled]width: 40%; */
 	margin-right: 5px;
 }
