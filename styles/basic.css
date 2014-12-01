@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 @import url(http://fonts.googleapis.com/css?family=Mr+Bedfort|Niconne|Roboto+Slab|PT+Sans);
 
 .wf-loading * {
@@ -289,7 +290,7 @@ footer section {
 #Social {
 	display: inline-block;
 	vertical-align: top;
-	border-left: 1px solid rgba(255,79,0,0.5);
+	border-left: 2px solid rgba(255,79,0,0.5);
 }
 #Social ul {
 	margin-left: 50px;
