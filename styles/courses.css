@@ -4,6 +4,8 @@
 	counter-reset: section;
 	border-collapse: separate;
 	border-spacing: 5px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255,79,0,1.00);
 }
 .levelbox {
 	width: 25%;
@@ -43,34 +45,59 @@
 	content: "\00A0\00A0" counter(subsection) ".\00A0"; 
 }
 #TrainingLevels p:focus, #TrainingLevels p:hover {
-	background-color: rgba(238,246,9,0.5);
+	background-color: rgba(238,246,9,0.3);
 }
 #ClassAndBatch {
-	border-collapse: separate;
-	border-spacing: 15px;
+	margin-top: 10px;
 	text-align: center;
 }
-#ClassAndBatch h2 {
-	margin: 5px;
-	padding: 5px;
-	display: table-header-group;
+#ClassAndBatch h1 {
+	text-align: center;
+	font-size: 24px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	font-family: 'Roboto Slab', Arial, sans-serif;
 }
-#ClassAndBatch div {
-	display: table-row;
+.tabular {
 	border: 1px solid rgba(143,89,11,.25);
-	margin: 50px;
-	text-align: left;
-}
-#ClassAndBatch div:nth-of-type(odd) {
-	background-color: rgba(191,191,191,1.00);
-}
-#ClassAndBatch div:only-of-type(even) {
-	background-color: rgba(255,255,255,1.00);
-}
-#ClassAndBatch h3 {
-	display: table-cell;
+	margin: 10px;
+	padding: 5px;
+	border-collapse: collapse;
+	border-spacing: 15px;
+	border-radius: 10px;
+	display: inline-block;
 	text-align: center;
 }
-#ClassAndBatch p {
-	display: table-cell;
+.tabular:focus, .tabular:hover {
+	border-color: rgba(143,89,11,1.0);
+}
+.tabular caption {
+	padding: 10px;
+}
+th {
+	background-color: rgba(143,89,11,.25);
+}
+.trow:focus, .trow:hover {
+	background-color: rgba(238,246,9,0.3);
+}
+td:first-child {
+	font-size: 28px;
+}
+td:last-child {
+	font-size: 20px;
+}
+.tcell {
+	text-align: center;
+	padding: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 1px dotted rgba(143,89,11,.25);
+}
+.tcell p {
+	text-align: left;
+	padding: 3px;
+	/* [disabled]border: 1px solid black; */
+}
+#ClassAndBatch div p {
+	display: inline-block;
 }
