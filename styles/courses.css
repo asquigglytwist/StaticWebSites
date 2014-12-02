@@ -1,14 +1,7 @@
 @charset "utf-8";
 
-.half {
-	/* [disabled]box-sizing: border-box; */
-	/* [disabled]width: 47%; */
-	/* [disabled]display: inline-block; */
-	/* [disabled]border: 1px solid black; */
-}
 #TrainingLevels {
 	counter-reset: section;
-	margin-left: 5px;
 	border-collapse: separate;
 	border-spacing: 5px;
 }
@@ -53,5 +46,31 @@
 	background-color: rgba(238,246,9,0.5);
 }
 #ClassAndBatch {
-	margin-right: 5px;
+	border-collapse: separate;
+	border-spacing: 15px;
+	text-align: center;
+}
+#ClassAndBatch h2 {
+	margin: 5px;
+	padding: 5px;
+	display: table-header-group;
+}
+#ClassAndBatch div {
+	display: table-row;
+	border: 1px solid rgba(143,89,11,.25);
+	margin: 50px;
+	text-align: left;
+}
+#ClassAndBatch div:nth-of-type(odd) {
+	background-color: rgba(191,191,191,1.00);
+}
+#ClassAndBatch div:only-of-type(even) {
+	background-color: rgba(255,255,255,1.00);
+}
+#ClassAndBatch h3 {
+	display: table-cell;
+	text-align: center;
+}
+#ClassAndBatch p {
+	display: table-cell;
 }
