@@ -9,3 +9,12 @@
 	display: inline-block;
 	width: 48%;
 }
+#AboutContent {
+	text-align: center;
+	border: 1px solid black;
+}
+#AboutContent div {
+	display: inline-block;
+	width: 75%;
+	text-align: left;
+}
