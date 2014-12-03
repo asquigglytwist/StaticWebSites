@@ -96,12 +96,31 @@
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
 	function initialize()
 	{
-		var mapProp = {
-			center:new google.maps.LatLng(51.508742,-0.120850),
-			zoom:5,
-			mapTypeId:google.maps.MapTypeId.ROADMAP
-		};
-		var map=new google.maps.Map(document.getElementById("GoogleMap"), mapProp);
+		var myLatlng = new google.maps.LatLng(12.961054, 77.705226);
+		var mapOptions = {
+			center: myLatlng,//new google.maps.LatLng(12.961054, 77.705226),
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("GoogleMap"), mapOptions);
+		var marker = new google.maps.Marker({
+			position: myLatlng,
+			map: map,
+			animation: google.maps.Animation.DROP,
+			title: "M.S. Natyalaya!"
+		});
+		google.maps.event.addListener(marker, 'click', toggleBounce);
+	}
+	function toggleBounce()
+	{
+		if (marker.getAnimation() != null)
+		{
+			marker.setAnimation(null);
+		}
+		else
+		{
+			marker.setAnimation(google.maps.Animation.BOUNCE);
+		}
 	}
 	function loadScript()
 	{
