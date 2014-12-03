@@ -20,7 +20,7 @@
 
 @media print {
 	a[href]:after {
-		content: " (" attr(href) ") ";
+		content: " [" attr(href) "] ";
 	}
 }
 
@@ -30,9 +30,10 @@
 	margin: 0;
 	font-family: "PT Sans", "Segoe UI", Verdana, sans-serif;
 	font-size: 18px;
-	color: rgba(0,0,0,1.00);
-	box-sizing: border-box;
 	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
 	-ms-transition: all 1s ease;
@@ -43,16 +44,6 @@
 {
     outline: none;
 }
-a {
-	text-decoration: none;
-	color: rgba(0,124,176,1.00);
-}
-a:visited:before {
-	content:  "\2713 ";
-}
-img {
-	border: 0;
-}
 body {
 	background-image: url(../images/MSN_BG.png);
 	background-position: 100% 0%;
@@ -60,11 +51,25 @@ body {
 	background-size: 175vh;
 	background-size: 85vw;
 }
+a {
+	text-decoration: none;
+	color: rgba(0,124,176,1.00);
+	vertical-align: text-bottom;
+}
+a:visited:before {
+	content:  "\2713 ";
+}
+img {
+	border: 0;
+}
+span {
+	vertical-align: middle;
+}
+.msncolor {
+	color: rgba(255,79,0,1.00);
+}
 header {
 	height: 150px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	z-index: 1000;
 	width: 100%;
 	text-align: left;
@@ -78,7 +83,6 @@ header {
 #Name {
 	font-family: 'Mr Bedfort', cursive;
 	font-size: 50px;
-	color: rgba(255,79,0,1.00);
 	font-weight: bold;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -237,10 +241,7 @@ footer section {
 	display: inline-block;
 	border: 1px solid rgba(143,89,11,1.00);
 	border-radius: 6px 6px;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
+	padding: 10px;
 	margin-bottom: 5px;
 	font-family: 'Roboto Slab', Arial, sans-serif;
 	font-size: 20px;
