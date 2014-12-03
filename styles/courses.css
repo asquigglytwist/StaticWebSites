@@ -34,7 +34,7 @@
 	counter-reset: subsection;
 }
 #TrainingLevels h2:before {
-	content: counter(section, upper-roman) ' - ';
+	/* [disabled]content: counter(section, upper-roman) ' - '; */
 }
 #TrainingLevels p {
 	margin: 10px;
@@ -82,6 +82,7 @@ th {
 }
 td:first-child {
 	font-size: 28px;
+	color: rgba(65,105,225,1.00);
 }
 td:last-child {
 	font-size: 20px;
@@ -98,6 +99,33 @@ td:last-child {
 	padding: 3px;
 	/* [disabled]border: 1px solid black; */
 }
+.day {
+	width: 90px;
+	display: inline-block;
+	padding: 0;
+}
 #ClassAndBatch div p {
 	display: inline-block;
+}
+#GuideLink {
+	margin: 40px;
+	text-align: center;
+}
+#GuideLink a {
+	display: inline-block;
+	border: 1px solid rgba(143,89,11,1.00);
+	border-radius: 6px;
+	padding: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-bottom: 5px;
+	font-family: 'Roboto Slab', Arial, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: rgba(143,89,11,1.00);
+	min-width: 170px;
+}
+#GuideLink a:focus, #GuideLink a:hover {
+	background-color: rgba(143,89,11,1.00);
+	color: rgba(255,255,255,1.00);
 }
