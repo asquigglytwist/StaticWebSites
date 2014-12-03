@@ -47,7 +47,7 @@
 	/* [disabled]zoom: 101%; */
 }
 #FullScreen {
-	background-color: rgba(0,0,0,0.75);
+	background-color: rgba(0,0,0,0.80);
 	position: absolute;
 	top: 1px;
 	right: 1px;
@@ -55,6 +55,8 @@
 	left: 1px;
 	z-index: 505;
 	display: none;
+	text-align: center;
+	border: 1px solid blue;
 }
 #FullScreen .singlerow {
 	display: inline-block;
@@ -64,13 +66,19 @@
 	text-align: center;
 }
 #FullScreen input[type="button"] {
-	background-color: whitesmoke;
+	padding: 10px;
+	border: 1px solid rgba(143,89,11,1.00);
 	border-radius: 10px;
-	border: 1px solid orange;
-	padding: 7px;
-	padding-left: 10px;
-	padding-right: 10px;
-	color: black;
+	font-family: Impact, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	background-color: white;
+	color: rgba(143,89,11,1.00);
+	height: 100px;
+}
+#FullScreen input[type="button"]:focus, #FullScreen input[type="button"]:hover {
+	background-color: rgba(143,89,11,1.00);
+	color: rgba(255,255,255,1.00);
 }
 #FSTitle {
 	display: inline-block;
@@ -98,20 +106,21 @@
 #FSImageControls {
 	text-align: center;
 	vertical-align: middle;
+	border: 1px solid blue;
 }
-
+#FSImageContainer {
+	width: calc(100% - 180px);
+	/* [disabled]border: 1px solid blue; */
+}
 #FSImage {
 	border: 3px solid whitesmoke;
 	max-width: 100%;
 	max-height: 800px;
 	max-height: calc(100vh - 120px);
-	/* [disabled]display: block; */
 	text-align: center;
 	margin: 0 auto;
 }
 #Prev {
-	/* [disabled]float: left; */
 }
 #Next {
-	/* [disabled]float: right; */
 }
