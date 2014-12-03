@@ -30,7 +30,10 @@ MSN.fnFullScreen = function () {
 	}
 };
 MSN.fnLoadImage = function (ndTemp) {
+	MSN.ndFSImage.style.opacity = 0;
+	window.setTimeout(function() { }, 2000);
 	MSN.ndFSImage.src = ndTemp.getAttribute("src").replace("/thumbs/", "/full/");
+	MSN.ndFSImage.style.opacity = 1;
 	var iTemp = Number(ndTemp.getAttribute("data-eventid"));
 	if(MSN.sAllEventTitles[iTemp].length > 0)
 		MSN.ndFSTitle.innerHTML = MSN.sAllEventTitles[iTemp];
@@ -135,7 +138,7 @@ MSN.fnStaticGallery = function () {
 		for(var j = 0; j < tmpAllImgs.length; j++)
 		{
 			tmpAllImgs[j].setAttribute("data-eventid", i.toString());
-			tmpAllImgs[j].setAttribute("data-imageid", j.toString());
+			tmpAllImgs[j].setAttribute("data-imageid", MSN.ndAllImgs.length.toString());
 			tmpAllImgs[j].onclick = MSN.fnFullScreen;
 			MSN.ndAllImgs.push(tmpAllImgs[j]);
 		}
