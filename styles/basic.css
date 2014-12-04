@@ -70,8 +70,6 @@ span {
 }
 header {
 	height: 150px;
-	z-index: 1000;
-	width: 100%;
 	text-align: left;
 }
 #Brand {

@@ -22,6 +22,10 @@ MSN.ndFSTitle = undefined;
 MSN.sFSCaptionID = "FSCaption";
 MSN.ndFSCaption = undefined;
 
+MSN.fnSleep = function (iMilliSec) {
+	var msUntil = (new Date().getTime() + iMilliSec);
+	while(new Date().getTime() < msUntil){ /* do nothing */ }
+};
 MSN.fnFullScreen = function () {
 	if(MSN.ndFullScreen && MSN.ndFSImage)
 	{
@@ -31,7 +35,6 @@ MSN.fnFullScreen = function () {
 };
 MSN.fnLoadImage = function (ndTemp) {
 	MSN.ndFSImage.style.opacity = 0;
-	window.setTimeout(function() { }, 2000);
 	MSN.ndFSImage.src = ndTemp.getAttribute("src").replace("/thumbs/", "/full/");
 	MSN.ndFSImage.style.opacity = 1;
 	var iTemp = Number(ndTemp.getAttribute("data-eventid"));
@@ -59,7 +62,7 @@ MSN.fnPrevImage = function () {
 };
 MSN.fnNextImage = function () {
 	var ixNext = Number(MSN.ndFSImage.getAttribute("data-imageid")) + 1;
-	if(ixNext < (MSN.ndAllImgs.length - 1))
+	if(ixNext < MSN.ndAllImgs.length)
 		MSN.fnLoadImage(MSN.ndAllImgs[ixNext]);
 };
 MSN.fnFSKeyUp = function (evt) {

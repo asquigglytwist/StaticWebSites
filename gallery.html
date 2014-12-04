@@ -32,9 +32,6 @@
         <h1>Gallery</h1>
         <h2>Past events and Showcase</h2>
     </div>
-    <!--<div>
-    	Just another div.
-    </div>-->
     <div id="Gallery">
     	<div class="event" data-title="Nava Rasams" data-on="22-Sep-2-14" data-at="Galleria Emporium" data-desc="Koushalya Nivas, the guru - performing all nine rasams.">
         	<img class ="thumb" src="images/gallery/thumbs/NavaRasams/Adhbuta.jpg" alt="Adhbuta" title="Adbhuta" />
@@ -45,21 +42,37 @@
             <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Rowdra.jpg" alt="Rowdra" title="Rowdra" />
             <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shantha.jpg" alt="Shantha" title="Shantha" />
             <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shringara.jpg" alt="Shringara" title="Shringara" />
-            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Veera.jpg" alt="veera" title="veera" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Veera.jpg" alt="veera" title="Veera" />
+        </div>
+    	<div class="event" data-title="1Nava Rasams1" data-on="122-Sep-2-14" data-at="Galleria Emporium" data-desc="1Koushalya Nivas, the guru - performing all nine rasams.1">
+        	<img class ="thumb" src="images/gallery/thumbs/NavaRasams/Adhbuta.jpg" alt="Adhbuta" title="1Adbhuta" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Bhayanaka.jpg" alt="Bhayanaka" title="1Bhayanaka" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Bhibatsya.jpg" alt="Bhibatsya" title="1Bhibatsya" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Haasya.jpg" alt="Haasya" title="1Haasya" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Karuna.jpg" alt="Karuna" title="1Karuna" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Rowdra.jpg" alt="Rowdra" title="1Rowdra" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shantha.jpg" alt="Shantha" title="1Shantha" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shringara.jpg" alt="Shringara" title="1Shringara" />
+            <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Veera.jpg" alt="veera" title="1Veera" />
         </div>
     </div>
-    <!--<div>
-    	Just another div.
-    </div>-->
     <div id="FullScreen" tabindex="-1">
-    	<h2 id="FSTitle">Blah Blah</h2>
         <div id="FSCloseBtn" onClick="MSN.fnHideFS();">X</div>
         <div id="FSImageControls">
-        	<input type="button" class="singlerow" id="Prev" value="&lt;" onClick="MSN.fnPrevImage();" />
-        	<div id="FSImageContainer" class="singlerow"><img id="FSImage" /></div>
-            <input type="button" class="singlerow" id="Next" value="&gt;" onClick="MSN.fnNextImage();" />
+        	<div class="singlerow" style="text-align: left;">
+            	<input type="button" id="Prev" value="&lt;" onClick="MSN.fnPrevImage();" />
+            </div>
+            <div class="singlerow" style="border: 1px solid blue; border-radius: 10px; width: calc(99vw - 120px);">
+                <h2 id="FSTitle">Blah Blah</h2>
+                <div id="FSImageContainer">
+                	<img id="FSImage" />
+                </div>
+                <h3 id="FSCaption"></h3>
+            </div>
+            <div class="singlerow" style="text-align: right;">
+            	<input type="button" class="singlerow" id="Next" value="&gt;" onClick="MSN.fnNextImage();" />
+            </div>
         </div>
-        <h3 id="FSCaption"></h3>
     </div>
     </section>
 </article>
