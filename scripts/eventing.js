@@ -23,13 +23,20 @@ MSN.isIE = function () {
 };
 MSN.createTicker = function()
 {
+	MSN.ndTicker = document.getElementById("Ticker");
 	var xhr = new XMLHttpRequest();
 	MSN.getNodeValue = function(ndNode) { return ndNode.firstChild.nodeValue; };
 	xhr.onreadystatechange=function()
 	{
 		if (xhr.readyState == 4)// && xhr.status == 200)
 		{
-			MSN.ndTicker = document.getElementById("Ticker");
+			if(!xhr.responseXML || xhr.responseXML.length)
+			{
+				MSN.ndTicker.innerHTML = "No upcoming events.";
+				MSN.ndTicker.style.display = "block";
+				MSN.ndTicker.style.opacity = 1;
+				return;
+			}
 			var allUpcomingEvents = xhr.responseXML.getElementsByTagName(MSN.sTagEvent);
 			for(var i = 0; i < allUpcomingEvents.length; i++)
 			{
@@ -114,5 +121,14 @@ MSN.onTickerToggled = function () {
 MSN.playpauseTooltip = function () {
 };
 window.onload = function() {
-	MSN.createTicker();
+	try
+	{
+		MSN.createTicker();
+	}
+	catch(ex)
+	{
+		MSN.ndTicker.innerHTML = "No upcoming events.";
+		MSN.ndTicker.style.display = "block";
+		MSN.ndTicker.style.opacity = 1;
+	}
 };

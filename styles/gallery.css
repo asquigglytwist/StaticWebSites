@@ -118,6 +118,9 @@
 	max-height: calc(100vh - 120px);
 	text-align: center;
 	margin: 0 auto;
+	background-image: url(../images/MSN_Loader.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 #Prev {
 }
