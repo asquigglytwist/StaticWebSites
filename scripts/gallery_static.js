@@ -1,7 +1,7 @@
 // JavaScript Document
 
 var MSN = MSN || {};
-MSN.sGalleryDivID = "Gallery";
+MSN.sGalleryDivID = "Images";
 MSN.ndGallery = undefined;
 MSN.sEventsClass = ".event";
 MSN.ndAllEvents = [];

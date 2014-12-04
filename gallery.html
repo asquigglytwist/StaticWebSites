@@ -6,6 +6,7 @@
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
 <link href="styles/gallery.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="scripts/gallery_static.js" defer></script>
+<script type="text/javascript" src="scripts/youtube_embed.js" defer></script>
 </head>
 
 <body>
@@ -32,7 +33,17 @@
         <h1>Gallery</h1>
         <h2>Past events and Showcase</h2>
     </div>
-    <div id="Gallery">
+    <section id="Videos">
+    	<p>Our TimeMachine - to relive some of the best moments...</p>
+    	<div class="sidebyside" id="VdoNo1">
+        	<iframe width="420" height="315" src="https://www.youtube.com/embed/66l9weWs1nM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="sidebyside" id="VdoNo1">
+        	<iframe width="420" height="315" src="https://www.youtube.com/embed/66l9weWs1nM" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section id="Images">
+    	<p>Until scientists figure a way to stop time...</p>
     	<div class="event" data-title="Nava Rasams" data-on="22-Sep-2-14" data-at="Galleria Emporium" data-desc="Koushalya Nivas, the guru - performing all nine rasams.">
         	<img class ="thumb" src="images/gallery/thumbs/NavaRasams/Adhbuta.jpg" alt="Adhbuta" title="Adbhuta" />
             <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Bhayanaka.jpg" alt="Bhayanaka" title="Bhayanaka" />
@@ -55,22 +66,22 @@
             <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Shringara.jpg" alt="Shringara" title="1Shringara" />
             <img class ="thumb" src="images/gallery/thumbs/NavaRasams/Veera.jpg" alt="veera" title="1Veera" />
         </div>
-    </div>
+    </section>
     <div id="FullScreen" tabindex="-1">
-        <div id="FSCloseBtn" onClick="MSN.fnHideFS();">X</div>
+        <div id="FSCloseBtn" onClick="MSN.fnHideFS();"></div>
         <div id="FSImageControls">
         	<div class="singlerow" style="text-align: left;">
-            	<input type="button" id="Prev" value="&lt;" onClick="MSN.fnPrevImage();" />
+            	<input type="button" id="Prev" value="" onClick="MSN.fnPrevImage();" />
             </div>
-            <div class="singlerow" style="border: 1px solid blue; border-radius: 10px; width: calc(99vw - 120px);">
-                <h2 id="FSTitle">Blah Blah</h2>
-                <div id="FSImageContainer">
-                	<img id="FSImage" />
+            <div class="singlerow" id="FSShowCase">
+                <div id="FSContainer">
+                	<h2 id="FSTitle" class="halved">Title here</h2>
+                	<img id="FSImage" onclick="MSN.fnNextImage();" />
+                    <h3 id="FSCaption" class="halved">Caption here</h3>
                 </div>
-                <h3 id="FSCaption"></h3>
             </div>
             <div class="singlerow" style="text-align: right;">
-            	<input type="button" class="singlerow" id="Next" value="&gt;" onClick="MSN.fnNextImage();" />
+            	<input type="button" id="Next" value="" onClick="MSN.fnNextImage();" />
             </div>
         </div>
     </div>
@@ -134,6 +145,7 @@
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
 	window.onload = function() {
+		MSN.fnOptimizeYouTubeEmbeds();
 		MSN.fnStaticGallery();
 	};
 	document.body.onkeyup = function(evt) {

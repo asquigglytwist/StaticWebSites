@@ -80,6 +80,10 @@ span {
 	-moz-filter: none;
 	filter: none;
 }
+.invert {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
 header {
 	height: 150px;
 	text-align: left;
