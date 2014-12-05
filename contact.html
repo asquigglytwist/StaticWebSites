@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <title>M.S. Natyalaya</title>
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
+<style>
+#ContactDetails div {
+	margin: 15px;
+}
+</style>
 </head>
 
 <body>
@@ -30,10 +35,35 @@
         <h1>Contact Us</h1>
         <h2>If you're interested... or just curious...</h2>
     </div>
-    <div id="ContactForm" style="text-align: center;">
-    	<iframe src="https://docs.google.com/forms/d/1t4WTg7Ji9LJqOXwp2Pp4yLrs-pnOI3adxDpeuSyWIYc/viewform?embedded=true" width="780" height="780" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <div style="text-align: center;">
+        <div id="ContactWrapper" style="display: inline-block; vertical-align: top;">
+            <div id="ContactDetails">
+                <div>
+                    <h2>Kouslaya Nivas</h2>Guru &amp; Director.
+                </div>
+                <div style="border-left: none;">
+                    <h2>Nivas Venkataramanan</h2>Chairman &amp; Chief-Coordinator.
+                </div>
+            </div>
+            <div id="Social" style="margin: 0; padding: 0; display: inline-block; border: none;">
+                <nav>
+                    <ul style="margin: 0; border: none;">
+                        <h2>Follow us on</h2>
+                        <a href="https://www.facebook.com/M.SNatyalaya"><li class="grayscale" id="FB" data-nwname="FaceBook"></li></a>
+                        <a href="https://twitter.com/msnatyalaya"><li class="grayscale" id="TW" data-nwname="Twitter"></li></a>
+                        <a href="https://www.youtube.com/channel/UCdG2gIzx5NWRNw0ngCZ017w"><li class="grayscale" id="YT" data-nwname="YouTube"></li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="ContactForm" style="display: inline-block;">
+            <iframe src="https://docs.google.com/forms/d/1t4WTg7Ji9LJqOXwp2Pp4yLrs-pnOI3adxDpeuSyWIYc/viewform?embedded=true" width="780" height="780" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        </div>
     </div>
-    <div id="GoogleMap" style="margin-top: 30px; min-height:380px;">
+    <div id="Location">
+    	<h3>On the map.</h3>
+        <div id="GoogleMap" style="margin-top: 30px; min-height:380px; max-width: 80%; text-align: center;">
+        </div>
     </div>
     </section>
 </article>
@@ -64,7 +94,7 @@
             <a href="terms.html"><li>Terms</li></a>
         </ul>
         </nav>
-        <div id="Social">
+        <div id="Social" style="display: none;">
             <nav>
                 <ul>
                     <h2>Follow us on</h2>
