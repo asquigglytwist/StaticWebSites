@@ -11,7 +11,7 @@
 }
 #AboutContent {
 	text-align: center;
-	border: 1px solid black;
+	/* [disabled]border: 1px solid black; */
 }
 #AboutContent div {
 	display: inline-block;
