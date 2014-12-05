@@ -6,10 +6,14 @@
 	padding: 15px;
 	/* [disabled]border: 1px solid black; */
 }
-.sidebyside {
+.vdogrp {
+	margin: 30px;
+}
+.sidebysidevdo {
 	display: inline-block;
 	vertical-align: top;
 	width: 48%;
+	min-width: 420px;
 }
 #Images {
 	/* [disabled]border: 1px solid black; */
@@ -23,6 +27,9 @@
 	-ms-transition: all 1s ease;
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
+}
+#Images h2 {
+	text-align: center;
 }
 #Images .event {
 	margin: 10px;
