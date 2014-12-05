@@ -3,18 +3,26 @@
 #ContactDetails {
 	border: 1px solid rgba(255,79,0,0.5);
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 50px;
 }
 #ContactDetails div {
 	display: inline-block;
 	width: 48%;
+	padding: 7px;
 }
 #AboutContent {
 	text-align: center;
 	/* [disabled]border: 1px solid black; */
 }
 #AboutContent div {
+	margin: 15px;
 	display: inline-block;
 	width: 75%;
 	text-align: left;
+}
+#ScrollableContent {
+	background-image: url(../images/thumbs/LogoInBG.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	/* [disabled]background-size: contain; */
 }
