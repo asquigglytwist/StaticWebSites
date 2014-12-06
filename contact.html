@@ -4,46 +4,7 @@
 <meta charset="utf-8">
 <title>M.S. Natyalaya</title>
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
-<style>
-#ScrollableContent {
-	background-image: url('./images/thumbs/LogoInBG.png');
-	background-position: center center;
-	background-repeat: no-repeat;
-	/* [disabled]background-size: contain; */
-}
-#ContactMethods {
-	text-align: center;
-}
-#ContactMethods * {
-	opacity: 0;
-	visibility: hidden;
-	position: absolute;
-}
-#ContactForm {
-	display: none;
-}
-#ContactMethods *:target {
-	opacity: 1;
-	visibility: visible;
-	position: static;
-}
-#ContactMethods *:target * {
-	opacity: 1;
-	visibility: visible;
-	position: static;
-}
-#ContactForm:target {
-	display: block;
-}
-#Location:target #GoogleMap {
-	/* [disabled]display: block !important; */
-}
-#ContactDetails div {
-	margin: 15px;
-	display: inline-block;
-	padding: 7px;
-}
-</style>
+<link href="styles/contact.css" rel="stylesheet" type="text/css">
 </head>
 
 <body onhashchange="LoadMap();">
