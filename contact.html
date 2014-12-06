@@ -5,6 +5,12 @@
 <title>M.S. Natyalaya</title>
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
 <style>
+#ScrollableContent {
+	background-image: url('./images/thumbs/LogoInBG.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	/* [disabled]background-size: contain; */
+}
 #ContactMethods {
 	text-align: center;
 }
@@ -30,7 +36,7 @@
 	display: block;
 }
 #Location:target #GoogleMap {
-	display: block !important;
+	/* [disabled]display: block !important; */
 }
 #ContactDetails div {
 	margin: 15px;
@@ -76,12 +82,15 @@
             <div>
                 <h2>Kouslaya Nivas</h2>
                 Guru &amp; Director.
+                <p><img src="images/K.png" style="cursor: copy;" /></p>
             </div>
             <div style="border-left: 2px solid rgba(255,79,0,0.5);">
                 <h2>Nivas Venkataramanan</h2>Chairman &amp; Chief-Coordinator.
+                <p><img src="images/N.png" style="cursor: copy;" /></p>
             </div>
             <div style="border-left: 2px solid rgba(255,79,0,0.5);">
                 <h2>Admin's Name</h2>Administrative Assistant.
+                <p><img src="images/N.png" style="cursor: copy;" /></p>
             </div>
         </div>
         <div id="Social" style="margin: 0; padding: 0; border: none;">
@@ -111,8 +120,8 @@
             <iframe src="https://docs.google.com/forms/d/1t4WTg7Ji9LJqOXwp2Pp4yLrs-pnOI3adxDpeuSyWIYc/viewform?embedded=true" width="780" height="820" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
         </div>
     </div>
-    <div style="position: absolute; right: 20px; width: 50px; height: 50px; display: inline-block; border-radius: 50%; border: 1px solid black; text-align: center;">
-    	<a href="#PageContent" style="font-size: 32px;">Top</a>
+    <div id="BackToTop" style="position: absolute; right: 20px; width: 50px; height: 50px; display: inline-block; border-radius: 50%; border: 1px solid rgba(143,89,11,.25); text-align: center;">
+    	<a href="#PageContent" style="font-size: 28px;">Top</a>
     </div>
     </section>
 </article>
