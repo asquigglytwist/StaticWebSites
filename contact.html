@@ -33,13 +33,14 @@
     </div>
     <section class="actionableitems">
     	<p>How would you like to contact us?</p>
-        <a href="#ContactDetails">Contact Details</a>
+        <a href="#ContactDetails">Contact Information</a>
         <a href="#Social">Social Networks</a>
         <a href="#Location">On Premises</a>
         <a href="#ContactForm">We'll come to you</a>
     </section>
     <div id="ContactMethods">
         <div id="ContactDetails">
+        	<h3>Contact Information</h3>
             <div>
                 <h2>Kouslaya Nivas</h2>
                 Guru &amp; Director.
@@ -53,11 +54,13 @@
                 <h2>Admin's Name</h2>Administrative Assistant.
                 <p><img src="images/N.png" style="cursor: copy;" /></p>
             </div>
+            <h4><img src="images/M.png" /></h4>
         </div>
         <div id="Social" style="margin: 0; padding: 0; border: none;">
+        	<h3>Social Networks</h3>
             <nav>
                 <ul style="margin: 0; border: none;">
-                    <h2>Follow us on</h2>
+                    <h4>Follow us on</h4>
                     <a href="https://www.facebook.com/M.SNatyalaya"><li class="grayscale" id="FB" data-nwname="FaceBook"></li></a>
                     <a href="https://twitter.com/msnatyalaya"><li class="grayscale" id="TW" data-nwname="Twitter"></li></a>
                     <a href="https://www.youtube.com/channel/UCnisTAPf9JEZ-fWLo_0Z6Pw/"><li class="grayscale" id="YT" data-nwname="YouTube"></li></a>
@@ -65,24 +68,28 @@
             </nav>
         </div>
         <div id="Location">
-            <h3>Address</h3>
-            <div>
-            <p>No.7, 2nd Cross, Chinnappanahalli Road,</p><p>Marathahalli,</p>
-            <p>Behind Purva Fountain Square,</p>
-            <p>Bangalore - 560037.</p>
-            <p>Karnataka - India.</p>
+        	<h3>On Premises</h3>
+            <div class="addrwrapper" id="Address">
+                <h4>Address</h4>
+                <p>No.7, 2nd Cross, Chinnappanahalli Road,</p>
+                <p>Marathahalli,</p>
+                <p>Behind Purva Fountain Square,</p>
+                <p>Bangalore - 560037.</p>
+                <p>Karnataka - India.</p>
             </div>
-            <h3>View location on the map.</h3>
-            <div id="GoogleMap" style="margin-top: 30px; min-height:380px; display: block;">
-            	Loading Map...
+            <div class="addrwrapper" id="OnMap">
+	            <h4>View location on the map.</h4>
+                <div id="GoogleMap" style="margin-top: 30px; min-height:380px; display: block;">
+                    Loading Map...
+                </div>
             </div>
         </div>
         <div id="ContactForm">
-            <iframe src="https://docs.google.com/forms/d/1t4WTg7Ji9LJqOXwp2Pp4yLrs-pnOI3adxDpeuSyWIYc/viewform?embedded=true" width="780" height="820" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            <iframe src="https://docs.google.com/forms/d/1t4WTg7Ji9LJqOXwp2Pp4yLrs-pnOI3adxDpeuSyWIYc/viewform?embedded=true" width="780" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
         </div>
     </div>
-    <div id="BackToTop" style="position: absolute; right: 20px; width: 50px; height: 50px; display: inline-block; border-radius: 50%; border: 1px solid rgba(143,89,11,.25); text-align: center;">
-    	<a href="#PageContent" style="font-size: 28px;">Top</a>
+    <div id="BackToTop">
+    	<a href="#PageContent" class="tooltip" data-href="Back to Top">&#x25B2;</a>
     </div>
     </section>
 </article>

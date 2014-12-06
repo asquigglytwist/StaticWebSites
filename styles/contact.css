@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 #ScrollableContent {
-	background-image: url('./images/thumbs/LogoInBG.png');
-	background-position: center center;
+	background-image: url('../images/thumbs/LogoInBG.png');
+	background-position: center 160px;
 	background-repeat: no-repeat;
 	/* [disabled]background-size: contain; */
+	background-attachment: fixed;
 }
 #ContactMethods {
 	text-align: center;
@@ -33,8 +34,41 @@
 #Location:target #GoogleMap {
 	/* [disabled]display: block !important; */
 }
+#ContactMethods div > h3 {
+	/* [disabled]margin-top: 30px; */
+	margin-bottom: 30px;
+	font-size: 24px;
+}
 #ContactDetails div {
 	margin: 15px;
 	display: inline-block;
 	padding: 7px;
+}
+.addrwrapper {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+}
+#Address {
+	min-width: 320px;
+}
+#Address h4 {
+	margin-bottom: 30px;
+}
+#OnMap {
+	min-width: 800px;
+}
+#BackToTop {
+	position: absolute;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	border-radius: 50%;
+	border: 1px solid rgba(143,89,11,.25);
+	text-align: center;
+	padding-top: 5px;
+}
+#BackToTop a {
+	font-size: 24px;
 }
