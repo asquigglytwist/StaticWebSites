@@ -117,7 +117,7 @@ MSN.fnStaticGallery = function () {
 		MSN.sAllEventTimes.push(sTime);
 		MSN.sAllEventLocations.push(sLocation);
 		
-		var ndTitle = document.createElement("h2");
+		var ndTitle = document.createElement("h3");
 		ndTitle.innerHTML = sTitle;
 		MSN.ndAllEvents[i].insertBefore(ndTitle, MSN.ndAllEvents[i].firstChild);
 		
