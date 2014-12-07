@@ -27,11 +27,16 @@ alert("It appears this is an older version of Internet Explorer, which does not 
 <hr /><hr /><hr /><hr /><hr />
 <br /><br /><br /><br /><br />
 <![endif]-->
+<div id="Banner" style="position: fixed; top: 0; bottom: 0; width: 100%; height: 100vh; vertical-align: middle; background-color: rgba(255,255,255,0.80); z-index: 600; padding-top: 15px;">
+<p style="background-color: rgba(143,89,11,1.00); color: white; text-align: center; font-size: 24px; vertical-align: middle;">
+<span style="display: inline-block; width: 95%;">This website is still in development.&nbsp;Please do bear with any breakages you observe.</span><span style="width: 3%; font-size: 32px; border: 2px solid rgba(255,79,0,1.00); padding: 10px; cursor: pointer;" onClick="document.getElementById('Banner').style.display='none';">X</span>
+</p>
+</div>
 <header>
 	<a href="index.html">
         <img src="images/AltLogo.png" alt="M.S. Natyalaya - Logo" id="Logo" title="M.S. Natyalaya" />
         <div id="Brand">
-            <div id="Name" class="msncolor">M.S. Natyalaya</div>
+            <div id="Name" class="msncolor">M.S. Natyalaya<span style="vertical-align: super;">Beta (Site)</span></div>
             <div id="Motto">Taking art beyond boundaries</div>
         </div>
     </a>
@@ -44,16 +49,17 @@ alert("It appears this is an older version of Internet Explorer, which does not 
         </ul>
     </nav>
 </header>
-<article id="ScrollableContent">
+<article id="ScrollableContent" style="background-image: url('images/Natrajar_Plainx250.png'); background-repeat: no-repeat; background-position: 30% 0px;">
     <section id="PageContent">
-        <div class="contenttitle">
+        <div class="contenttitle" style="opacity: 0;">
             <h1>Welcome to <div class="msncolor" style="font: inherit; font-weight: bold; display: inline-block; vertical-align: text-bottom;">M.S. Natyalaya</div></h1>
-            <h2>A Bangalore based Bharatanatyam institute at Chinnappanahalli, Marathahalli.</h2>
+            <h2 style="opacity: 0;">A Bangalore based Bharatanatyam institute at Chinnappanahalli, Marathahalli.</h2>
         </div>
+        <h2 style="padding-left: 50px; color: rgba(59,76,96,1.00); font-size: 20px;">A Bangalore based Bharatanatyam institute at Chinnappanahalli, Marathahalli.</h2>
         <div id="BillBoard">
             <div id="UpComingEvents">
                 <div id="TickerControls"><input type="checkbox" id="PauseTicker" onchange="MSN.onTickerToggled();" disabled /><label for="PauseTicker"></label></div>
-                <h1>Upcoming Event(s)</h1>
+                <h1>Announcements / Upcoming Event(s)</h1>
                 <div id="Ticker" class="loadinganim">
                     <p>Looking up information on upcoming events, please wait</p>
                 </div>
