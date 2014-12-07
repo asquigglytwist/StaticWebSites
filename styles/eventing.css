@@ -35,6 +35,7 @@
 }
 #PauseTicker {
 	opacity: 0;
+	cursor: pointer;
 }
 #PauseTicker + label {
 	padding: 5px;
