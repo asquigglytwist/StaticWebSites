@@ -28,7 +28,7 @@ MSN.createTicker = function()
 	MSN.getNodeValue = function(ndNode) { return ndNode.firstChild.nodeValue; };
 	xhr.onreadystatechange=function()
 	{
-		if (xhr.readyState == 4)// && xhr.status == 200)
+		if ((xhr.readyState == 4) && (xhr.status == 200))
 		{
 			if(!xhr.responseXML || xhr.responseXML.length)
 			{
@@ -40,13 +40,24 @@ MSN.createTicker = function()
 			var allUpcomingEvents = xhr.responseXML.getElementsByTagName(MSN.sTagEvent);
 			for(var i = 0; i < allUpcomingEvents.length; i++)
 			{
+				var sTitle = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
+					sDesc = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
+					sWhen = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
+					sWhere = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
+				if(!sTitle)
+					sTitle = " ";
+				if(!sDesc)
+					sDesc = " ";
+				if(!sWhen)
+					sWhen = " ";
+				if(!sWhere)
+					sWhere = " ";
 				var ndEvtTitle = document.createElement("h2");
-				ndEvtTitle.innerHTML = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]);
+				ndEvtTitle.innerHTML = sTitle;
 				var ndEvtDesc = document.createElement("h3");
-				ndEvtDesc.innerHTML = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]);
+				ndEvtDesc.innerHTML = sDesc;
 				var ndEvtWhenWhere = document.createElement("h3");
-				ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;" + MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]) +
-									  "&nbsp;&nbsp;at&nbsp;&nbsp;" + MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]));
+				ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;" + sWhen + "&nbsp;&nbsp;at&nbsp;&nbsp;" + sWhere);
 				ndEvtWhenWhere.setAttribute("class", "onat");
 				var ndTemp = document.createElement(MSN.sTagToUse);
 				ndTemp.appendChild(ndEvtTitle);
