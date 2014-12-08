@@ -41,9 +41,43 @@ alert("It appears this is an older version of Internet Explorer, which does not 
             <div id="Motto">Taking art beyond boundaries</div>
         </div>
     </a>
+    <style>
+	.submenu {
+		display: none;
+		position: absolute;
+		padding-top: 10px;
+	}
+	#NavBar .submenu ul li {
+		display: block;
+		font-weight: normal;
+	}
+	#NavBar > ul li:focus .submenu, #NavBar > ul li:hover .submenu {
+		display: block;
+	}
+	#NavBar .submenu ul {
+		background-color: rgba(143,89,11,1.00);
+		text-align: left;
+		padding: 10px;
+		padding-top: 3px;
+	}
+	#NavBar .submenu ul li:focus, #NavBar .submenu ul li:hover {
+		padding-right: 10px;
+		padding-left: 10px;
+		font-weight: bold;
+	}
+	</style>
     <nav id="NavBar">
         <ul>
-            <a href="courses.html"><li class="tooltip" data-href="Details about the curriculum and courses offered.">Courses</li></a>
+            <li>
+            	Students
+            	<div class="submenu">
+                	<ul>
+                    	<a href="courses.html"><li class="tooltip" data-href="Details about the curriculum and courses offered.">Courses</li></a>
+                        <a href="guidelines.html"><li class="tooltip" data-href="Guidelines for students and parents.">GuideLines</li></a>
+                        <a href="resources.html"><li class="tooltip" data-href="Resources on the theory about Bharathanatyam.">Resources</li></a>
+                    </ul>
+                </div>
+            </li>
             <a href="gallery.html"><li class="tooltip" data-href="Show case of pictures and recordings from events.">Gallery</li></a>
             <a href="contact.html"><li class="tooltip" data-href="If you want to drop by, say hello or for more details, contact us.">Contact</li></a>
             <a href="about.html"><li class="tooltip" data-href="Get to know about us and our processes.">About Us</li></a>

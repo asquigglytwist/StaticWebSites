@@ -158,11 +158,11 @@ header {
 	padding-left: 10px;
 	background-color: rgba(143,89,11,1.00);
 }
-#NavBar ul {
+#NavBar > ul {
 	text-align: center;
 	list-style-type: none;
 }
-#NavBar ul li {
+#NavBar > ul li {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -175,7 +175,7 @@ header {
 	background-color: rgba(143,89,11,1.00);
 	color: rgba(255,255,255,0.80);
 }
-#NavBar ul li:hover, #NavBar ul li:focus {
+#NavBar > ul li:hover, #NavBar > ul li:focus {
 	background-color: rgba(0,0,0,0.25);
 	color: rgba(255,255,255,1.00);
 	font-weight: bold;
@@ -188,7 +188,7 @@ header {
 	color: #FFF;
 	color: white;
 	display: block;
-	position: absolute;
+	position: fixed;
 	text-shadow: 0 1px 0 #000000;
 	white-space: nowrap;
 	z-index: 505;
@@ -198,6 +198,7 @@ header {
 	padding-right: 5px;
 	top: 55px;
 	font-size: 14px;
+	top: 37px;
 	right: 0px;
 	font-weight: normal;
 	text-align: center;
