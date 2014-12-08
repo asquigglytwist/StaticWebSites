@@ -3,6 +3,7 @@
 #BillBoard {
 	margin-bottom: 50px;
 	margin-top: 40px;
+	text-align: center;
 }
 #UpComingEvents {
 	min-width: 440px;
