@@ -38,15 +38,17 @@
 	border-top: 3px solid rgba(255,79,0,1.00);
 	text-align: left;
 	display: inline-block;
-	padding-right: 15px;
+	padding-right: 5px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 3px;
 	font-family: 'Roboto Slab', Arial, sans-serif;
+	width: 100%;
 }
-.albumname:focus, .albumname:hover{
+.thumb:hover .albumname, .thumb:focus .albumname {
 	background-color: rgba(238,246,9,0.7);
-	padding-right: 5px;
+	padding-right: 15px;
+	width: auto;
 }
 .nail {
 	width: 200px;
