@@ -204,6 +204,29 @@ header {
 	font-weight: normal;
 	text-align: center;
 }
+.submenu {
+	display: none;
+	position: absolute;
+	padding-top: 10px;
+}
+#NavBar .submenu ul li {
+	display: block;
+	font-weight: normal;
+}
+#NavBar > ul li:focus .submenu, #NavBar > ul li:hover .submenu {
+	display: block;
+}
+#NavBar .submenu ul {
+	background-color: rgba(143,89,11,1.00);
+	text-align: left;
+	padding: 10px;
+	padding-top: 3px;
+}
+#NavBar .submenu ul li:focus, #NavBar .submenu ul li:hover {
+	padding-right: 10px;
+	padding-left: 10px;
+	font-weight: bold;
+}
 #ScrollableContent {
 	padding-left: 75px;
 	padding-right: 75px;
