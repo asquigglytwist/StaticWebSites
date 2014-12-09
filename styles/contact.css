@@ -4,8 +4,6 @@
 	background-image: url('../images/thumbs/LogoInBG.png');
 	background-position: center 160px;
 	background-repeat: no-repeat;
-	/* [disabled]background-size: contain; */
-	background-attachment: fixed;
 }
 #ContactMethods {
 	text-align: center;
@@ -65,10 +63,29 @@
 	height: 50px;
 	display: inline-block;
 	border-radius: 50%;
-	border: 1px solid rgba(143,89,11,.25);
+	border: 1px solid rgba(143,89,11,1);
+	background-color: rgba(143,89,11,1);
 	text-align: center;
 	padding-top: 5px;
+	cursor: pointer;
 }
 #BackToTop a {
 	font-size: 24px;
+	color: rgba(255,255,255,1.00);
+}
+#BackToTop span {
+	display: none;
+	position: relative;
+	top: 15px;
+	right: 28px;
+	width: 95px;
+}
+#BackToTop:focus, #BackToTop:hover {
+	background-color: rgba(255,255,255,1.00);
+}
+#BackToTop:focus span, #BackToTop:hover span {
+	display: block;
+}
+#BackToTop:focus a, #BackToTop:hover a {
+	color: rgba(143,89,11,1);
 }
