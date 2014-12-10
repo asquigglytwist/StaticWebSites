@@ -17,11 +17,11 @@ MSN.tmrTicker = undefined;
 MSN.chkTicker = undefined;
 MSN.getNodeValue = undefined;
 
-MSN.isIE = function () {
+MSN.fnIsIE = function () {
   var myNav = navigator.userAgent.toLowerCase();
   return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
 };
-MSN.createTicker = function()
+MSN.fnCreateTicker = function()
 {
 	MSN.ndTicker = document.getElementById("Ticker");
 	var xhr = new XMLHttpRequest();
@@ -63,7 +63,7 @@ MSN.createTicker = function()
 				ndTemp.appendChild(ndEvtTitle);
 				ndTemp.appendChild(ndEvtWhenWhere);
 				ndTemp.appendChild(ndEvtDesc);
-				MSN.hideNode(ndTemp);
+				MSN.fnHideNode(ndTemp);
 				MSN.ndEventDivs.push(ndTemp);
 				MSN.ndTicker.firstElementChild.innerHTML += ".";
 				MSN.ndTicker.appendChild(ndTemp);
@@ -73,10 +73,10 @@ MSN.createTicker = function()
 			MSN.ndTicker.style.opacity = 1;
 			if(MSN.ndEventDivs.length > 0)
 			{
-				MSN.updateTicker();
-				if(MSN.oneTime)
-					MSN.oneTime();
-				MSN.tmrTicker = setInterval(function() { MSN.updateTicker() }, MSN.iDelay);
+				MSN.fnUpdateTicker();
+				if(MSN.fnOneTime)
+					MSN.fnOneTime();
+				MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
 			}
 			else
 			{
@@ -88,51 +88,51 @@ MSN.createTicker = function()
 	xhr.open("GET", MSN.sUpComingXML, MSN.bAsyncRequest);
 	xhr.send();
 }
-MSN.updateTicker = function() {
-	MSN.hideNode(MSN.ndTicker);
+MSN.fnUpdateTicker = function() {
+	MSN.fnHideNode(MSN.ndTicker);
 	if(MSN.ndTicker.style.backgroundImage.length > 0)
 		MSN.ndTicker.style.backgroundImage = "none";
 	if(MSN.ndTicker.childNodes.length > 0)
 	{
-		MSN.hideNode(MSN.ndEventDivs[MSN.iDivIxToShow]);;
+		MSN.fnHideNode(MSN.ndEventDivs[MSN.iDivIxToShow]);;
 	}
 	MSN.iDivIxToShow++;
 	if(MSN.iDivIxToShow > (MSN.ndEventDivs.length - 1))
 	{
 		MSN.iDivIxToShow = 0;
 	}
-	MSN.showNode(MSN.ndEventDivs[MSN.iDivIxToShow]);
-	MSN.showNode(MSN.ndTicker);
+	MSN.fnShowNode(MSN.ndEventDivs[MSN.iDivIxToShow]);
+	MSN.fnShowNode(MSN.ndTicker);
 };
-MSN.hideNode = function (ndNode) {
+MSN.fnHideNode = function (ndNode) {
 	ndNode.style.opacity = 0;
 	ndNode.style.height = "0";
 };
-MSN.showNode = function (ndNode) {
+MSN.fnShowNode = function (ndNode) {
 	ndNode.style.opacity = 1;
 	ndNode.style.height = "auto";
 };
-MSN.oneTime = function() {
+MSN.fnOneTime = function() {
 	MSN.ndTicker.setAttribute("class", "");
 	MSN.ndTicker.firstElementChild.style.display = "none";
 	if(MSN.ndEventDivs.length > 0)
 		MSN.chkTicker.disabled = false;
-	MSN.oneTime = undefined;
+	MSN.fnOneTime = undefined;
 };
-MSN.onTickerToggled = function () {
+MSN.fnOnTickerToggled = function () {
 	if(MSN.chkTicker.checked)
 	{
 		clearInterval(MSN.tmrTicker);
 	}
 	else
 	{
-		MSN.tmrTicker = setInterval(function() { MSN.updateTicker() }, MSN.iDelay);
+		MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
 	}
 };
 window.onload = function() {
 	try
 	{
-		MSN.createTicker();
+		MSN.fnCreateTicker();
 	}
 	catch(ex)
 	{
