@@ -129,8 +129,6 @@ MSN.onTickerToggled = function () {
 		MSN.tmrTicker = setInterval(function() { MSN.updateTicker() }, MSN.iDelay);
 	}
 };
-MSN.playpauseTooltip = function () {
-};
 window.onload = function() {
 	try
 	{
