@@ -199,17 +199,25 @@
             </div>
         </div>
     </section>
-    <audio id="BGAudio" controls style="display: none;" autoplay loop>
+    <!--<audio id="BGAudio" controls style="display: none;" autoplay loop>
          <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp4"
                  type='audio/mp4'>
          <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga"
                  type='audio/ogg; codecs=vorbis'>
          <p>Your user agent does not support the HTML5 Audio element.</p>
-    </audio>
+    </audio>-->
 </footer>
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
-	var vis = (function() {
+	var ndHead = document.getElementsByTagName('head')[0];
+	var preRender = document.createElement('link'), preFetch = document.createElement('link');
+	preRender.setAttribute('rel', 'prerender');
+	preFetch.setAttribute('rel', 'prefetch');
+	preRender.setAttribute('href', 'gallery.html');
+	preFetch.setAttribute('href', 'gallery.html');
+	ndHead.appendChild(preRender);
+	ndHead.appendChild(preFetch);
+/*	var vis = (function() {
 		var stateKey, eventKey, keys = {
 			hidden: "visibilitychange",
 			webkitHidden: "webkitvisibilitychange",
@@ -237,7 +245,7 @@
 		else {
 			bgAudio.pause();
 		}
-	});
+	});*/
 </script>
 </body>
 </html>
