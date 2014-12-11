@@ -15,17 +15,19 @@ MSN.iDivIxToShow = 1;
 MSN.ndTicker = undefined;
 MSN.tmrTicker = undefined;
 MSN.chkTicker = undefined;
-MSN.getNodeValue = undefined;
+MSN.fnGetNodeValue = undefined;
 
 MSN.fnIsIE = function () {
   var myNav = navigator.userAgent.toLowerCase();
   return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
 };
+MSN.fnGetNodeValue = function(ndNode) {
+	return ndNode.firstChild.nodeValue;
+};
 MSN.fnCreateTicker = function()
 {
 	MSN.ndTicker = document.getElementById("Ticker");
 	var xhr = new XMLHttpRequest();
-	MSN.getNodeValue = function(ndNode) { return ndNode.firstChild.nodeValue; };
 	xhr.onreadystatechange=function()
 	{
 		if ((xhr.readyState == 4) && (xhr.status == 200))
@@ -40,10 +42,10 @@ MSN.fnCreateTicker = function()
 			var allUpcomingEvents = xhr.responseXML.getElementsByTagName(MSN.sTagEvent);
 			for(var i = 0; i < allUpcomingEvents.length; i++)
 			{
-				var sTitle = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
-					sDesc = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
-					sWhen = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
-					sWhere = MSN.getNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
+				var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
+					sDesc = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
+					sWhen = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
+					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
 				if(!sTitle)
 					sTitle = " ";
 				if(!sDesc)
