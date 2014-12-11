@@ -33,9 +33,12 @@ MSN.fnFullScreen = function () {
 		MSN.ndFullScreen.style.display = "block";
 	}
 };
+MSN.fnGetFullImagePath = function (sPath) {
+	return sPath.replace("/thumbs/", "/full/");
+};
 MSN.fnLoadImage = function (ndTemp) {
 	MSN.ndFSImage.style.opacity = 0;
-	MSN.ndFSImage.src = ndTemp.getAttribute("src").replace("/thumbs/", "/full/");
+	MSN.ndFSImage.src = MSN.fnGetFullImagePath(ndTemp.getAttribute("src"));//.replace("/thumbs/", "/full/");
 	MSN.ndFSImage.style.opacity = 1;
 	var iTemp = Number(ndTemp.getAttribute("data-eventid"));
 	if(MSN.sAllEventTitles[iTemp].length > 0)
@@ -106,6 +109,7 @@ MSN.fnFSKeyUp = function (evt) {
 MSN.fnStaticGallery = function () {
 	MSN.ndGallery = document.getElementById(MSN.sGalleryDivID);
 	MSN.ndAllEvents = MSN.ndGallery.querySelectorAll(MSN.sEventsClass);
+	var sImgPaths = "";
 	for(var i = 0; i < MSN.ndAllEvents.length; i++)
 	{
 		var sTitle = MSN.ndAllEvents[i].getAttribute(MSN.sEventTitleAttrib),
@@ -143,6 +147,7 @@ MSN.fnStaticGallery = function () {
 			tmpAllImgs[j].setAttribute("data-eventid", i.toString());
 			tmpAllImgs[j].setAttribute("data-imageid", MSN.ndAllImgs.length.toString());
 			tmpAllImgs[j].onclick = MSN.fnFullScreen;
+			sImgPaths += ((MSN.fnGetFullImagePath(tmpAllImgs[j].src)) + ",");
 			MSN.ndAllImgs.push(tmpAllImgs[j]);
 		}
 	}
@@ -150,4 +155,8 @@ MSN.fnStaticGallery = function () {
 	MSN.ndFSImage = document.getElementById(MSN.sFSImgID);
 	MSN.ndFSTitle = document.getElementById(MSN.sFSTitleID);
 	MSN.ndFSCaption = document.getElementById(MSN.sFSCaptionID);
+	if(typeof(Worker) !== "undefined") {
+		MSN.imgFetcher = new Worker('scripts/imgfetcher.js');
+		MSN.imgFetcher.postMessage(sImgPaths);
+	}
 };
