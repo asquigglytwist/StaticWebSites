@@ -44,7 +44,7 @@ MSN.fnLoadImage = function (ndTemp) {
 	if(MSN.sAllEventTitles[iTemp].length > 0)
 		MSN.ndFSTitle.innerHTML = MSN.sAllEventTitles[iTemp];
 	else
-		MSN.ndFSTitle.innerHTML = "M.S. Natyalaya";
+		MSN.ndFSTitle.innerHTML = "M.S.&nbsp;Natyalaya";
 	MSN.ndFSImage.setAttribute("data-imageid", ndTemp.getAttribute("data-imageid"));
 	var sTitle = ndTemp.getAttribute("title");
 	if(sTitle.length > 0)
