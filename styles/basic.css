@@ -265,6 +265,9 @@ footer {
 	padding-top: 2px;
 	border-top: 1px solid rgba(143,89,11,.25);
 }
+footer * {
+	font-size: 16px;
+}
 footer section {
 	border-top: 1px solid rgba(255,79,0,0.5);
 	min-height: 150px;
