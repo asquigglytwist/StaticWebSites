@@ -32,6 +32,7 @@ table ul li {
 }
 .maintitle {
 	text-align: center;
+	font-family: "Roboto Slab",Arial,sans-serif;
 }
 .subtitle {
 	font-weight: normal;
@@ -69,4 +70,26 @@ table ul li {
 }
 .itemvalue img {
 	vertical-align: bottom;
+}
+#RnRHBook {
+	margin: 70px 10px 10px 10px;
+	text-align: center;
+}
+#RnRHBook a {
+	display: inline-block;
+	border: 1px solid rgba(143,89,11,1.00);
+	border-radius: 6px;
+	padding: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-bottom: 5px;
+	font-family: 'Roboto Slab', Arial, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: rgba(143,89,11,1.00);
+	min-width: 170px;
+}
+#RnRHBook a:focus, #RnRHBook a:hover {
+	background-color: rgba(143,89,11,1.00);
+	color: rgba(255,255,255,1.00);
 }
