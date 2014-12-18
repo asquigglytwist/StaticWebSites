@@ -185,8 +185,8 @@
         </div>
     </section>
 </footer>
-<div id="BGVidContainer" style="z-index: -5; opacity: .1; width: 100%; position: fixed; top: 0px; bottom: 0px;">
-    <video id="BGVideo" style="width: 100%;" autoplay loop>
+<div id="BGVidContainer">
+    <video id="BGVideo" autoplay loop>
         <source src="assets/GuruInBG.mp4" />
     </video>
 </div>
@@ -215,11 +215,11 @@
 		var bgVideo = document.getElementById("BGVideo");
 		if (vis()) {
 			if(bgVideo.paused)
-				window.setTimeout(function() { if(vis()) { bgVideo.play(); document.title="M.S. Natyalaya - Kousalya Nivas, the Guru" + " playing...";}}, 3000);
+				window.setTimeout(function() { if(vis()) { bgVideo.play(); document.title="M.S. Natyalaya - Kousalya Nivas, the Guru" + " [Video Playing]...";}}, 3000);
 		}
 		else {
 			bgVideo.pause();
-			document.title="M.S. Natyalaya - Kousalya Nivas, the Guru" + " paused...";
+			document.title="M.S. Natyalaya - Kousalya Nivas, the Guru" + " [Video Paused]...";
 		}
 	});
 </script>

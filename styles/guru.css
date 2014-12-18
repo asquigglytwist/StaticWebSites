@@ -22,3 +22,14 @@ q {
 .lists {
 	margin-left: 40px;
 }
+#BGVidContainer {
+	z-index: -5;
+	opacity: .1;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+}
+#BGVideo {
+	width: 100%;
+}
