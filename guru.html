@@ -185,13 +185,43 @@
         </div>
     </section>
 </footer>
-<div id="BGVid" style="z-index: -5; opacity: .1; width: 100%; position: fixed; top: 0px; bottom: 0px;">
-    <video style="width: 100%;" autoplay loop>
+<div id="BGVidContainer" style="z-index: -5; opacity: .1; width: 100%; position: fixed; top: 0px; bottom: 0px;">
+    <video id="BGVideo" style="width: 100%;" autoplay loop>
         <source src="assets/GuruInBG.mp4" />
     </video>
 </div>
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
+	var vis = (function() {
+		var stateKey, eventKey, keys = {
+			hidden: "visibilitychange",
+			webkitHidden: "webkitvisibilitychange",
+			mozHidden: "mozvisibilitychange",
+			msHidden: "msvisibilitychange"
+		};
+		for (stateKey in keys) {
+			if (stateKey in document) {
+				eventKey = keys[stateKey];
+				break;
+			}
+		}
+		return function(c) {
+			if (c)
+				document.addEventListener(eventKey, c);
+			return !document[stateKey];
+		}
+	})();
+	vis(function() {
+		var bgVideo = document.getElementById("BGVideo");
+		if (vis()) {
+			if(bgVideo.paused)
+				window.setTimeout(function() { if(vis()) { bgVideo.play(); document.title="M.S. Natyalaya - Kousalya Nivas, the Guru" + " playing...";}}, 3000);
+		}
+		else {
+			bgVideo.pause();
+			document.title="M.S. Natyalaya - Kousalya Nivas, the Guru" + " paused...";
+		}
+	});
 </script>
 </body>
 </html>
