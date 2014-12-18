@@ -14,11 +14,17 @@ q {
 }
 .paratitle {
 	font-size: 24px;
-	display: none;
 }
 .paracontent {
 	margin: 15px 0px 15px 0px;
+	/* [disabled]border: 1px solid black; */
 }
+/*#AboutGuru section div.paracontent:nth-of-type(odd) {
+	margin-right: 25%;
+}
+#AboutGuru section div.paracontent:nth-of-type(even) {
+	margin-left: 25%;
+}*/
 .lists {
 	margin-left: 40px;
 }
