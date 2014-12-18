@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+q {
+	vertical-align: top;
+}
+.paratitle {
+	font-size: 24px;
+}
+.paracontent {
+	margin: 10px 0px 10px 0px;
+}
+.lists {
+	margin-left: 40px;
+}
