@@ -141,11 +141,6 @@ header {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	display: inline-block;
-	float: right;
-	z-index: 501;
-	position: absolute;
-	right: 125px;
-	top: 57px;
 	-webkit-box-shadow: 2px 2px 10px 3px rgba(179,111,13,0.35),0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 0 9px 0px 0px transparent,0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
 	-ms-box-shadow: 0 9px 0px 0px transparent,0 -9px 0px 0px transparent,12px 0 15px -4px rgba(0, 0, 0, 0.4),-12px 0 15px -4px rgba(0, 0, 0, 0.4);
@@ -197,7 +192,6 @@ header {
 	clear: both;
 	padding-left: 5px;
 	padding-right: 5px;
-	top: 55px;
 	font-size: 14px;
 	top: 37px;
 	right: 0px;
@@ -333,7 +327,7 @@ footer section {
 #Social {
 	display: inline-block;
 	vertical-align: top;
-	border-left: 2px solid rgba(255,79,0,0.5);
+	border-left: none;
 }
 #Social ul {
 	margin-left: 50px;
@@ -392,4 +386,73 @@ footer section {
 	text-align: right;
 	padding-right: 15px;
 	width: 48%;
+}
+
+@media screen and (max-width: 769px) {
+	header {
+		height: auto;
+		padding-bottom: 100px;
+	}
+	#Brand {
+		margin-left: 125px;
+		text-align: left;
+	}
+	#Name {
+		font-size: 36px;
+	}
+	#Logo:focus, #Logo:hover {
+		border-radius: 0px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	#NavBar {
+		position: static;
+		text-align: center;
+		width: 100%;
+		margin: 55px 0px 15px 0px;
+	}
+	.submenu {
+		padding-top: -3px;
+	}
+	.submenu:focus, .submenu:hover {
+		display: block;
+	}
+	.tooltip:hover:after,.tooltip:focus:after {
+		top: 145px;
+		right: 5px;
+		font-weight: normal;
+		text-align: center;
+	}
+	.contenttitle {
+		margin-right: 0px;
+	}
+	footer {
+		margin-top: 10px;
+	}
+	#LinkForms nav ul {
+		display: block;
+	}
+	#Social {
+		border-left: none;
+	}
+	#Disclaimer > div {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 770px) {
+	#NavBar {
+		float: right;
+		z-index: 501;
+		position: absolute;
+		right: 125px;
+		top: 57px;
+	}
+}
+@media screen and (min-width: 960px) {
+	#Social {
+		border-left: 2px solid rgba(255,79,0,0.5);
+	}
 }
