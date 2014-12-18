@@ -1,13 +1,23 @@
 @charset "utf-8";
 
+#AboutGuru {
+	text-align: center;
+}
+#AboutGuru section {
+	margin: 15px;
+	display: inline-block;
+	width: 75%;
+	text-align: left;
+}
 q {
 	vertical-align: top;
 }
 .paratitle {
 	font-size: 24px;
+	display: none;
 }
 .paracontent {
-	margin: 10px 0px 10px 0px;
+	margin: 15px 0px 15px 0px;
 }
 .lists {
 	margin-left: 40px;
