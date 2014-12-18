@@ -139,3 +139,9 @@ td:last-child {
 	background-color: rgba(143,89,11,1.00);
 	color: rgba(255,255,255,1.00);
 }
+@media screen and (max-width: 769px) {
+	.tcell {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
