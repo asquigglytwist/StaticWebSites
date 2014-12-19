@@ -87,8 +87,8 @@
 }
 
 @media only screen and (max-width: 769px) {
-	#ContactMethodsIndex a {
-		display: table-cell;
+	#ContactMethodsIndex {
+		display: none;
 	}
 	#ContactMethods > div {
 		opacity: 1;
@@ -102,6 +102,10 @@
 	#ContactDetails > div {
 		display: block;
 		border-left: none !important;
+	}
+	#Address {
+		min-width: 250px;
+		text-align: left;
 	}
 	#ContactForm {
 		display: block;
@@ -117,7 +121,7 @@
 	#BackToTop {
 		display: block;
 		position: relative;
-		left: 50%;
+		left: 47%;
 		text-align: center;
 		margin: 25px 0px 35px 0px;
 	}
