@@ -177,3 +177,22 @@
 }
 #FSCaption {
 }
+
+@media screen and (max-width: 767px) {
+	.vdogrp .sidebysidevdo {
+		min-width: 210px;
+		display: block;
+	}
+	.vdogrp .sidebysidevdo div, .vdogrp .sidebysidevdo div img {
+		width: 200px !important;
+		height: 148px !important;
+	}
+	#Videos {
+		margin-left: 0px;
+		margin-right: 0px;
+		padding: 0px;
+	}
+	#Images {
+    	min-width: 250px;
+	}
+}
