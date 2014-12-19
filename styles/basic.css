@@ -189,7 +189,7 @@ header {
 	display: block;
 	font-weight: normal;
 }
-#NavBar > ul li:focus .submenu, #NavBar > ul li:hover .submenu {
+#NavBar > ul li:focus .submenu, #NavBar > ul li:hover .submenu, .submenu:focus, .submenu:hover {
 	display: block;
 }
 #NavBar .submenu ul {
@@ -395,11 +395,12 @@ footer section {
 	}
 }
 @media screen and (max-width: 480px) {
-	body {
-		background-image: url(../images/MSN_BG_w480.png);
-	}
 	#Name {
 		font-size: 24px;
+	}
+	#Motto {
+		margin-left: 5px;
+		font-size: 18px;
 	}
 	#ScrollableContent {
 		padding-left: 25px;
@@ -415,20 +416,15 @@ footer section {
 	}
 }
 @media only screen and (min-width: 481px) and (max-width: 769px) {
-	body {
-		background-image: url(../images/MSN_BG_w780.png);
-	}
 	#Name {
 		font-size: 36px;
 	}
 }
 @media screen and (max-width: 1100px) {
-	body {
-		background-image: url(../images/MSN_BG_w1100.png);
-	}
 	header {
+		/* [disabled]min-height: 720px; */
 		height: auto;
-		padding-bottom: 100px;
+		padding-bottom: 160px;
 	}
 	#Brand {
 		margin-left: 125px;
@@ -450,12 +446,6 @@ footer section {
 	}
 	.submenu:focus, .submenu:hover {
 		display: block;
-	}
-	.tooltip:hover:after,.tooltip:focus:after {
-		top: 145px;
-		right: 5px;
-		font-weight: normal;
-		text-align: center;
 	}
 	#ScrollableContent {
 		padding-left: 35px;
@@ -479,17 +469,47 @@ footer section {
 		width: 100%;
 	}
 }
-/*@media screen and (min-width: 770px) {
-	#NavBar {
-		float: right;
-		z-index: 501;
-		position: absolute;
-		right: 125px;
-		top: 57px;
-	}
-}*/
 @media screen and (min-width: 960px) {
 	#Social {
 		border-left: 2px solid rgba(255,79,0,0.5);
 	}
 }
+@media only screen and (max-width: 480px) {
+	body {
+		background-image: none;
+	}
+	#NavBar {
+		padding: 2px;
+	}
+	#NavBar > ul li {
+		font-size: 16px;
+	}
+	#NavBar > ul > a:nth-of-type(3):after {
+		content: '\A';
+		white-space: pre;
+	}
+}
+@media only screen and (min-width: 481px) and (max-width: 769px) {
+	body {
+		background-image: none;
+	}
+	#NavBar > ul li {
+		font-size: 18px;
+	}
+	.tooltip:hover:after,.tooltip:focus:after {
+		display: none;
+		font-size: 10px;
+	}
+}
+@media screen and (min-width: 770px) and (max-width: 1100px) {
+	body {
+		background-image: url(../images/MSN_BG_w1100.png);
+	}
+	.tooltip:hover:after,.tooltip:focus:after {
+		top: 145px;
+		right: 5px;
+		font-weight: normal;
+		text-align: center;
+	}
+}
+
