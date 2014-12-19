@@ -8,23 +8,23 @@
 #ContactMethods {
 	text-align: center;
 }
-#ContactMethods * {
+#ContactMethods > div {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
-}
-#ContactForm {
-	display: none;
 }
 #ContactMethods *:target {
 	opacity: 1;
 	visibility: visible;
 	position: static;
 }
-#ContactMethods *:target * {
+/*#ContactMethods *:target * {
 	opacity: 1;
 	visibility: visible;
 	position: static;
+}*/
+#ContactForm {
+	display: none;
 }
 #ContactForm:target {
 	display: block;
@@ -55,6 +55,9 @@
 }
 #OnMap {
 	min-width: 710px;
+}
+#AltEmbedMap, #AltEmbedForm {
+	display: none;
 }
 #BackToTop {
 	position: absolute;
@@ -88,4 +91,38 @@
 }
 #BackToTop:focus a, #BackToTop:hover a {
 	color: rgba(143,89,11,1);
+}
+
+@media only screen and (max-width: 769px) {
+	#ContactMethodsIndex a {
+		display: table-cell;
+	}
+	#ContactMethods > div {
+		opacity: 1;
+		visibility: visible;
+		position: static;
+	}
+	#ContactMethods div > h3 {
+		margin-top: 25px;
+		text-decoration: underline;
+	}
+	#ContactDetails > div {
+		display: block;
+		border-left: none !important;
+	}
+	#OnMap, #ContactForm:target iframe {
+		display: none;
+	}
+	#AltEmbedMap, #AltEmbedForm {
+		display: block;
+	}
+}
+@media screen and (max-width: 1100px) {
+	#BackToTop {
+		display: block;
+		position: relative;
+		left: 50%;
+		text-align: center;
+		margin: 25px 0px 35px 0px;
+	}
 }
