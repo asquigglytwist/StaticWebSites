@@ -93,3 +93,29 @@ table ul li {
 	background-color: rgba(143,89,11,1.00);
 	color: rgba(255,255,255,1.00);
 }
+
+@media screen and (max-width: 350px) {
+	#PageContent {
+		margin: 0px;
+		padding: 0px;
+	}
+	table {
+		max-width: 220px;
+		border-spacing: 0px;
+	}
+	.outerrow {
+		width: 215px;
+	}
+}
+@media screen and (max-width: 800px) {
+	.outerrow {
+		width: calc(100vw - 100px);
+	}
+	.cell, .itemname, .itemvalue {
+		display: table-row;
+	}
+	.itemvalue {
+		display: block;
+		padding-left: 15px;
+	}
+}
