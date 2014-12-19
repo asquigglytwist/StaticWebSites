@@ -463,6 +463,9 @@ footer section {
 	#Social {
 		border-left: none;
 	}
+	#Disclaimer {
+		padding-left: 0px;
+	}
 	#Disclaimer > div {
 		display: block;
 		text-align: center;
