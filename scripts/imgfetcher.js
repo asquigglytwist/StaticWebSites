@@ -10,8 +10,8 @@ self.addEventListener('message', function(e) {
 			xhr.open('GET', imgpaths[i], false);
 			xhr.responseType = 'blob';
 			xhr.send();
-			var blob = new Blob([xhr.response], {type: 'image/jpeg'});
-			console.log(blob);
+			//var blob = new Blob([xhr.response], {type: 'image/jpeg'});
+			//console.log(blob);
 		}
 	}
 }, false);
