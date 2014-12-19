@@ -195,4 +195,17 @@
 	#Images {
     	min-width: 250px;
 	}
+	#FullScreen input[type="button"] {
+		border-radius: 10px;
+		height: 70px;
+		width: 36px;
+		background-size: contain;
+	}
+	#FSTitle {
+		font-size: 22px;
+	}
+	#FSShowCase, #FSContainer, #FSImage {
+    	max-height: calc(100vmin - 160px);
+		max-width: calc(90vmin - 100px)
+	}
 }
