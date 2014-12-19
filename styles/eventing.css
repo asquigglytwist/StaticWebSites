@@ -17,9 +17,9 @@
 	margin-top: 7px;
 	margin-bottom: 7px;
 	margin-left: 5px;
+	margin-right: 20px;
 	display: inline-block;
 	border-radius: 10px;
-	margin-right: 20px;
 }
 #UpComingEvents * {
 	-webkit-transition: all 3s ease;
@@ -128,4 +128,21 @@
 	background-repeat: no-repeat;
 	background-position: 50% 70%;
 	background-image: url(../images/MSN_Loader.gif);
+}
+
+/*@media screen and (max-width: 320px) {
+	#UpComingEvents {
+		width: 65%;
+		min-width: 250px;
+	}
+}*/
+@media screen and (max-width: 480px) {
+	#UpComingEvents {
+		/*width: 65%;
+		min-width: 350px;*/
+		display: block;
+		margin: 5px;
+		min-width: 250px;
+		width: auto;
+	}
 }
