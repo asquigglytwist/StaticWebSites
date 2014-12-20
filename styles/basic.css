@@ -173,6 +173,12 @@ header {
 	background-color: rgba(143,89,11,1.00);
 	color: rgba(255,255,255,0.80);
 }
+#NavBar > ul > a:first-child li {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEQAACxEBf2RfkQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAABBUlEQVRIS82VTQrCMBCFWyzWiogLFUTcCv6hHkGvoODW+19Cp2VSHnHSTBKEZmeced+bn7ZZ1rOz+tAhT/k/fC1qcXMYcIfflxToHIQqBAnQYE7rHDJzAN6sqoIAkrgRaCGxAGyL0xWIv0Osdzm3dbBdqu0KEf9pl2+FVW1xtQLaJVayjB0WAkGjwPsZ0vlpHYQMjWKb6uscqZIp3T9YcM+B40DAGYzV5p6ueRwjAeq8QyKg8lUuASbS+8dqgakgCtDMxT4EGIHbJMDJbAgLroU2JgHsZKmN/QEYJ2VHf6UKdtrt23IgAjaOGeBGXjlm6FvTwvVJ1Nz7xM3/pUYMYyjxJYl/AVMe45N9HVjZAAAAAElFTkSuQmCC);
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+}
 #NavBar > ul li:hover, #NavBar > ul li:focus {
 	background-color: rgba(0,0,0,0.25);
 	color: rgba(255,255,255,1.00);
