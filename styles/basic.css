@@ -401,6 +401,19 @@ footer section {
 	}
 }
 @media screen and (max-width: 480px) {
+	* {
+		font-size: 14px;
+	}
+	.contenttitle {
+		margin-top: 25px;
+		margin-bottom: 40px;
+	}
+	.contenttitle h1 {
+		font-size: 24px;
+	}
+	.contenttitle h2 {
+		font-size: 18px;
+	}
 	#Name {
 		font-size: 24px;
 	}
