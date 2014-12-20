@@ -138,11 +138,14 @@
 }*/
 @media screen and (max-width: 480px) {
 	#UpComingEvents {
-		/*width: 65%;
-		min-width: 350px;*/
 		display: block;
 		margin: 5px;
 		min-width: 250px;
 		width: auto;
+	}
+}
+@media screen and (max-width: 769px) {
+	#UpComingEvents h1 {
+		font-size: 18px;
 	}
 }
