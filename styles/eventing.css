@@ -129,13 +129,11 @@
 	background-position: 50% 70%;
 	background-image: url(../images/MSN_Loader.gif);
 }
-
-/*@media screen and (max-width: 320px) {
-	#UpComingEvents {
-		width: 65%;
-		min-width: 250px;
-	}
-}*/
+#TkrActItms {
+	width: 20%;
+	display: inline-block;
+	background-color: transparent;
+}
 @media screen and (max-width: 480px) {
 	#UpComingEvents {
 		display: block;
@@ -147,5 +145,9 @@
 @media screen and (max-width: 769px) {
 	#UpComingEvents h1 {
 		font-size: 18px;
+	}
+	#TkrActItms {
+		width: auto;
+		margin-top: 15px;
 	}
 }
