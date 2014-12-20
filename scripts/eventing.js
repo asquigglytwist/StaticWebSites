@@ -76,9 +76,16 @@ MSN.fnCreateTicker = function()
 			if(MSN.ndEventDivs.length > 0)
 			{
 				MSN.fnUpdateTicker();
-				if(MSN.fnOneTime)
-					MSN.fnOneTime();
-				MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
+				if(MSN.ndEventDivs.length == 1)
+				{
+					MSN.chkTicker.disabled = true;
+				}
+				else
+				{
+					if(MSN.fnOneTime)
+						MSN.fnOneTime();
+					MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
+				}
 			}
 			else
 			{
