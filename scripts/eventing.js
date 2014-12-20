@@ -76,16 +76,9 @@ MSN.fnCreateTicker = function()
 			if(MSN.ndEventDivs.length > 0)
 			{
 				MSN.fnUpdateTicker();
-				if(MSN.ndEventDivs.length == 1)
-				{
-					MSN.chkTicker.disabled = true;
-				}
-				else
-				{
-					if(MSN.fnOneTime)
-						MSN.fnOneTime();
-					MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
-				}
+				if(MSN.fnOneTime)
+					MSN.fnOneTime();
+				MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
 			}
 			else
 			{
@@ -124,7 +117,7 @@ MSN.fnShowNode = function (ndNode) {
 MSN.fnOneTime = function() {
 	MSN.ndTicker.setAttribute("class", "");
 	MSN.ndTicker.firstElementChild.style.display = "none";
-	if(MSN.ndEventDivs.length > 0)
+	if(MSN.ndEventDivs.length > 1)
 		MSN.chkTicker.disabled = false;
 	MSN.fnOneTime = undefined;
 };
