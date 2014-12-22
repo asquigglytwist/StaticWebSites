@@ -291,7 +291,7 @@ footer section {
 	font-size: 20px;
 	text-align: center;
 	color: rgba(143,89,11,1.00);
-	min-device-width: 170px;
+	min-width: 170px;
 	width: 30%;
 }
 .actionableitems a:hover, .actionableitems a:focus {
@@ -309,7 +309,7 @@ footer section {
 }
 #LinkForms ul {
 	display: inline-block;
-	min-device-width: 80px;
+	min-width: 80px;
 	list-style-type: none;
 	vertical-align: top;
 	margin-top: 30px;
