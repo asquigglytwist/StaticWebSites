@@ -48,7 +48,7 @@ body {
 	background-image: url(../images/MSN_BG.png);
 	background-position: 100% 0%;
 	background-repeat: no-repeat;
-	background-size: 175vh;
+	/*background-size: 175vh;*/
 	background-size: 85vw;
 }
 a {
@@ -174,7 +174,7 @@ header {
 	color: rgba(255,255,255,0.80);
 }
 #NavBar > ul > a:first-child li {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEQAACxEBf2RfkQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAABBUlEQVRIS82VTQrCMBCFWyzWiogLFUTcCv6hHkGvoODW+19Cp2VSHnHSTBKEZmeced+bn7ZZ1rOz+tAhT/k/fC1qcXMYcIfflxToHIQqBAnQYE7rHDJzAN6sqoIAkrgRaCGxAGyL0xWIv0Osdzm3dbBdqu0KEf9pl2+FVW1xtQLaJVayjB0WAkGjwPsZ0vlpHYQMjWKb6uscqZIp3T9YcM+B40DAGYzV5p6ueRwjAeq8QyKg8lUuASbS+8dqgakgCtDMxT4EGIHbJMDJbAgLroU2JgHsZKmN/QEYJ2VHf6UKdtrt23IgAjaOGeBGXjlm6FvTwvVJ1Nz7xM3/pUYMYyjxJYl/AVMe45N9HVjZAAAAAElFTkSuQmCC);
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEQAACxEBf2RfkQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAABBUlEQVRIS82VTQrCMBCFWyzWiogLFUTcCv6hHkGvoODW+19Cp2VSHnHSTBKEZmeced+bn7ZZ1rOz+tAhT/k/fC1qcXMYcIfflxToHIQqBAnQYE7rHDJzAN6sqoIAkrgRaCGxAGyL0xWIv0Osdzm3dbBdqu0KEf9pl2+FVW1xtQLaJVayjB0WAkGjwPsZ0vlpHYQMjWKb6uscqZIp3T9YcM+B40DAGYzV5p6ueRwjAeq8QyKg8lUuASbS+8dqgakgCtDMxT4EGIHbJMDJbAgLroU2JgHsZKmN/QEYJ2VHf6UKdtrt23IgAjaOGeBGXjlm6FvTwvVJ1Nz7xM3/pUYMYyjxJYl/AVMe45N9HVjZAAAAAElFTkSuQmCC');
 	background-repeat: no-repeat;
 	width: 25px;
 	height: 25px;
@@ -291,7 +291,7 @@ footer section {
 	font-size: 20px;
 	text-align: center;
 	color: rgba(143,89,11,1.00);
-	min-width: 170px;
+	min-device-width: 170px;
 	width: 30%;
 }
 .actionableitems a:hover, .actionableitems a:focus {
@@ -309,7 +309,7 @@ footer section {
 }
 #LinkForms ul {
 	display: inline-block;
-	min-width: 80px;
+	min-device-width: 80px;
 	list-style-type: none;
 	vertical-align: top;
 	margin-top: 30px;
@@ -394,16 +394,13 @@ footer section {
 	width: 48%;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-device-width: 360px) {
 	#ScrollableContent {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
 }
-@media screen and (max-width: 480px) {
-	* {
-		font-size: 14px;
-	}
+@media screen and (max-device-width: 480px) {
 	#Name {
 		font-size: 24px;
 	}
@@ -424,12 +421,15 @@ footer section {
 		color: rgba(0,0,0,1.00);
 	}
 }
-@media only screen and (min-width: 481px) and (max-width: 769px) {
+@media only screen and (min-device-width: 481px) and (max-device-width: 769px) {
 	#Name {
 		font-size: 36px;
 	}
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-device-width: 769px) {
+	* {
+		font-size: 14px;
+	}
 	body {
 		background-image: none;
 	}
@@ -453,7 +453,7 @@ footer section {
 		font-size: 18px;
 	}
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-device-width: 1100px) {
 	header {
 		/* [disabled]min-height: 720px; */
 		height: auto;
@@ -505,12 +505,12 @@ footer section {
 		width: 100%;
 	}
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-device-width: 960px) {
 	#Social {
 		border-left: 2px solid rgba(255,79,0,0.5);
 	}
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-device-width: 480px) {
 	#NavBar {
 		padding: 2px;
 	}
@@ -522,12 +522,12 @@ footer section {
 		white-space: pre;
 	}
 }
-@media only screen and (min-width: 481px) and (max-width: 769px) {
+@media only screen and (min-device-width: 481px) and (max-device-width: 769px) {
 	#NavBar > ul li {
 		font-size: 18px;
 	}
 }
-@media screen and (min-width: 770px) and (max-width: 1100px) {
+@media screen and (min-device-width: 770px) and (max-device-width: 1100px) {
 	body {
 		background-image: url(../images/MSN_BG_w1100.png);
 	}
