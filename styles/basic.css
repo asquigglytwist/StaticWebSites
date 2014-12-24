@@ -394,13 +394,13 @@ footer section {
 	width: 48%;
 }
 
-@media screen and (max-device-width: 360px) {
+@media screen and (max-width: 360px) {
 	#ScrollableContent {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
 }
-@media screen and (max-device-width: 480px) {
+@media screen and (max-width: 480px) {
 	#Name {
 		font-size: 24px;
 	}
@@ -421,12 +421,12 @@ footer section {
 		color: rgba(0,0,0,1.00);
 	}
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 769px) {
+@media only screen and (min-width: 481px) and (max-width: 769px) {
 	#Name {
 		font-size: 36px;
 	}
 }
-@media screen and (max-device-width: 769px) {
+@media screen and (max-width: 769px) {
 	* {
 		font-size: 14px;
 	}
@@ -453,20 +453,24 @@ footer section {
 		font-size: 18px;
 	}
 }
-@media screen and (max-device-width: 1100px) {
+@media screen and (max-width: 1100px) {
 	header {
 		/* [disabled]min-height: 720px; */
 		height: auto;
 		padding-bottom: 160px;
 	}
-	#Brand {
-		margin-left: 125px;
-		text-align: left;
+	#Logo {
+		width: 100px;
+		height: 89px;
 	}
 	#Logo:focus, #Logo:hover {
 		border-radius: 0px;
 		-webkit-box-shadow: none;
 		box-shadow: none;
+	}
+	#Brand {
+		margin-left: 105px;
+		text-align: left;
 	}
 	#NavBar {
 		position: static;
@@ -505,12 +509,12 @@ footer section {
 		width: 100%;
 	}
 }
-@media screen and (min-device-width: 960px) {
+@media screen and (min-width: 960px) {
 	#Social {
 		border-left: 2px solid rgba(255,79,0,0.5);
 	}
 }
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px) {
 	#NavBar {
 		padding: 2px;
 	}
@@ -522,12 +526,12 @@ footer section {
 		white-space: pre;
 	}
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 769px) {
+@media only screen and (min-width: 481px) and (max-width: 769px) {
 	#NavBar > ul li {
 		font-size: 18px;
 	}
 }
-@media screen and (min-device-width: 770px) and (max-device-width: 1100px) {
+@media screen and (min-width: 770px) and (max-width: 1100px) {
 	body {
 		background-image: url(../images/MSN_BG_w1100.png);
 	}
