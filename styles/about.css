@@ -1,14 +1,10 @@
 @charset "utf-8";
 
-#ContactDetails {
-	border: 1px solid rgba(255,79,0,0.5);
-	text-align: center;
-	margin-top: 50px;
-}
-#ContactDetails div {
-	display: inline-block;
-	width: 48%;
-	padding: 7px;
+#ScrollableContent {
+	background-image: url(../images/thumbs/LogoInBG.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	/* [disabled]background-size: contain; */
 }
 #AboutContent {
 	text-align: center;
@@ -20,9 +16,68 @@
 	width: 75%;
 	text-align: left;
 }
-#ScrollableContent {
-	background-image: url(../images/thumbs/LogoInBG.png);
-	background-position: center center;
-	background-repeat: no-repeat;
-	/* [disabled]background-size: contain; */
+#ContactDetails {
+	text-align: center;
+	margin-top: 50px;
+}
+.inlineblock {
+	display: inline-block;
+}
+#ContactDetails article {
+	width: 70%;
+	margin: 0 auto;
+}
+#ContactDetails article h2 {
+	font-size: 24px;
+	border: 1px solid rgba(255,79,0,0.5);
+	margin: 15px 0px 15px 0px;
+}
+#ContactDetails article section h3 {
+	font-size: 24px;
+}
+#Management {
+}
+#Management section {
+	margin: 20px 0px 20px 0px;
+	padding: 20px;
+	border-radius: 30px;
+	border: 1px solid rgba(143,89,11,.25);
+}
+#Management section:focus, #Management section:hover {
+	border-color: rgba(143,89,11,1.0);
+	background-color: rgba(238,246,9,0.3);
+}
+#Management section p {
+	margin: 5px 0px 5px 0px;
+}
+#Management section:nth-of-type(1) {
+	text-align: left;
+}
+#Management section:nth-of-type(2) {
+	text-align: right;
+}
+#Management section div:nth-of-type(2) {
+	text-align: justify;
+}
+#Management img {
+	width: 125px;
+	height: 125px;
+	padding: 2px;
+	border-radius: 50%;
+	border: 1px solid rgba(143,89,11,.25);
+}
+#Management img:focus, #Management img:hover {
+	border-radius: 5px;
+}
+#TheTeam section img {
+	width: 90px;
+	height: 90px;
+	padding: 2px;
+	border-radius: 5px;
+	border: 1px solid rgba(143,89,11,.25);
+}
+#TheTeam section {
+	display: inline-block;
+	width: 48%;
+	padding: 7px;
 }
