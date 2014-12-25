@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-#ScrollableContent {
-	background-image: url(../images/thumbs/LogoInBG.png);
-	background-position: center center;
-	background-repeat: no-repeat;
-	/* [disabled]background-size: contain; */
-}
 #AboutContent {
 	text-align: center;
 	/* [disabled]border: 1px solid black; */
@@ -22,6 +16,12 @@
 }
 .inlineblock {
 	display: inline-block;
+}
+#Management section {
+	background-image: url(../images/thumbs/LogoInAboutBG.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	/* [disabled]background-size: 35%; */
 }
 #AboutContent h1, #ContactDetails h1 {
 	font-size: 24px;
