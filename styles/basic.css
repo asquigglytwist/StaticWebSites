@@ -6,9 +6,11 @@
     opacity: 0;
 }
 .wf-loading {
-	background: url('https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/369_font_loader/ajax-loader.gif') no-repeat center center;
-    height: 100%;
-    overflow: hidden;        
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url(../images/MSN_Loader.gif);
+	height: 100%;
+	overflow: hidden;
 }
 .wf-active *, .wf-inactive * {
     -webkit-transition: opacity 1s ease-out;

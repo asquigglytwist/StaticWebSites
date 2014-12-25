@@ -28,7 +28,7 @@ MSN.fnCreateTicker = function()
 {
 	MSN.ndTicker = document.getElementById("Ticker");
 	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange=function()
+	xhr.onreadystatechange = function ()
 	{
 		if ((xhr.readyState == 4) && (xhr.status == 200))
 		{
@@ -89,7 +89,7 @@ MSN.fnCreateTicker = function()
 	}
 	xhr.open("GET", MSN.sUpComingXML, MSN.bAsyncRequest);
 	xhr.send();
-}
+};
 MSN.fnUpdateTicker = function() {
 	MSN.fnHideNode(MSN.ndTicker);
 	if(MSN.ndTicker.style.backgroundImage.length > 0)
