@@ -121,7 +121,7 @@ MSN.fnStaticGallery = function () {
 		MSN.sAllEventTimes.push(sTime);
 		MSN.sAllEventLocations.push(sLocation);
 		
-		var ndTitle = document.createElement("h3");
+		/*var ndTitle = document.createElement("h3");
 		ndTitle.innerHTML = sTitle;
 		MSN.ndAllEvents[i].insertBefore(ndTitle, MSN.ndAllEvents[i].firstChild);
 		
@@ -139,7 +139,7 @@ MSN.fnStaticGallery = function () {
 		
 		var ndDesc = document.createElement("h4");
 		ndDesc.innerHTML = sDesc;
-		MSN.ndAllEvents[i].appendChild(ndDesc);
+		MSN.ndAllEvents[i].appendChild(ndDesc);*/
 		
 		var tmpAllImgs = MSN.ndAllEvents[i].getElementsByTagName("img");
 		for(var j = 0; j < tmpAllImgs.length; j++)
