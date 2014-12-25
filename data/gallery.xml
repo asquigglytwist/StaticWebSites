@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dyngallery>
+	<div class="event" data-title="Nava Rasams" data-on="22-Sep-2014" data-at="Galleria Emporium" data-desc="Kousalya Nivas, the Guru - performing all nine rasams.">
+		<h3>Nava Rasams</h3>
+		<div>
+			On <span>22-Sep-2014</span> at <span>Galleria Emporium</span>
+		</div>
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Adhbuta.jpg" alt="Adhbuta" title="Adbhuta" data-eventid="0" data-imageid="0" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Bhayanaka.jpg" alt="Bhayanaka" title="Bhayanaka" data-eventid="0" data-imageid="1" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Bhibatsya.jpg" alt="Bhibatsya" title="Bhibatsya" data-eventid="0" data-imageid="2" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Haasya.jpg" alt="Haasya" title="Haasya" data-eventid="0" data-imageid="3" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Karuna.jpg" alt="Karuna" title="Karuna" data-eventid="0" data-imageid="4" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Rowdra.jpg" alt="Rowdra" title="Rowdra" data-eventid="0" data-imageid="5" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Shantha.jpg" alt="Shantha" title="Shantha" data-eventid="0" data-imageid="6" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Shringara.jpg" alt="Shringara" title="Shringara" data-eventid="0" data-imageid="7" />
+		<img class="thumb" src="images/gallery/thumbs/NavaRasams/Veera.jpg" alt="veera" title="Veera" data-eventid="0" data-imageid="8" />
+		<h4>Kousalya Nivas, the Guru - performing all nine rasams.</h4>
+	</div>
+	<div class="event" data-title="Annual Day 2013" data-on="April-2013" data-at="Sri Bhooneela Sametha Sri Venkataramana Swamy Temple, BEML, Bangalore" data-desc="M.S.Natyalaya students performing at Annual Day - 2013 event.">
+		<h3>Annual Day 2013</h3>
+		<div>
+			On <span>April-2013</span> at <span>Sri Bhooneela Sametha Sri Venkataramana Swamy Temple, BEML, Bangalore</span>
+		</div>
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot1.jpg" alt="" title="" data-eventid="1" data-imageid="9" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot2.jpg" alt="" title="" data-eventid="1" data-imageid="10" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot3.jpg" alt="" title="" data-eventid="1" data-imageid="11" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot4.jpg" alt="Chief Guest Mrs. Sharmila Vinay talking about importance of Bharatanatyam and onn stage Mr. Jeyakumar (BEML Balaji temple Chief Incharge)." title="Chief Guest Mrs. Sharmila Vinay talking about importance of Bharatanatyam and onn stage Mr. Jeyakumar (BEML Balaji temple Chief Incharge)." data-eventid="1" data-imageid="12" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot5.jpg" alt="" title="" data-eventid="1" data-imageid="13" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot6.jpg" alt="Chief guests distributing prizes and certificates to students." title="Chief guests distributing prizes and certificates to students." data-eventid="1" data-imageid="14" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot7.jpg" alt="Group photo" title="Group photo" data-eventid="1" data-imageid="15" />
+		<img class="thumb" src="images/gallery/thumbs/AnnualDay2013/AnnualDay_2013_Shot8.jpg" alt="" title="" data-eventid="1" data-imageid="16" />
+		<h4>M.S.Natyalaya students performing at Annual Day - 2013 event.</h4>
+	</div>
+</dyngallery>
