@@ -23,13 +23,17 @@
 .inlineblock {
 	display: inline-block;
 }
+#AboutContent h1, #ContactDetails h1 {
+	font-size: 24px;
+	border-bottom: 1px solid rgba(255,79,0,0.5);
+	text-align: left;
+}
 #ContactDetails article {
 	width: 70%;
 	margin: 0 auto;
 }
 #ContactDetails article h2 {
-	font-size: 24px;
-	border: 1px solid rgba(255,79,0,0.5);
+	font-size: 22px;
 	margin: 15px 0px 15px 0px;
 }
 #ContactDetails article section h3 {
@@ -43,12 +47,12 @@
 	border-radius: 30px;
 	border: 1px solid rgba(143,89,11,.25);
 }
-#Management section:focus, #Management section:hover {
+#ContactDetails section:focus, #ContactDetails section:hover {
 	border-color: rgba(143,89,11,1.0);
 	background-color: rgba(238,246,9,0.3);
 }
 #Management section p {
-	margin: 5px 0px 5px 0px;
+	margin: 15px 0px 15px 0px;
 }
 #Management section:nth-of-type(1) {
 	text-align: left;
