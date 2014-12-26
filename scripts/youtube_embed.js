@@ -1,3 +1,7 @@
+// JavaScript Document
+
+var MSN = MSN || {};
+
 MSN.fnOptimizeYouTubeEmbeds = function () {
 	var frames = document.getElementsByTagName( 'iframe' );
 	for ( var i = 0; i < frames.length; i++ ) {
