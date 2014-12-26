@@ -44,6 +44,7 @@
 	padding-left: 3px;
 	font-family: 'Roboto Slab', Arial, sans-serif;
 	width: 100%;
+	color: rgba(0,0,0,1.00);
 }
 .thumb:hover .albumname, .thumb:focus .albumname {
 	background-color: rgba(238,246,9,0.7);
