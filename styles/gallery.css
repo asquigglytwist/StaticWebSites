@@ -52,7 +52,7 @@
 	border-radius: 7px;
 }
 #Images .event:focus, #Images .event:hover {
-	border-color: rgba(143,89,11,1.0);
+	border-color: rgba(143,89,11,1);
 }
 #Images .event h2 {
 	margin-bottom: 5px;
