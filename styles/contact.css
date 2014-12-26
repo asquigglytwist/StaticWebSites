@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-#ScrollableContent {
-	background-image: url('../images/thumbs/LogoInBG.png');
-	background-position: center 160px;
-	background-repeat: no-repeat;
-}
 #ContactMethods {
 	text-align: center;
 }
