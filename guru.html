@@ -37,10 +37,7 @@
 	width: auto;
 	height: auto;
 	opacity: 1;
-	will-change: transform;
 	border-radius: 0px;
-	padding: 3px;
-	border: 1px solid rgba(143,89,11,1);
 }
 </style>
 <!--[if lte IE 8]>
@@ -256,6 +253,12 @@
 </div>
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
+	window.onload = function() {
+		MSN.fnStaticGallery();
+	};
+	document.body.onkeyup = function(evt) {
+		MSN.fnFSKeyUp(evt);
+	};
 	document.getElementById("BGVideo").volume = .2;
 	var vis = (function() {
 		var stateKey, eventKey, keys = {
@@ -287,12 +290,6 @@
 			document.title="M.S.Natyalaya - Kousalya Nivas, the Guru" + " [Video Paused]...";
 		}
 	});
-	window.onload = function() {
-		MSN.fnStaticGallery();
-	};
-	document.body.onkeyup = function(evt) {
-		MSN.fnFSKeyUp(evt);
-	};
 </script>
 </body>
 </html>
