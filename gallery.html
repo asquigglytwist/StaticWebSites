@@ -182,7 +182,9 @@
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
 	window.onload = function() {
-		MSN.fnOptimizeYouTubeEmbeds();
+		try {
+			MSN.fnOptimizeYouTubeEmbeds();
+		} catch(ex) {}
 		MSN.fnDynamicGallery();
 		window.setTimeout(function() { MSN.fnStaticGallery(); }, 5000);
 	};
