@@ -147,6 +147,7 @@ MSN.fnStaticGallery = function () {
 			tmpAllImgs[j].setAttribute("data-eventid", i.toString());
 			tmpAllImgs[j].setAttribute("data-imageid", MSN.ndAllImgs.length.toString());
 			tmpAllImgs[j].onclick = MSN.fnFullScreen;
+			tmpAllImgs[j].src = tmpAllImgs[j].src ? tmpAllImgs[j].src : tmpAllImgs[j].getAttribute('src');
 			sImgPaths += ((MSN.fnGetFullImagePath(tmpAllImgs[j].src)) + ",");
 			MSN.ndAllImgs.push(tmpAllImgs[j]);
 		}
