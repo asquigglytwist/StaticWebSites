@@ -1,0 +1,1 @@
+Files in this directory are not directly related to the site. Will be tools that help generate content or other utilities.
