@@ -86,7 +86,7 @@ MSN.fnCreateTicker = function()
 				MSN.ndTicker.innerHTML = "No upcoming events.";
 			}
 		}
-	}
+	};
 	xhr.open("GET", MSN.sUpComingXML, MSN.bAsyncRequest);
 	xhr.send();
 };
