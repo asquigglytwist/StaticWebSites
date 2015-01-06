@@ -89,6 +89,21 @@
 #Images .event .thumb:nth-child(even):focus, #Images .event .thumb:nth-child(even):hover {
 	transform: rotate(3deg);
 }
+#Images > article > div.event > div {
+    font-family: 'Roboto Regular', Arial;
+    vertical-align: bottom;
+}
+#Images .eventtitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#Images .eventdate, #Images .eventorganizer, #Images .eventvenue, #Images .presidedby {
+    margin: 0px 10px 0px 10px;
+}
+#Images .eventdate:focus, #Images .eventdate:hover, #Images .eventorganizer:focus, #Images .eventorganizer:hover, #Images .eventvenue:focus, #Images .eventvenue:hover, #Images .presidedby:focus, #Images .presidedby:hover {
+    border-bottom: 1px dotted;
+}
 #FullScreen {
 	background-color: rgba(0,0,0,0.80);
 	position: fixed;
