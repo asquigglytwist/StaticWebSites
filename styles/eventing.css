@@ -118,6 +118,20 @@
 	margin-left: 10px;
 	font-size: 16px;
 }
+#Ticker .gueststitle {
+    font-size: 18px;
+    text-decoration: underline;
+}
+#Ticker .chiefguest {
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+#Ticker .chiefguest > li {
+    font-size: 16px;
+    text-align: left;
+}
+#Ticker .chiefguest > li:focus, #Ticker .chiefguest > li:hover {
+}
 #UpComingEvents h1:before {
 	content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAABecAAAXnAaTotfkAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAB8ElEQVRIS+2Uu0vDUBjFi+CkiLRCaUya+0pbig7SQdSt6iYIDiIq7g5uPkCnKk5ORRQcdLGIi6t/gw51kGqdpSA4iA9QK2I9t0kk8UHVtIsYuOQS7j2/75z73fh8/8+fTiAUCrUEg8GGmpoMh8OMMXqLkRfC31QTmBAaF4Kdg7SLccQ5OxFCVB8mhN4RjUZKlNKUdALQGcZp1WEQzSCyS7xLnNPFmsAgvAdAUdM0jth6DENI2JINQ6Q5z84syBMia7cPH/N+C1aOEaAs3OZ0XW/+cYPEYkoAkB0h+BWl6hvEFkIHdksYY2QZ6/bh+EJRlEBFkKwGsSRR2QpGllLyGItFS4SQic82w9Uk1hVNGC0YhtpaERKPxxuxsYDqsYkdYr7OORmUb3y7RxFdThGsmYlEDJwTGca8DWenVIRYC+ogOm9Wx4acmxDLliwAzjrld0Q1KyFYP/5d8Q/rIFKuFCJjbhjbRAEPgKZlMZ4gtrCMBQ6eITbqjotsWxfW9f3Xrsx46IFsBMb0EUdLpwDPexJ+dyZpgO7gbMMwOGLSyw7QhceIdrUqIPsMGAsnTWdszryYZAqQazga8ARKJBL1EF2zuq7X7ZBMy7OByxdVVf2eQPLPjJt9g4r7vricC3CU8QSRm6Ujzz9Fz1X8CzgSeAUpFYYRoVcz0AAAAABJRU5ErkJggg==') '    ';
 }
