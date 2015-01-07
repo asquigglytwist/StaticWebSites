@@ -39,27 +39,34 @@ MSN.fnFetchDynamicXML = function () {
 			{
 				if (window.DOMParser)
 				{
+					MSN.sDOMWrappingTag = 'div';
 					var xmlDoc = undefined;
 					parser = new DOMParser();
 					xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
-					ndGalRoot = xmlDoc.getElementsByTagName(MSN.sTagGallery)[0],
-					allGalleryItems = ndGalRoot.childNodes;
+					ndGalRoot = xmlDoc.getElementsByTagName(MSN.sTagGallery)[0], allGalleryItems = ndGalRoot.childNodes;
 					for(var i = 0; i < allGalleryItems.length; i++)
 					{
 						if(Node.ELEMENT_NODE != allGalleryItems[i].nodeType)
 							continue;
-						var ndTemp = document.createElement(MSN.sDOMWrappingTag);
-						var ndTitle = allGalleryItems[i].getElementsByTagName("h3")[0], ndDesc = allGalleryItems[i].getElementsByTagName("h4")[0];
-						ndTemp.appendChild(ndTitle.cloneNode(true));
+						var ndWrap = document.createElement(MSN.sDOMWrappingTag), ndEvent = document.createElement('div');
+						ndEvent.setAttribute('class', 'event');
+						var ndTitle = ((allGalleryItems[i].getElementsByTagName("h3")[0]).cloneNode(true)), ndDesc = ((allGalleryItems[i].getElementsByTagName("h4")[0]).cloneNode(true));
+						ndTitle.setAttribute('class', 'eventtitle');
+						var ndTitlePara = document.createElement("p");
+						ndTitlePara.appendChild(ndTitle);
+						ndEvent.appendChild(ndTitlePara);
 						var ndaImages = allGalleryItems[i].getElementsByTagName("img");
+						var ndImgPara = document.createElement("p");
 						for(var j = 0; j < ndaImages.length; j++)
 						{
 							var ndImg = document.createElement("img");
 							ndImg.setAttribute('src', ndaImages[j].getAttribute('src'));
-							ndTemp.appendChild(ndImg);
+							ndImg.setAttribute('class', 'thumb');
+							ndImgPara.appendChild(ndImg);
 						}
-						ndTemp.appendChild(ndDesc.cloneNode(true));
-						MSN.ndDivImages.appendChild(ndTemp);
+						ndEvent.appendChild(ndImgPara);
+						ndEvent.appendChild(ndDesc);
+						MSN.ndDivImages.appendChild(ndEvent);
 					}
 				}
 			}
