@@ -65,7 +65,7 @@ span {
 	vertical-align: top;
 }
 .msncolor {
-	color: rgba(255,79,0,1.00);
+	color: rgba(255,79,0,1);
 }
 .grayscale {
 	-webkit-filter: grayscale(100%);

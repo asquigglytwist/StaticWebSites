@@ -38,6 +38,7 @@ MSN.fnGetFullImagePath = function (sPath) {
 };
 MSN.fnLoadImage = function (ndTemp) {
 	MSN.ndFSImage.style.opacity = 0;
+	MSN.ndFSImage.src = "";
 	MSN.ndFSImage.src = MSN.fnGetFullImagePath(ndTemp.getAttribute("src"));//.replace("/thumbs/", "/full/");
 	MSN.ndFSImage.style.opacity = 1;
 	var iTemp = Number(ndTemp.getAttribute("data-eventid"));
