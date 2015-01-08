@@ -42,7 +42,8 @@ MSN.fnCreateTicker = function () {
                 var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
 					sDesc = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
 					sWhen = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
-					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
+					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]),
+                    sEvtLink = (allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]).getAttribute("linkto");
                 if (!sTitle)
                     sTitle = " ";
                 if (!sDesc)
@@ -69,7 +70,15 @@ MSN.fnCreateTicker = function () {
                 ndGuestsTitle.setAttribute('class', 'gueststitle')
                 for (var j = 0; j < ndAllGuests.length; j++) {
                     var ndGuest = document.createElement('li');
-                    ndGuest.innerHTML = ndAllGuests[j].textContent;
+                    var sGuestLinkTo = ndAllGuests[j].getAttribute("linkto");
+                    if (sGuestLinkTo && sGuestLinkTo.length) {
+                        var ndGuestLinkTo = document.createElement('a');
+                        ndGuestLinkTo.setAttribute('href', sGuestLinkTo);
+                        ndGuestLinkTo.innerHTML = ndAllGuests[j].textContent;
+                        ndGuest.appendChild(ndGuestLinkTo);
+                    }
+                    else
+                        ndGuest.innerHTML = ndAllGuests[j].textContent;
                     ndGuestList.appendChild(ndGuest);
                 }
                 if (ndAllGuests.length) {
@@ -78,6 +87,12 @@ MSN.fnCreateTicker = function () {
                     ndTemp.appendChild(ndGuestList);
                 }
                 ndTemp.appendChild(ndEvtDesc);
+                if (sEvtLink && sEvtLink.length > 0) {
+                    var ndEvtLinkTo = document.createElement('a');
+                    ndEvtLinkTo.setAttribute('href', sEvtLink);
+                    ndEvtLinkTo.innerHTML = "For more details...";
+                    ndTemp.appendChild(ndEvtLinkTo);
+                }
                 MSN.fnHideNode(ndTemp);
                 MSN.ndEventDivs.push(ndTemp);
                 MSN.ndTicker.firstElementChild.innerHTML += ".";
