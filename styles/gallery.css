@@ -24,8 +24,8 @@
 }
 #Images {
 	/* [disabled]border: 1px solid black; */
-	min-width: 600px;
-	width: 75%;
+	/* [disabled]min-width: 600px; */
+	/* [disabled]width: 75%; */
 	margin: 0 auto;
 	display: none;
 }
@@ -39,14 +39,17 @@
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-#Images h2 {
-	text-align: center;
+#Images h2, section > section.actionableitems > h2 {
 	margin-top: 25px;
 	margin-bottom: 25px;
+	font-size: 24px;
+	border-bottom: 1px solid rgba(255,79,0,0.5);
+	text-align: left;
 }
 #Images .event {
-	margin: 10px;
-	margin-bottom: 30px;
+	margin: 10px 15px 30px 15px;
+	margin: 15px auto;
+	width: 85%;
 	padding: 10px;
 	border: 1px solid rgba(143,89,11,.25);
 	border-radius: 7px;
