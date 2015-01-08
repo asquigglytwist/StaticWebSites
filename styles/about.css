@@ -10,6 +10,9 @@
 	width: 75%;
 	text-align: left;
 }
+#AboutContent > div > q {
+	vertical-align: text-bottom;
+}
 #ContactDetails {
 	text-align: center;
 	margin-top: 50px;
