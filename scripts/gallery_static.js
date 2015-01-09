@@ -21,6 +21,9 @@ MSN.sFSTitleID = "FSTitle";
 MSN.ndFSTitle = undefined;
 MSN.sFSCaptionID = "FSCaption";
 MSN.ndFSCaption = undefined;
+MSN.sFSHUDID = "FSHUD";
+MSN.sHUDCount = "0/0";
+MSN.ndFSHUD = undefined;
 
 MSN.fnSleep = function (iMilliSec) {
 	var msUntil = (new Date().getTime() + iMilliSec);
@@ -37,21 +40,22 @@ MSN.fnGetFullImagePath = function (sPath) {
 	return sPath.replace("/thumbs/", "/full/");
 };
 MSN.fnLoadImage = function (ndTemp) {
-	MSN.ndFSImage.style.opacity = 0;
-	MSN.ndFSImage.src = "";
-	MSN.ndFSImage.src = MSN.fnGetFullImagePath(ndTemp.getAttribute("src"));//.replace("/thumbs/", "/full/");
-	MSN.ndFSImage.style.opacity = 1;
-	var iTemp = Number(ndTemp.getAttribute("data-eventid"));
-	if(MSN.sAllEventTitles[iTemp].length > 0)
-		MSN.ndFSTitle.innerHTML = MSN.sAllEventTitles[iTemp];
-	else
-		MSN.ndFSTitle.innerHTML = "M.S.Natyalaya";
-	MSN.ndFSImage.setAttribute("data-imageid", ndTemp.getAttribute("data-imageid"));
-	var sTitle = ndTemp.getAttribute("title");
-	if(sTitle && sTitle.length > 0)
-		MSN.ndFSCaption.innerHTML = sTitle;
-	else
-		MSN.ndFSCaption.innerHTML = "";
+    MSN.ndFSImage.style.opacity = 0;
+    //MSN.ndFSImage.src = "";
+    MSN.ndFSImage.src = MSN.fnGetFullImagePath(ndTemp.getAttribute("src")); //.replace("/thumbs/", "/full/");
+    MSN.ndFSImage.style.opacity = 1;
+    var iTemp = Number(ndTemp.getAttribute("data-eventid"));
+    if (MSN.sAllEventTitles[iTemp].length > 0)
+        MSN.ndFSTitle.innerHTML = MSN.sAllEventTitles[iTemp];
+    else
+        MSN.ndFSTitle.innerHTML = "M.S.Natyalaya";
+    MSN.ndFSImage.setAttribute("data-imageid", ndTemp.getAttribute("data-imageid"));
+    MSN.ndFSHUD.innerHTML = ((window.parseInt(ndTemp.getAttribute("data-imageid")) + 1) + MSN.sHUDCount);
+    var sTitle = ndTemp.getAttribute("title");
+    if (sTitle && sTitle.length > 0)
+        MSN.ndFSCaption.innerHTML = sTitle;
+    else
+        MSN.ndFSCaption.innerHTML = "";
 };
 MSN.fnHideFS = function () {
 	if(MSN.ndFullScreen)
@@ -116,7 +120,6 @@ MSN.fnStaticGallery = function () {
 			sDate = MSN.ndAllEvents[i].getAttribute(MSN.sEventDateAttrib),
 			sLocation = MSN.ndAllEvents[i].getAttribute(MSN.sEventLocationAttrib),
 			sDesc = MSN.ndAllEvents[i].getAttribute(MSN.sEventDescAttrib);
-
         if (!sTitle) {
             sTitle = MSN.ndAllEvents[i].getElementsByTagName('h3')[0].textContent;
         }
@@ -167,6 +170,8 @@ MSN.fnStaticGallery = function () {
     MSN.ndFSImage = document.getElementById(MSN.sFSImgID);
     MSN.ndFSTitle = document.getElementById(MSN.sFSTitleID);
     MSN.ndFSCaption = document.getElementById(MSN.sFSCaptionID);
+    MSN.ndFSHUD = document.getElementById(MSN.sFSHUDID);
+    MSN.sHUDCount = (" / " + MSN.ndAllImgs.length);
     document.getElementById('LoadingMsg').style.display = "none";
     if (typeof (Worker) !== "undefined") {
         MSN.imgFetcher = new Worker('scripts/imgfetcher.js');

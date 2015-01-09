@@ -118,6 +118,18 @@
 	display: none;
 	text-align: center;
 }
+#FSHUD {
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px dotted transparent;
+}
+#FSHUD:focus, #FSHUD:hover {
+    border-color: white;
+}
 #FSCloseBtn {
 	display: inline-block;
 	margin: 10px;
@@ -205,8 +217,16 @@
 	/* [disabled]width: 90%; */
 	font-size: 36px;
 	font-family: 'Roboto Slab', Arial, sans-serif;
+    color: white;
 }
 #FSCaption {
+}
+#FSHelpMsg {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    z-index: -3;
 }
 
 @media screen and (max-width: 767px) {
