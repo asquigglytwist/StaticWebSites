@@ -190,6 +190,7 @@
 	border: 3px solid whitesmoke;
 	max-height: 800px;
 	max-height: calc(100vh - 120px);
+    max-width: calc(100vw - 210px);
 	text-align: center;
 	margin: 0 auto;
 	background-image: url(../images/MSN_Loader.gif);
