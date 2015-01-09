@@ -97,6 +97,7 @@
     </section>
     <section id="Images">
     	<h2>The best moments captured in a frame</h2>
+        <section id="LoadingMsg">There are no images, yet.</section>
     </section>
     <div id="FullScreen" tabindex="-1">
         <div id="FSCloseBtn" onClick="MSN.fnHideFS();"></div>
@@ -187,7 +188,7 @@
 			MSN.fnOptimizeYouTubeEmbeds();
 		} catch(ex) {}
 		MSN.fnDynamicGallery();
-		window.setTimeout(function() { MSN.fnStaticGallery(); }, 5000);
+		//window.setTimeout(function() { MSN.fnStaticGallery(); }, 5000);
 	};
 	document.body.onkeyup = function(evt) {
 		MSN.fnFSKeyUp(evt);
