@@ -53,13 +53,17 @@ MSN.fnCreateTicker = function () {
                 if (!sWhere)
                     sWhere = " ";
                 var ndEvtTitle = document.createElement("h2");
+                ndEvtTitle.setAttribute('itemprop', 'name');
                 ndEvtTitle.innerHTML = sTitle;
                 var ndEvtDesc = document.createElement("h3");
+                ndEvtDesc.setAttribute('itemprop', 'description');
                 ndEvtDesc.innerHTML = sDesc;
                 var ndEvtWhenWhere = document.createElement("h3");
-                ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;" + sWhen + "&nbsp;&nbsp;at&nbsp;&nbsp;" + sWhere);
+                ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;<span itemprop='startDate'>" + sWhen + "</span>&nbsp;&nbsp;at&nbsp;&nbsp;<span itemprop='location' itemscope itemtype='http://schema.org/Place'>" + sWhere + "</span>");
                 ndEvtWhenWhere.setAttribute("class", "onat");
                 var ndTemp = document.createElement(MSN.sTagToUse);
+                ndTemp.setAttribute('itemscope', '');
+                ndTemp.setAttribute('itemtype', 'http://schema.org/Event');
                 ndTemp.appendChild(ndEvtTitle);
                 ndTemp.appendChild(ndEvtWhenWhere);
                 var ndAllGuestsGroup = allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtChiefGuestsList)[0],
@@ -90,6 +94,7 @@ MSN.fnCreateTicker = function () {
                 if (sEvtLink && sEvtLink.length > 0) {
                     var ndEvtLinkTo = document.createElement('a');
                     ndEvtLinkTo.setAttribute('href', sEvtLink);
+                    ndEvtLinkTo.setAttribute('itemprop', 'url');
                     ndEvtLinkTo.innerHTML = "For more details...";
                     ndTemp.appendChild(ndEvtLinkTo);
                 }
