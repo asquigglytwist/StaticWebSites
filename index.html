@@ -78,7 +78,7 @@
         <span style="position: absolute; top: 0px; right: 10px; width: 3%; font-size: 32px; border: 2px solid rgba(255,79,0,1.00); padding: 10px; cursor: pointer;" onClick="document.getElementById('Banner').style.display='none';">X</span>
     </p>
 </div>
-<header>
+<header role="banner">
 	<a href="index.html">
         <img src="images/AltLogo.png" alt="M.S.Natyalaya - Logo" id="Logo" title="M.S.Natyalaya" />
         <div id="Brand">
@@ -86,14 +86,14 @@
             <div id="Motto">Learn, Express, Grow</div>
         </div>
     </a>
-    <nav id="NavBar">
+    <nav id="NavBar" role="navigation">
         <ul>
         	<a href="index.html"><li class="tooltip currentpage" data-href="Back to the home page."></li></a>
             <a href="gallery.html"><li class="tooltip" data-href="Show case of pictures and recordings from events.">Gallery</li></a>
             <a href="contact.html"><li class="tooltip" data-href="If you want to drop by, say hello or for more details, contact us.">Contact</li></a>
-            <li>
+            <li aria-haspopup="true">
             	Students
-            	<div class="submenu">
+            	<div class="submenu" aria-hidden="true">
                 	<ul>
                     	<a href="courses.html"><li class="tooltip" data-href="Details about the curriculum and courses offered.">Courses</li></a>
                         <a href="guidelines.html"><li class="tooltip" data-href="Guidelines for students and parents.">GuideLines</li></a>
@@ -101,9 +101,9 @@
                     </ul>
                 </div>
             </li>
-            <li>
+            <li aria-haspopup="true">
             	About
-            	<div class="submenu">
+            	<div class="submenu" aria-hidden="true">
                 	<ul>
                     	<a href="guru.html"><li class="tooltip" data-href="The Guru, Kousalya Nivas's qualification, performances and latest achievements.">The&nbsp;Guru</li></a>
                         <a href="about.html"><li class="tooltip" data-href="About our institute - M.S.Natyalaya.">M.S.Natyalaya</li></a>
@@ -115,7 +115,7 @@
     </nav>
 </header>
 <article id="ScrollableContent">
-    <section id="PageContent">
+    <section id="PageContent" role="main">
         <div class="contenttitle" style="visibility: hidden;">
             <h1>Welcome to <div class="msncolor" style="font: inherit; font-weight: bold; display: inline-block; vertical-align: text-bottom;">M.S.Natyalaya</div></h1>
             <h2 style="opacity: 0;">A Bangalore based Bharatanatyam institute at Chinnappanahalli, Marathahalli.</h2>
@@ -124,7 +124,7 @@
             We, <span class="msncolor">M.S.Natyalaya</span>, are a <a href="contact.html#Location" title="M.S.Natyalaya on map">Bangalore <img style="width: 26px; height: 26px; vertical-align: top;" alt='Link to location of M.S.Natyalaya, marked on Google Maps.' title='M.S.Natyalaya on map' src='data:image/png;base64,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' /></a> based Bharathanatyam institute. We impart the knowledge of Bharatanatyam to our students by several degrees of training, so that they learn the fundamentals in-depth and get involved in the art with full devotion and dedication. Having a thorough understanding, they not only excel in dance but also contribute to the development of the art.
         </div>
         <div id="BillBoard">
-            <div id="UpComingEvents">
+            <div id="UpComingEvents" aria-live="assertive">
                 <div id="TickerControls"><input type="checkbox" id="PauseTicker" onchange="MSN.fnOnTickerToggled();" disabled /><label for="PauseTicker"></label></div>
                 <h1>Announcements / Upcoming Event(s)</h1>
                 <div id="Ticker" class="loadinganim">
@@ -190,7 +190,7 @@
         </div>
     </section>
 </article>
-<footer>
+<footer role="contentinfo">
     <section class="actionableitems">
     	<p>Trying to find us?</p>
         <a href="contact.html#ContactDetails">Contact Information</a>
