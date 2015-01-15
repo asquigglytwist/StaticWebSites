@@ -172,7 +172,8 @@ MSN.fnStaticGallery = function () {
     MSN.ndFSCaption = document.getElementById(MSN.sFSCaptionID);
     MSN.ndFSHUD = document.getElementById(MSN.sFSHUDID);
     MSN.sHUDCount = (" / " + MSN.ndAllImgs.length);
-    document.getElementById('LoadingMsg').style.display = "none";
+    if(document.getElementById('LoadingMsg'))
+        document.getElementById('LoadingMsg').style.display = "none";
     if (typeof (Worker) !== "undefined") {
         MSN.imgFetcher = new Worker('scripts/imgfetcher.js');
         MSN.imgFetcher.postMessage(sImgPaths);
