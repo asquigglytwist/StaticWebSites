@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
 <link href="styles/eventing.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/eventing.js?2" defer></script>
 <link rel="canonical" href="http://msnatyalaya.com/updates.html">
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -44,20 +45,34 @@
         background-color: rgba(238,246,9,0.3);
     }
 	#MyTweets {
+        width: 70%;
+        margin: 0 auto;
 		border: 1px solid rgba(143,89,11,.25);
         border-radius: 20px;
 	}
 	#MyTweets:focus, #MyTweets:hover {
         border-color: rgba(143,89,11,1);
         border-radius: 2px;
+	}
+    #MyTweets > div {
+        width: 90%;
+        padding-bottom: 20px;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(143,89,11,.25);
+    }
+    #MyTweets > div:focus, #MyTweets > div:hover {
         background-color: rgba(238,246,9,0.3);
-	}
+    }
 	#MyTweets .tweet {
-		margin-left: 20px;
+		margin: 5px 0px 10px 20px;
 	}
-	#MyTweets .timePosted {
-		text-align: right;
+	#MyTweets .timePosted, #MyTweets .interact {
+        display: inline-block;
+        width: 48%;
 	}
+    #MyTweets .interact {
+        text-align: right;
+    }
 	#MyTweets .interact a {
 		margin-right: 15px;
 	}
@@ -113,26 +128,11 @@
         <article id="FutureEvents">
             <h1>Upcoming Events</h1>
             <section id="Ticker" style="opacity: 1;">
-                <div id="NrityaBharatanjali2015">
-                    <h2>Nritya Bharatanjali 2015</h2>
-                    <h3 class="onat">on&nbsp;&nbsp;February 06, 2015&nbsp;&nbsp;at&nbsp;&nbsp;HAL Dr V.M Ghatge Convention Center, Old Airport road, Next to Aerospace Museum, Bangalore</h3>
-                    <h3 class="gueststitle">Chief Guests</h3>
-                    <ul class="chiefguest">
-                        <li>Wg. Cdr. (Retd.) M.P. Benjamin - General Manager, HAL</li>
-                        <li>
-                            <a href="http://www.rashmihospital.com/">Dr.Shalini Rao, MS DORL DNB FCPS, ENT Surgeon and Otologist, Rashmi Hospital</a>
-                        </li>
-                    </ul>
-                    <h3>
-                        Dance Festival – On Occasion of M.S. Natyalya's 3rd Annual Day. Our students present various performances and a wonderful Bharatanatyam dance ballet with the theme 'Bharat Satvan' - dance portraying life of Indian soldiers. M.S.Natyalaya dedicates it to this year's Republic day.
-                    </h3>
-                </div>
             </section>
         </article>
         <article id="Announcements">
-            <h1>Announcements</h1>
+            <h1>Announcements (via Twitter)</h1>
             <section>
-            	<h2>Via Twitter</h2>
                 <section id="MyTweets">
                 </section>
             </section>
