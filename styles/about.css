@@ -76,6 +76,9 @@
 #Management img:focus, #Management img:hover {
 	border-radius: 5px;
 }
+#TheTeam h2 {
+    padding-top: 25px;
+}
 #TheTeam section img {
 	width: 90px;
 	height: 90px;
@@ -83,8 +86,22 @@
 	border-radius: 5px;
 	border: 1px solid rgba(143,89,11,.25);
 }
-#TheTeam section {
-	display: inline-block;
-	width: 48%;
+#TheTeam > section {
 	padding: 7px;
+}
+#TheTeam > section > div {
+    display: inline-block;
+}
+#TheTeam > section > div > h4 {
+    font-size: 20px;
+}
+#TheTeam > section > div > p {
+    margin: 10px 0px 10px 0px;
+}
+#TheTeam > section > div:first-of-type {
+    width: 25%;
+}
+#TheTeam > section > div:nth-of-type(2) {
+    width: 70%;
+    text-align: justify;
 }
