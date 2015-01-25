@@ -3,6 +3,7 @@
 var MSN = MSN || {};
 MSN.iDelay = 7000;
 MSN.bAsyncRequest = true;
+MSN.bIsCallerUpdatesPage = false;
 MSN.sUpComingXML = "data/upcoming.xml";
 MSN.sTagEvent = "event";
 MSN.sTagEvtTitle = "title";
@@ -27,6 +28,9 @@ MSN.fnGetNodeValue = function(ndNode) {
 	return ndNode.firstChild.nodeValue;
 };
 MSN.fnCreateTicker = function () {
+    if (document.location.href.indexOf("/updates.html") > 0) {
+        MSN.bIsCallerUpdatesPage = true;
+    }
     MSN.ndTicker = document.getElementById("Ticker");
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -42,8 +46,7 @@ MSN.fnCreateTicker = function () {
                 var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
 					sDesc = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
 					sWhen = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
-					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]),
-                    sEvtLink = (allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]).getAttribute("linkto");
+					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
                 if (!sTitle)
                     sTitle = " ";
                 if (!sDesc)
@@ -91,16 +94,11 @@ MSN.fnCreateTicker = function () {
                     ndTemp.appendChild(ndGuestList);
                 }
                 ndTemp.appendChild(ndEvtDesc);
-                if (sEvtLink && sEvtLink.length > 0) {
-                    var ndEvtLinkTo = document.createElement('a');
-                    ndEvtLinkTo.setAttribute('href', sEvtLink);
-                    ndEvtLinkTo.setAttribute('itemprop', 'url');
-                    ndEvtLinkTo.innerHTML = "For more details...";
-                    ndTemp.appendChild(ndEvtLinkTo);
+                if (!MSN.bIsCallerUpdatesPage) {
+                    MSN.fnHideNode(ndTemp);
+                    MSN.ndTicker.firstElementChild.innerHTML += ".";
                 }
-                MSN.fnHideNode(ndTemp);
                 MSN.ndEventDivs.push(ndTemp);
-                MSN.ndTicker.firstElementChild.innerHTML += ".";
                 MSN.ndTicker.appendChild(ndTemp);
             }
             MSN.chkTicker = document.getElementById("PauseTicker");
@@ -110,7 +108,14 @@ MSN.fnCreateTicker = function () {
                 MSN.fnUpdateTicker();
                 if (MSN.fnOneTime)
                     MSN.fnOneTime();
-                MSN.tmrTicker = setInterval(function () { MSN.fnUpdateTicker() }, MSN.iDelay);
+                if (!MSN.bIsCallerUpdatesPage) {
+                    var ndEvtLinkTo = document.createElement('a');
+                    ndEvtLinkTo.setAttribute('href', 'updates.html');
+                    ndEvtLinkTo.setAttribute('itemprop', 'url');
+                    ndEvtLinkTo.innerHTML = "For more details...";
+                    MSN.ndTicker.appendChild(ndEvtLinkTo);
+                    MSN.tmrTicker = setInterval(function () { MSN.fnUpdateTicker() }, MSN.iDelay);
+                }
             }
             else {
                 MSN.chkTicker.disabled = true;
@@ -145,12 +150,13 @@ MSN.fnShowNode = function (ndNode) {
 	ndNode.style.opacity = 1;
 	ndNode.style.height = "auto";
 };
-MSN.fnOneTime = function() {
-	MSN.ndTicker.setAttribute("class", "");
-	MSN.ndTicker.firstElementChild.style.display = "none";
-	if(MSN.ndEventDivs.length > 1)
-		MSN.chkTicker.disabled = false;
-	MSN.fnOneTime = undefined;
+MSN.fnOneTime = function () {
+    MSN.ndTicker.setAttribute("class", "");
+    if (!MSN.bIsCallerUpdatesPage)
+        MSN.ndTicker.firstElementChild.style.display = "none";
+    if (MSN.ndEventDivs.length > 1)
+        MSN.chkTicker.disabled = false;
+    MSN.fnOneTime = undefined;
 };
 MSN.fnOnTickerToggled = function () {
 	if(MSN.chkTicker.checked)
