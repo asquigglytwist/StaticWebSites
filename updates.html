@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="styles/basic.css" rel="stylesheet" type="text/css">
 <link href="styles/eventing.css" rel="stylesheet" type="text/css">
+<link href="styles/gallery.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="scripts/gallery_static.js"></script>
 <script type="text/javascript" src="scripts/eventing.js?2" defer></script>
 <link rel="canonical" href="http://msnatyalaya.com/updates.html">
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -129,6 +131,29 @@
             <h1>Upcoming Events</h1>
             <section id="Ticker" style="opacity: 1;">
             </section>
+            <div id="Images" style="display: block;">
+                <div class="event" data-title="Nritya Bharatanjali 2015" data-on="February 06, 2015" data-at="HAL Dr V.M Ghatge Convention Center" data-desc="Dance Festival – On Occasion of M.S. Natyalya's 3rd Annual Day. Our students present various performances and a wonderful Bharatanatyam dance ballet with the theme 'Bharat Satvan' - dance portraying life of Indian soldiers. M.S.Natyalaya dedicates it to this year's Republic day. "><h3 class="eventtitle">Nritya Bharatanjali 2015</h3><div> Date: <span class="eventdate">February 06, 2015</span> Organizer: <span class="eventorganizer">M.S.Natyalaya</span></div><div> Venue: <span class="eventvenue">HAL Dr V.M Ghatge Convention Center</span></div><div> Presided By: <span class="presidedby">Wg. Cdr. (Retd.) M.P. Benjamin - General Manager, HAL, Dr.Shalini Rao, MS DORL DNB FCPS, ENT Surgeon and Otologist, Rashmi Hospital</span></div><div class="eventthemedance"> Theme dance of the event: Bharat Satvan</div><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo0.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo1.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo2.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo3.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo4.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo5.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo6.png" alt="" title="" /><img class="thumb" src="images/gallery/thumbs/BharathSatvan/photo7.png" alt="" title="" /><h4>Dance Festival – On Occasion of M.S. Natyalya's 3rd Annual Day. Our students present various performances and a wonderful Bharatanatyam dance ballet with the theme 'Bharat Satvan' - dance portraying life of Indian soldiers. M.S.Natyalaya dedicates it to this year's Republic day. </h4></div>
+            </div>
+          </div>
+          <div id="FullScreen" tabindex="-1">
+              <div id="FSHUD" class="halved">0/0</div>
+              <div id="FSCloseBtn" onClick="MSN.fnHideFS();"></div>
+              <div id="FSImageControls">
+                  <div class="singlerow" style="text-align: left;">
+                      <input type="button" id="Prev" value="" onClick="MSN.fnPrevImage();" />
+                  </div>
+                  <div class="singlerow" id="FSShowCase">
+                      <div id="FSContainer">
+                          <h2 id="FSTitle" class="halved">Title here</h2>
+                          <img id="FSImage" onclick="MSN.fnNextImage();" />
+                          <h3 id="FSCaption" class="halved">Caption here</h3>
+                      </div>
+                  </div>
+                  <div class="singlerow" style="text-align: right;">
+                      <input type="button" id="Next" value="" onClick="MSN.fnNextImage();" />
+                  </div>
+              </div>
+          </div>
         </article>
         <article id="Announcements">
             <h1>Announcements (via Twitter)</h1>
@@ -203,6 +228,10 @@
 </footer>
 <script>
 	document.getElementById("CopyRightYear").innerHTML = new Date().getFullYear();
+    MSN.fnStaticGallery();
+    document.body.onkeyup = function(evt) {
+		MSN.fnFSKeyUp(evt);
+	};
 	/*Twitter updates widget.*/
 	/*********************************************************************
         *  #### Twitter Post Fetcher v12.0 #### Coded by Jason Mayes 2013. A present to all the developers out there. www.jasonmayes.com. Please keep this disclaimer with my code if you use it. Thanks. :-)
