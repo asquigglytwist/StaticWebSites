@@ -133,7 +133,7 @@
 }
 #Ticker .chiefguest > li:focus, #Ticker .chiefguest > li:hover {
 }
-#Ticker > div > a {
+#Ticker > a {
     float: right;
     margin: 15px 15px 0px 10px;
     border-bottom: 1px dotted;
