@@ -28,6 +28,7 @@
 	/* [disabled]width: 75%; */
 	margin: 0 auto;
 	display: none;
+    text-align: center;
 }
 #Videos:target, #Images:target {
 	display: block;
@@ -56,6 +57,7 @@
 }
 #Images .event:focus, #Images .event:hover {
 	border-color: rgba(143,89,11,1);
+    background-color: rgba(238,246,9,0.3);
 }
 #Images .event h2 {
 	margin-bottom: 5px;
@@ -76,9 +78,6 @@
 	will-change: transform;
 	border-radius: 50%;
 	border: 1px solid transparent;
-}
-#Images .event:focus, #Images .event:hover {
-	background-color: rgba(238,246,9,0.3);
 }
 #Images .event:focus .thumb, #Images .event:hover .thumb {
 	opacity: 1;
