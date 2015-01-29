@@ -51,7 +51,7 @@
 	border: 1px solid rgba(143,89,11,.25);
 }
 #ContactDetails section:focus, #ContactDetails section:hover {
-	border-color: rgba(143,89,11,1.0);
+	border-color: rgba(143,89,11,1);
 	background-color: rgba(238,246,9,0.3);
 }
 #Management section p {
@@ -104,4 +104,25 @@
 #TheTeam > section > div:nth-of-type(2) {
     width: 70%;
     text-align: justify;
+}
+@media screen and (max-width: 769px) {
+    #Management section {
+        text-align: left;
+    }
+    #Management section .inlineblock {
+        display: block;
+    }
+    #Management section div:nth-of-type(2) {
+	    text-align: left;
+    }
+    #TheTeam > section > div {
+        display: block;
+    }
+    #TheTeam > section > div:first-of-type {
+        width: 85%;
+    }
+    #TheTeam > section > div:nth-of-type(2) {
+        width: 85%;
+        text-align: left;
+    }
 }
