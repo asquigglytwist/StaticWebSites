@@ -1,5 +1,3 @@
-// JavaScript Document
-
 var MSN = MSN || {};
 MSN.sGalleryDivID = "Images";
 MSN.ndGallery = undefined;
@@ -41,8 +39,7 @@ MSN.fnGetFullImagePath = function (sPath) {
 };
 MSN.fnLoadImage = function (ndTemp) {
     MSN.ndFSImage.style.opacity = 0;
-    //MSN.ndFSImage.src = "";
-    MSN.ndFSImage.src = MSN.fnGetFullImagePath(ndTemp.getAttribute("src")); //.replace("/thumbs/", "/full/");
+    MSN.ndFSImage.src = MSN.fnGetFullImagePath(ndTemp.getAttribute("src"));
     MSN.ndFSImage.style.opacity = 1;
     var iTemp = Number(ndTemp.getAttribute("data-eventid"));
     if (MSN.sAllEventTitles[iTemp].length > 0)
@@ -77,32 +74,26 @@ MSN.fnFSKeyUp = function (evt) {
 	var bHandled = false;
 	if(MSN.ndFullScreen && ("block" == MSN.ndFullScreen.style.display))
 	{
-		//alert('' + evt.keyCode);
 		if(evt.keyCode == 27)
 		{
-			//alert('Escape');
 			MSN.fnHideFS();
 		}
 		else if(evt.keyCode == 37)
 		{
-			//alert('Left');
 			MSN.fnPrevImage();
 			bHandled = true;
 		}
 		else if(evt.keyCode==39)
 		{
-			//alert('Right');
 			MSN.fnNextImage();
 			bHandled = true;
 		}
 		else if(evt.keyCode==38)
 		{
-			//alert('Up');
 			bHandled = true;
 		}
 		else if(evt.keyCode==40)
 		{
-			//alert('Down');
 			bHandled = true;
 		}
 	}
@@ -115,7 +106,7 @@ MSN.fnStaticGallery = function () {
     MSN.ndGallery = document.getElementById(MSN.sGalleryDivID);
     MSN.ndAllEvents = MSN.ndGallery.querySelectorAll(MSN.sEventsClass);
     var sImgPaths = "";
-    for (var i = 0; i < MSN.ndAllEvents.length; i++) {
+    for (var i = 0, iLenAllEvts = MSN.ndAllEvents.length; i < iLenAllEvts; i++) {
         var sTitle = MSN.ndAllEvents[i].getAttribute(MSN.sEventTitleAttrib),
 			sDate = MSN.ndAllEvents[i].getAttribute(MSN.sEventDateAttrib),
 			sLocation = MSN.ndAllEvents[i].getAttribute(MSN.sEventLocationAttrib),
@@ -136,28 +127,8 @@ MSN.fnStaticGallery = function () {
         MSN.sAllEventTimes.push(sDate);
         MSN.sAllEventLocations.push(sLocation);
 
-        /*var ndTitle = document.createElement("h3");
-        ndTitle.innerHTML = sTitle;
-        MSN.ndAllEvents[i].insertBefore(ndTitle, MSN.ndAllEvents[i].firstChild);
-		
-        var ndTime = document.createElement("span"), ndLoc = document.createElement("span");
-        ndTime.innerHTML = sDate;
-        ndLoc.innerHTML = sLocation;
-        var ndWhenWhere = document.createElement("div");
-        ndWhenWhere.innerHTML = "On ";
-        ndWhenWhere.appendChild(ndTime);
-        ndWhenWhere.innerHTML += " at ";
-        ndWhenWhere.appendChild(ndLoc);
-        //MSN.ndAllEvents[i].appendChild(ndWhenWhere);
-        MSN.ndAllEvents[i].insertBefore(ndWhenWhere, MSN.ndAllEvents[i].firstChild);
-        MSN.ndAllEvents[i].insertBefore(ndTitle, MSN.ndAllEvents[i].firstChild);
-		
-        var ndDesc = document.createElement("h4");
-        ndDesc.innerHTML = sDesc;
-        MSN.ndAllEvents[i].appendChild(ndDesc);*/
-
         var tmpAllImgs = MSN.ndAllEvents[i].getElementsByTagName("img");
-        for (var j = 0; j < tmpAllImgs.length; j++) {
+        for (var j = 0, iLenAllImgs = tmpAllImgs.length; j < iLenAllImgs; j++) {
             tmpAllImgs[j].setAttribute("data-eventid", i.toString());
             tmpAllImgs[j].setAttribute("data-imageid", MSN.ndAllImgs.length.toString());
             tmpAllImgs[j].onclick = MSN.fnFullScreen;

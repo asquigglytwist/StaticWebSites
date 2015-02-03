@@ -1,5 +1,3 @@
-// JavaScript Document
-
 var MSN = MSN || {};
 MSN.iDelay = 7000;
 MSN.bAsyncRequest = true;
@@ -26,7 +24,7 @@ MSN.fnFetchDynamicXML = function () {
 							allGalleryItems = ndGalRoot.children;
             if (allGalleryItems) {
                 document.getElementById('LoadingMsg').innerHTML = "Loading Images...  Please wait.  We'll make sure it is worth the wait."
-                for (var i = 0; i < allGalleryItems.length; i++) {
+                for (var i = 0, iLenAllGall = allGalleryItems.length; i < iLenAllGall; i++) {
                     var ndTemp = document.createElement(MSN.sDOMWrappingTag);
                     ndTemp.innerHTML = allGalleryItems[i].outerHTML;
                     MSN.ndDivImages.appendChild(ndTemp);
@@ -40,7 +38,7 @@ MSN.fnFetchDynamicXML = function () {
                     parser = new DOMParser();
                     xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
                     ndGalRoot = xmlDoc.getElementsByTagName(MSN.sTagGallery)[0], allGalleryItems = ndGalRoot.childNodes;
-                    for (var i = 0; i < allGalleryItems.length; i++) {
+                    for (var i = 0, iLenAllGall = allGalleryItems.length; i < iLenAllGall; i++) {
                         if (Node.ELEMENT_NODE != allGalleryItems[i].nodeType)
                             continue;
                         var ndWrap = document.createElement(MSN.sDOMWrappingTag), ndEvent = document.createElement('div');
@@ -54,7 +52,7 @@ MSN.fnFetchDynamicXML = function () {
                         ndEvent.appendChild(ndVenue);
                         var ndaImages = allGalleryItems[i].getElementsByTagName("img");
                         var ndImgPara = document.createElement("p");
-                        for (var j = 0; j < ndaImages.length; j++) {
+                        for (var j = 0, iLenAllImgs = ndaImages.length; j < iLenAllImgs; j++) {
                             var ndImg = document.createElement("img");
                             ndImg.setAttribute('src', ndaImages[j].getAttribute('src'));
                             ndImg.setAttribute('class', 'thumb');
