@@ -1,17 +1,11 @@
-// JavaScript Document
-
 var MSN = MSN || {};
-
 MSN.fnOptimizeYouTubeEmbeds = function () {
 	var frames = document.getElementsByTagName( 'iframe' );
-	for ( var i = 0; i < frames.length; i++ ) {
+	for ( var i = 0, iLenAllFrames = frames.length; i < iLenAllFrames; i++ ) {
 		if ( frames[ i ].src && frames[ i ].src.length > 0 && frames[ i ].src.match(/http(s)?:\/\/www\.youtube\.com/)) {
-			var src=frames[i].src;
-			var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-			var id=(src.match(p) ? RegExp.$1 : false);
+			var src=frames[i].src, p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/, id=(src.match(p) ? RegExp.$1 : false);
 			if(id == false) { continue;}
-			var w=frames[i].width;
-			var h=frames[i].height;
+			var w=frames[i].width, h=frames[i].height;
 			if(src == '' || w=='' || h=='') {continue;}
 			var pw=Math.ceil(w/2-38.5);
 			var ph=Math.ceil(h/2+38.5);
