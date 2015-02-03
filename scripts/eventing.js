@@ -1,5 +1,3 @@
-// JavaScript Document
-
 var MSN = MSN || {};
 MSN.iDelay = 7000;
 MSN.bAsyncRequest = true;
@@ -42,7 +40,7 @@ MSN.fnCreateTicker = function () {
                 return;
             }
             var allUpcomingEvents = xhr.responseXML.getElementsByTagName(MSN.sTagEvent);
-            for (var i = 0; i < allUpcomingEvents.length; i++) {
+            for (var i = 0, iLenAllUEvts = allUpcomingEvents.length; i < iLenAllUEvts; i++) {
                 var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
 					sDesc = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
 					sWhen = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
@@ -75,7 +73,7 @@ MSN.fnCreateTicker = function () {
                 ndGuestList = document.createElement('ul');
                 ndGuestsTitle.innerHTML = "Chief Guests";
                 ndGuestsTitle.setAttribute('class', 'gueststitle')
-                for (var j = 0; j < ndAllGuests.length; j++) {
+                for (var j = 0, iLenAllGst = ndAllGuests.length; j < iLenAllGst; j++) {
                     var ndGuest = document.createElement('li');
                     var sGuestLinkTo = ndAllGuests[j].getAttribute("linkto");
                     if (sGuestLinkTo && sGuestLinkTo.length) {
