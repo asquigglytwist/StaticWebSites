@@ -12,6 +12,7 @@ MSN.sTagEvtChiefGuestsList = "chiefguests";
 MSN.sTagEvtGuest = "guest";
 MSN.sTagToUse = "div";
 MSN.ndEventDivs = [];
+MSN.iTotalEvents = -1;
 MSN.iDivIxToShow = 0;
 MSN.ndTicker = undefined;
 MSN.tmrTicker = undefined;
@@ -115,7 +116,8 @@ MSN.fnCreateTicker = function () {
             MSN.chkTicker = document.getElementById("PauseTicker");
             MSN.ndTicker.style.display = "block";
             MSN.ndTicker.style.opacity = 1;
-            if (MSN.ndEventDivs.length > 0) {
+            MSN.iTotalEvents = MSN.ndEventDivs.length;
+            if (MSN.iTotalEvents > 0) {
                 MSN.fnUpdateTicker();
                 if (MSN.fnOneTime)
                     MSN.fnOneTime();
@@ -150,7 +152,7 @@ MSN.fnUpdateTicker = function () {
             MSN.fnHideNode(MSN.ndEventDivs[MSN.iDivIxToShow]); ;
         }
         MSN.iDivIxToShow++;
-        if (MSN.iDivIxToShow > (MSN.ndEventDivs.length - 1)) {
+        if (MSN.iDivIxToShow > (MSN.iTotalEvents - 1)) {
             MSN.iDivIxToShow = 0;
         }
         MSN.fnShowNode(MSN.ndEventDivs[MSN.iDivIxToShow]);
@@ -169,7 +171,7 @@ MSN.fnOneTime = function () {
     MSN.ndTicker.setAttribute("class", "");
     if (!MSN.bIsCallerUpdatesPage) {
         MSN.ndTicker.firstElementChild.style.display = "none";
-        if (MSN.ndEventDivs.length > 1)
+        if (MSN.iTotalEvents > 1)
             MSN.chkTicker.disabled = false;
     }
     MSN.fnOneTime = undefined;
