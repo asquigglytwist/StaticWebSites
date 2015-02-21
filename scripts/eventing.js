@@ -120,7 +120,7 @@ MSN.fnCreateTicker = function () {
                     MSN.fnOneTime();
                 if (!MSN.bIsCallerUpdatesPage) {
                     var ndEvtLinkTo = document.createElement('a');
-                    ndEvtLinkTo.setAttribute('href', 'updates.html');
+                    ndEvtLinkTo.setAttribute('href', 'updates.html#FutureEvents');
                     ndEvtLinkTo.setAttribute('itemprop', 'url');
                     ndEvtLinkTo.innerHTML = "For more details...";
                     MSN.ndTicker.appendChild(ndEvtLinkTo);
@@ -136,21 +136,21 @@ MSN.fnCreateTicker = function () {
     xhr.open("GET", MSN.sUpComingXML, MSN.bAsyncRequest);
     xhr.send();
 };
-MSN.fnUpdateTicker = function() {
-	MSN.fnHideNode(MSN.ndTicker);
-	if(MSN.ndTicker.style.backgroundImage.length > 0)
-		MSN.ndTicker.style.backgroundImage = "none";
-	if(MSN.ndTicker.childNodes.length > 0)
-	{
-		MSN.fnHideNode(MSN.ndEventDivs[MSN.iDivIxToShow]);;
-	}
-	MSN.iDivIxToShow++;
-	if(MSN.iDivIxToShow > (MSN.ndEventDivs.length - 1))
-	{
-		MSN.iDivIxToShow = 0;
-	}
-	MSN.fnShowNode(MSN.ndEventDivs[MSN.iDivIxToShow]);
-	MSN.fnShowNode(MSN.ndTicker);
+MSN.fnUpdateTicker = function () {
+    MSN.fnHideNode(MSN.ndTicker);
+    if (MSN.ndTicker.style.backgroundImage.length > 0)
+        MSN.ndTicker.style.backgroundImage = "none";
+    if (!MSN.bIsCallerUpdatesPage) {
+        if (MSN.ndTicker.childNodes.length > 0) {
+            MSN.fnHideNode(MSN.ndEventDivs[MSN.iDivIxToShow]); ;
+        }
+        MSN.iDivIxToShow++;
+        if (MSN.iDivIxToShow > (MSN.ndEventDivs.length - 1)) {
+            MSN.iDivIxToShow = 0;
+        }
+        MSN.fnShowNode(MSN.ndEventDivs[MSN.iDivIxToShow]);
+    }
+    MSN.fnShowNode(MSN.ndTicker);
 };
 MSN.fnHideNode = function (ndNode) {
 	ndNode.style.opacity = 0;
