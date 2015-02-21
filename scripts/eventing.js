@@ -39,6 +39,7 @@ MSN.fnCreateTicker = function () {
                 MSN.ndTicker.style.opacity = 1;
                 return;
             }
+            var ndThisBody = document.body;
             var allUpcomingEvents = xhr.responseXML.getElementsByTagName(MSN.sTagEvent);
             for (var i = 0, iLenAllUEvts = allUpcomingEvents.length; i < iLenAllUEvts; i++) {
                 var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
@@ -96,6 +97,17 @@ MSN.fnCreateTicker = function () {
                     MSN.fnHideNode(ndTemp);
                     MSN.ndTicker.firstElementChild.innerHTML += ".";
                 }
+                var sJsonLd = "{'@context': 'http://schema.org', '@type': 'Event', 'name': '"
+                              + sTitle
+                              + "', 'startDate' : '"
+                              + new Date(sWhen).toISOString()
+                              + "', 'url' : 'http://msnatyalaya.com/updates.html', 'location' : { '@type' : 'Place', 'name' : '"
+                              + sWhere
+                              + "', 'address' : { '@type' : 'PostalAddress', 'addressLocality' : 'Bangalore', 'addressRegion' : 'KA', 'addressCountry' : 'IN', 'postalCode' : '560038' } } }";
+                var ndJSONLDScript = document.createElement('script');
+                ndJSONLDScript.setAttribute('type', 'application/ld+json');
+                ndJSONLDScript.innerHTML = sJsonLd;
+                ndThisBody.appendChild(ndJSONLDScript);
                 MSN.ndEventDivs.push(ndTemp);
                 MSN.ndTicker.appendChild(ndTemp);
             }
@@ -150,10 +162,11 @@ MSN.fnShowNode = function (ndNode) {
 };
 MSN.fnOneTime = function () {
     MSN.ndTicker.setAttribute("class", "");
-    if (!MSN.bIsCallerUpdatesPage)
+    if (!MSN.bIsCallerUpdatesPage) {
         MSN.ndTicker.firstElementChild.style.display = "none";
-    if (MSN.ndEventDivs.length > 1)
-        MSN.chkTicker.disabled = false;
+        if (MSN.ndEventDivs.length > 1)
+            MSN.chkTicker.disabled = false;
+    }
     MSN.fnOneTime = undefined;
 };
 MSN.fnOnTickerToggled = function () {
