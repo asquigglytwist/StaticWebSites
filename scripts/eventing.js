@@ -37,6 +37,7 @@ MSN.fnCreateTicker = function () {
                 MSN.ndTicker.innerHTML = "No upcoming events.";
                 MSN.ndTicker.style.display = "block";
                 MSN.ndTicker.style.opacity = 1;
+                MSN.fnStopTickerBGAnim();
                 return;
             }
             var ndThisBody = document.body;
@@ -128,18 +129,22 @@ MSN.fnCreateTicker = function () {
                 }
             }
             else {
-                MSN.chkTicker.disabled = true;
+                if (!MSN.bIsCallerUpdatesPage)
+                    MSN.chkTicker.disabled = true;
                 MSN.ndTicker.innerHTML = "No upcoming events.";
+                MSN.fnStopTickerBGAnim();
             }
         }
     };
     xhr.open("GET", MSN.sUpComingXML, MSN.bAsyncRequest);
     xhr.send();
 };
+MSN.fnStopTickerBGAnim = function () {
+        MSN.ndTicker.style.backgroundImage = "none";
+};
 MSN.fnUpdateTicker = function () {
     MSN.fnHideNode(MSN.ndTicker);
-    if (MSN.ndTicker.style.backgroundImage.length > 0)
-        MSN.ndTicker.style.backgroundImage = "none";
+    MSN.fnStopTickerBGAnim();
     if (!MSN.bIsCallerUpdatesPage) {
         if (MSN.ndTicker.childNodes.length > 0) {
             MSN.fnHideNode(MSN.ndEventDivs[MSN.iDivIxToShow]); ;
@@ -179,15 +184,14 @@ MSN.fnOnTickerToggled = function () {
 		MSN.tmrTicker = setInterval(function() { MSN.fnUpdateTicker() }, MSN.iDelay);
 	}
 };
-window.onload = function() {
-	try
-	{
-		MSN.fnCreateTicker();
-	}
-	catch(ex)
-	{
-		MSN.ndTicker.innerHTML = "No upcoming events.";
-		MSN.ndTicker.style.display = "block";
-		MSN.ndTicker.style.opacity = 1;
-	}
+window.onload = function () {
+    try {
+        MSN.fnCreateTicker();
+    }
+    catch (ex) {
+        MSN.ndTicker.innerHTML = "No upcoming events.";
+        MSN.fnStopTickerBGAnim();
+        MSN.ndTicker.style.display = "block";
+        MSN.ndTicker.style.opacity = 1;
+    }
 };
