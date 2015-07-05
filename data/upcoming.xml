@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <upcomingevents>
+    <event>
+		<title>Certification Exams</title>
+		<desc>
+			Exams for students enrolled under Certification Programmes with Annamalai University, TamilNadu.
+		</desc>
+		<chiefguests>
+			<guest linkto=""></guest>
+		</chiefguests>
+		<start>July 11, 2015</start>
+        <!--<end>July 12, 2015</end>-->
+		<where>Will be duly informed by management.</where>
+	</event>
 </upcomingevents>
