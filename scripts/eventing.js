@@ -27,6 +27,12 @@ MSN.fnIsIE = function () {
 MSN.fnGetNodeValue = function(ndNode) {
 	return ndNode.firstChild.nodeValue;
 };
+MSN.fnGetEndDateIfAvailable = function (ndNodeList) {
+    if (ndNodeList.length > 0) {
+        return MSN.fnGetNodeValue(ndNodeList[0]);
+    }
+    return "";
+};
 MSN.fnCreateTicker = function () {
     if (document.location.href.indexOf("/updates.html") > 0) {
         MSN.bIsCallerUpdatesPage = true;
@@ -48,7 +54,7 @@ MSN.fnCreateTicker = function () {
                 var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
 					sDesc = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
 					sStartDate = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtStart)[0]),
-                    sEndDate = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtEnd)[0]),
+                    sEndDate = MSN.fnGetEndDateIfAvailable(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtEnd)),
 					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
                 if (!sTitle)
                     sTitle = " ";
