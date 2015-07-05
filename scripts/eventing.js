@@ -6,7 +6,8 @@ MSN.sUpComingXML = "data/upcoming.xml";
 MSN.sTagEvent = "event";
 MSN.sTagEvtTitle = "title";
 MSN.sTagEvtDesc = "desc";
-MSN.sTagEvtWhen = "when";
+MSN.sTagEvtStart = "start";
+MSN.sTagEvtEnd = "end";
 MSN.sTagEvtWhere = "where";
 MSN.sTagEvtChiefGuestsList = "chiefguests";
 MSN.sTagEvtGuest = "guest";
@@ -46,16 +47,19 @@ MSN.fnCreateTicker = function () {
             for (var i = 0, iLenAllUEvts = allUpcomingEvents.length; i < iLenAllUEvts; i++) {
                 var sTitle = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtTitle)[0]),
 					sDesc = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtDesc)[0]),
-					sWhen = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhen)[0]),
+					sStartDate = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtStart)[0]),
+                    sEndDate = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtEnd)[0]),
 					sWhere = MSN.fnGetNodeValue(allUpcomingEvents[i].getElementsByTagName(MSN.sTagEvtWhere)[0]);
                 if (!sTitle)
                     sTitle = " ";
                 if (!sDesc)
                     sDesc = " ";
-                if (!sWhen)
-                    sWhen = " ";
+                if (!sStartDate)
+                    sStartDate = " ";
                 if (!sWhere)
                     sWhere = " ";
+                if (!sEndDate)
+                    sEndDate = sEndDate.trim();
                 var ndEvtTitle = document.createElement("h2");
                 ndEvtTitle.setAttribute('itemprop', 'name');
                 ndEvtTitle.innerHTML = sTitle;
@@ -63,7 +67,20 @@ MSN.fnCreateTicker = function () {
                 ndEvtDesc.setAttribute('itemprop', 'description');
                 ndEvtDesc.innerHTML = sDesc;
                 var ndEvtWhenWhere = document.createElement("h3");
-                ndEvtWhenWhere.innerHTML = ("on&nbsp;&nbsp;<span itemprop='startDate'>" + sWhen + "</span>&nbsp;&nbsp;at&nbsp;&nbsp;<span itemprop='location' itemscope itemtype='http://schema.org/Place'>" + sWhere + "</span>");
+                if (sEndDate.length < 1) {
+                    ndEvtWhenWhere.innerHTML = ("on&nbsp; <span itemprop='startDate'>"
+                    + sStartDate
+                    + "</span>&nbsp; at&nbsp; <span itemprop='location' itemscope itemtype='http://schema.org/Place'>"
+                    + sWhere + "</span>");
+                }
+                else {
+                    ndEvtWhenWhere.innerHTML = ("<div>from&nbsp; <span itemprop='startDate'>"
+                    + sStartDate
+                    + "</span> to &nbsp; <span itemprop='endDate'>"
+                    + sEndDate
+                    + "</span></div>at&nbsp; <span itemprop='location' itemscope itemtype='http://schema.org/Place'>"
+                    + sWhere + "</span>");
+                }
                 ndEvtWhenWhere.setAttribute("class", "onat");
                 var ndTemp = document.createElement(MSN.sTagToUse);
                 ndTemp.setAttribute('itemscope', '');
@@ -102,7 +119,7 @@ MSN.fnCreateTicker = function () {
                 var sJsonLd = "{'@context': 'http://schema.org', '@type': 'Event', 'name': '"
                               + sTitle
                               + "', 'startDate' : '"
-                              + new Date(sWhen).toISOString()
+                              + new Date(sStartDate).toISOString()
                               + "', 'url' : 'http://msnatyalaya.com/updates.html', 'location' : { '@type' : 'Place', 'name' : '"
                               + sWhere
                               + "', 'address' : { '@type' : 'PostalAddress', 'addressLocality' : 'Bangalore', 'addressRegion' : 'KA', 'addressCountry' : 'IN', 'postalCode' : '560038' } } }";
