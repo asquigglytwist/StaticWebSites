@@ -98,37 +98,44 @@ MSN.fnCreateTicker = function () {
                 ndGuestsTitle = document.createElement('h3')
                 ndGuestList = document.createElement('ul');
                 ndGuestsTitle.innerHTML = "Chief Guests";
-                ndGuestsTitle.setAttribute('class', 'gueststitle')
-                for (var j = 0, iLenAllGst = ndAllGuests.length; j < iLenAllGst; j++) {
-                    var ndGuest = document.createElement('li');
-                    var sGuestLinkTo = ndAllGuests[j].getAttribute("linkto");
-                    if (sGuestLinkTo && sGuestLinkTo.length) {
-                        var ndGuestLinkTo = document.createElement('a');
-                        ndGuestLinkTo.setAttribute('href', sGuestLinkTo);
-                        ndGuestLinkTo.innerHTML = ndAllGuests[j].textContent;
-                        ndGuest.appendChild(ndGuestLinkTo);
+                ndGuestsTitle.setAttribute('class', 'gueststitle');
+                var j = 0, iLenAllGst = ndAllGuests.length;
+                for (; j < iLenAllGst; j++) {
+                    var sGuestName = ndAllGuests[j].textContent.trim();
+                    if (sGuestName && sGuestName.length) {
+                        var ndGuest = document.createElement('li');
+                        var sGuestLinkTo = ndAllGuests[j].getAttribute("linkto");
+                        if (sGuestLinkTo && sGuestLinkTo.length) {
+                            var ndGuestLinkTo = document.createElement('a');
+                            ndGuestLinkTo.setAttribute('href', sGuestLinkTo);
+                            ndGuestLinkTo.innerHTML = sGuestName;
+                            ndGuest.appendChild(ndGuestLinkTo);
+                        }
+                        else
+                            ndGuest.innerHTML = sGuestName;
+                        ndGuestList.appendChild(ndGuest);
                     }
-                    else
-                        ndGuest.innerHTML = ndAllGuests[j].textContent;
-                    ndGuestList.appendChild(ndGuest);
+                    /*else the Guest's Name is missing and has to be skipped.*/
                 }
-                if (ndAllGuests.length) {
+                if (ndGuestList.childElementCount) {
                     ndGuestList.setAttribute('class', 'chiefguest');
                     ndTemp.appendChild(ndGuestsTitle);
                     ndTemp.appendChild(ndGuestList);
+                }
+                else {
                 }
                 ndTemp.appendChild(ndEvtDesc);
                 if (!MSN.bIsCallerUpdatesPage) {
                     MSN.fnHideNode(ndTemp);
                     MSN.ndTicker.firstElementChild.innerHTML += ".";
                 }
-                var sJsonLd = "{'@context': 'http://schema.org', '@type': 'Event', 'name': '"
+                var sJsonLd = "{\"@context\": \"http://schema.org\", \"@type\": \"Event\", \"name\": \""
                               + sTitle
-                              + "', 'startDate' : '"
+                              + "\", \"startDate\" : \""
                               + new Date(sStartDate).toISOString()
-                              + "', 'url' : 'http://msnatyalaya.com/updates.html', 'location' : { '@type' : 'Place', 'name' : '"
+                              + "\", \"url\" : \"http://msnatyalaya.com/updates.html\", \"location\" : { \"@type\" : \"Place\", \"name\" : \""
                               + sWhere
-                              + "', 'address' : { '@type' : 'PostalAddress', 'addressLocality' : 'Bangalore', 'addressRegion' : 'KA', 'addressCountry' : 'IN', 'postalCode' : '560038' } } }";
+                              + "\", \"address\" : { \"@type\" : \"PostalAddress\", \"addressLocality\" : \"Bangalore\", \"addressRegion\" : \"KA\", \"addressCountry\" : \"IN\", \"postalCode\" : \"560038\" } } }";
                 var ndJSONLDScript = document.createElement('script');
                 ndJSONLDScript.setAttribute('type', 'application/ld+json');
                 ndJSONLDScript.innerHTML = sJsonLd;
