@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* NOTE:  This CSS is for styling default UI elements on the browser - like scrollbar, etc. */
+
+
+/* --- For IE --- */
+body{
+  scrollbar-base-color: #C0C0C0;
+  scrollbar-base-color: #C0C0C0;
+  scrollbar-3dlight-color: #C0C0C0;
+  scrollbar-highlight-color: #C0C0C0;
+  scrollbar-track-color: #EBEBEB;
+  scrollbar-arrow-color: black;
+  scrollbar-shadow-color: #C0C0C0;
+  scrollbar-dark-shadow-color: #C0C0C0;
+}
+
+/* --- For Chrome --- */
+::-webkit-scrollbar {
+      width: 5px;
+} /* this targets the default scrollbar (compulsory) */
+::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 120, 1);
+} /* the new scrollbar will have a flat appearance with the set background color */
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 200, 0.5);
+} /* this will style the thumb, ignoring the track */
+::-webkit-scrollbar-button {
+      background-color: rgba(0, 0, 0, 1);
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+::-webkit-scrollbar-corner {
+      background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+/*
+Working on Chrome - Backed Up
+::-webkit-scrollbar {
+	width: 3px;
+	height: 3px;
+}
+::-webkit-scrollbar-button {
+	background-color: #666;
+}
+::-webkit-scrollbar-track {
+	background-color: #999;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+	height: 50px;
+	background-color: #666;
+	border-radius: 3px;
+}
+::-webkit-scrollbar-corner {
+	background-color: #999;
+}
+::-webkit-resizer {
+	background-color: #666;
+}
+*/
