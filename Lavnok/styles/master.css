@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat|Abel|Quicksand|Courgette);
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Abel|Quicksand|Courgette);
 
 * {
 	margin: 0px;
@@ -12,7 +12,7 @@
 	outline: none;
 }
 body {
-	background: rgba(255,255,255,1) url("../images/lite/TechieTreeOnlyBranch.png") no-repeat left top;
+	background: rgba(255,255,255,1) url("../images/TechieTreeOnlyBranch.png") no-repeat left top;
     background-size:67%;
     font-size:  18px;
 }
@@ -176,7 +176,7 @@ ul {
 }
 #ScrollableContent {
     margin-top: 20%;
-    background: url("../images/lite/TechieTreeBark.png") repeat-y;
+    background: url("../images/TechieTreeBark.png") repeat-y;
     background-size: 20%;
 }
 .flexContainer {
@@ -214,7 +214,7 @@ ul {
    flex-grow: 4;
 }
 .branch{
-    background: url("../images/lite/BranchOnly.png") no-repeat;
+    background: url("../images/BranchOnly.png") no-repeat;
     width: auto;
     height: auto;
 }
@@ -381,7 +381,7 @@ ul {
     display: none;
 }
 #FlowingBottom{
-    background: url("../images/lite/TechieTreeLand.png") no-repeat;
+    background: url("../images/TechieTreeLand.png") no-repeat;
     background-size: 20%;
 }
 .footerContent{
