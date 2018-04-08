@@ -377,6 +377,15 @@ ul {
 #btnSubmit:active {
     box-shadow: none;
 }
+#btnSubmit:disabled {
+	background-color: rgba(2,178,213,0.65);
+	color: rgba(255,255,255,0.65);
+}
+#btnSubmit:disabled:hover, #btnSubmit:disabled:focus, #btnSubmit:disabled:active {
+	background-color: rgba(2,178,213,0.25);
+	color: rgba(255,255,255,0.25);
+	box-shadow: none;
+}
 #Response {
     display: none;
 }
